@@ -1,0 +1,36 @@
+Configurations
+	COMMAND-LINE TOOLS:
+	- install vim
+		- download vim-gtk[3] for clipboard support
+		- install vim-plug plugin manager
+	- install neofetch
+	- install onefetch
+	- install clang[-10 | -11]
+	- install htop
+	- install iotop
+	- download media codecs for video support (if required)
+	- install ttyper
+		- need cargo package manager before installation
+	- install bat
+	- install dictd
+		- installation instructions: {https://www.unixmen.com/look-dictionary-definitions-via-terminal/}
+		- install dict-gcide, an english dictionary database
+		- install dict-freedict-eng-hin, an english-to-hindi dictionary database
+	- install build-essential
+	- install gdb
+	- install trans (translate-shell) {https://github.com/soimort/translate-shell}
+		- required gawk
+			- install gawk
+	- install duf (optional)
+	- install exa (optional)
+		- need cargo package manager before installation
+
+	GUIs
+	- install BleachBit (if required)
+	- install spotify
+	- install free download manager (optional, using wget tool instead)
+	- install vlc
+		- set vlc as default application
+	- install discord (pending)
+	- install vscode (optional)
+	- install xournal (optional)
