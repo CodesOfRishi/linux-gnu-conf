@@ -1,0 +1,27 @@
+- **`-Wall`**
+  - Recommended compiler warnings.
+  - [Reference](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+- **`-Wextra`**
+  - This enables some extra warning flags that are not enabled by `-Wall`.
+  - [Reference](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+- **`-Wshadow`**
+  - Warn whenever a local variable or type declaration shadows another variable, parameter, type, class member (in C++), or whenever a built-in function is shadowed. 
+  - Note that in C++, the compiler warns if a local variable shadows an explicit typedef, but not if it shadows a struct/class/enum. 
+  - If this warning is enabled, it includes also all instances of local shadowing. This means that `-Wno-shadow=local` and `-Wno-shadow=compatible-local` are ignored when `-Wshadow` is used. Same as `-Wshadow=global`.
+  - [Reference](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+- **`-O2`**
+  - More optimization than `-O1`.
+  - GCC performs nearly all supported optimizations that do not involve a space-speed tradeoff.
+  - As compared to `-O`, this option increases both compilation time and the performance of the generated code.
+  - `-O2` turns on all optimization flags specified by `-O`.
+  - [Reference](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
+- **`-fwrapv`**
+  - This option instructs the compiler to assume that signed arithmetic overflow of addition, subtraction and multiplication wraps around using twos-complement representation.
+  - [Reference1](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
+  - [Reference2](https://stackoverflow.com/questions/47232954/what-does-fwrapv-do)
+- **`-Wfloat-equal`**
+  - Warns if two floating point values are compared directly: `a == b`. Usually the correct way is: `abs(a - b) < EPS`.
+  - [Reference](https://codeforces.com/blog/entry/15547)
+- **`-Wconversion`**
+  - Warns if data can be lost in an *implicit* conversion. Most often it is accidental assignment of a `long long` value to an `int` variable.
+  - [Reference](https://codeforces.com/blog/entry/15547)
