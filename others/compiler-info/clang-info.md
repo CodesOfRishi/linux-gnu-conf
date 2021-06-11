@@ -1,0 +1,4 @@
+- [clang documentation](https://clang.llvm.org/docs/)
+- [clang docs user manual](https://clang.llvm.org/docs/UsersManual.html)
+- [clang docs command guide](https://clang.llvm.org/docs/CommandGuide/clang.html)
+- [clang docs diagnostic reference](https://clang.llvm.org/docs/DiagnosticsReference.html)
