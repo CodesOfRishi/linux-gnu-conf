@@ -9,6 +9,7 @@ Configurations
 	- install htop
 	- install iotop
 	- download media codecs for video support (if required)
+	- install fd
 	- install ttyper
 		- need cargo package manager before installation
 	- install bat
