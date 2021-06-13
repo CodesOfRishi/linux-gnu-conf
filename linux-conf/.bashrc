@@ -28,3 +28,6 @@ source /usr/share/doc/fzf/examples/completion.bash
 
 export FZF_DEFAULT_COMMAND="fd --hidden --type f"
 export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND)' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 --color='hl+:2,hl:2'"
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 100% --border --preview 'bat --style=numbers --color=always --line-range :500 {}'"
