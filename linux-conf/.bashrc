@@ -24,3 +24,4 @@ alias ll="ls -lFA"
 # fzf
 # checkout `apt info fzf` -> checkout /usr/share/doc/fzf/README.Debian
 source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
