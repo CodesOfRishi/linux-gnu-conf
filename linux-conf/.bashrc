@@ -25,3 +25,6 @@ alias ll="ls -lFA"
 # checkout `apt info fzf` -> checkout /usr/share/doc/fzf/README.Debian
 source /usr/share/doc/fzf/examples/key-bindings.bash
 source /usr/share/doc/fzf/examples/completion.bash
+
+export FZF_DEFAULT_COMMAND="fd --hidden --type f"
+export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND)' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 --color='hl+:2,hl:2'"
