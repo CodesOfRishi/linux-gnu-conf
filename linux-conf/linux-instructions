@@ -11,6 +11,7 @@ Configurations
 	- download media codecs for video support (if required)
 	- install fd
 	- install tree
+	- install fzf
 	- install ttyper
 		- need cargo package manager before installation
 	- install bat
