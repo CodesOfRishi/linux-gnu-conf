@@ -20,3 +20,7 @@ alias cp="cp -v"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
 alias ll="ls -lFA"
+
+# fzf
+# checkout `apt info fzf` -> checkout /usr/share/doc/fzf/README.Debian
+source /usr/share/doc/fzf/examples/key-bindings.bash
