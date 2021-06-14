@@ -77,3 +77,11 @@ _gh() {
     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always' |
   grep -o "[a-f0-9]\{7,\}"
 }
+
+# key bindings for fzf git configurations
+if [[ $- =~ i ]]; then
+	bind '"\er": redraw-current-line'
+	bind '"\C-g\C-f": "$(_gf)\e\C-e\er"' # bind ctrl-g ctrl-f for _gf()
+	bind '"\C-g\C-b": "$(_gb)\e\C-e\er"' # bind ctrl-g ctrl-b for _gb()
+	bind '"\C-g\C-h": "$(_gh)\e\C-e\er"' # bind ctrl-g ctrl-h for _gh()
+fi
