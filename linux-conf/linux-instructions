@@ -1,4 +1,4 @@
-Configurations
+CONFIGURATIONS:
 	COMMAND-LINE TOOLS:
 	- install vim
 		- download vim-gtk[3] for clipboard support
@@ -28,7 +28,7 @@ Configurations
 	- install exa (optional)
 		- need cargo package manager before installation
 
-	GUIs
+	GUIs:
 	- install BleachBit (if required)
 	- install spotify
 	- install free download manager (optional, using wget tool instead)
@@ -37,3 +37,5 @@ Configurations
 	- install discord (pending)
 	- install vscode (optional)
 	- install xournal (optional)
+
+CHECK-OUT COMMAND-LINE TOOLS:
