@@ -15,8 +15,8 @@ export PS1='\[\e[1;36m\]┌──  [\[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[1;36
 export PATH='/home/rishi/.cargo/bin:'$PATH
 
 # aliases
-alias mv="mv -v"
 alias cp="cp -v"
+alias mv="mv -iv"
 alias rm="rm -I"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
