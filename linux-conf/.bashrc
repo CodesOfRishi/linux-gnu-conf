@@ -17,6 +17,7 @@ export PATH='/home/rishi/.cargo/bin:'$PATH
 # aliases
 alias mv="mv -v"
 alias cp="cp -v"
+alias rm="rm -I"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
 alias ll="ls -lFA"
