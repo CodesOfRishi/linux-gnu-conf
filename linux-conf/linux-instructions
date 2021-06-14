@@ -39,3 +39,5 @@ CONFIGURATIONS:
 	- install xournal (optional)
 
 CHECK-OUT COMMAND-LINE TOOLS:
+	- diff-so-fancy
+	- ripgrep
