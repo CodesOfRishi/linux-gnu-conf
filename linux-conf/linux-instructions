@@ -24,6 +24,7 @@ CONFIGURATIONS:
 	- install trans (translate-shell) {https://github.com/soimort/translate-shell}
 		- required gawk
 			- install gawk
+	- install starship (a custimzable prompt for any shell)
 	- install duf (optional)
 	- install exa (optional)
 		- need cargo package manager before installation
