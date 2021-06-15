@@ -44,3 +44,5 @@ CHECK-OUT COMMAND-LINE TOOLS:
 	- ripgrep
 
 CHECK-OUT GUIs SOFTWARES:
+	- Alacritty terminal
+	- i3 tiling windows manager
