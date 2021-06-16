@@ -44,6 +44,8 @@ CHECK-OUT COMMAND-LINE TOOLS:
 	- ripgrep
 	- ack vim plugin
 		- use it with ripgrep
+	- fzf vim plugin
+	- fzf ripgrep configurations
 
 CHECK-OUT GUIs SOFTWARES:
 	- Alacritty terminal
