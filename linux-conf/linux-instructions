@@ -42,6 +42,8 @@ CONFIGURATIONS:
 CHECK-OUT COMMAND-LINE TOOLS:
 	- diff-so-fancy
 	- ripgrep
+	- ack vim plugin
+		- use it with ripgrep
 
 CHECK-OUT GUIs SOFTWARES:
 	- Alacritty terminal
