@@ -18,8 +18,7 @@ eval "$(starship init bash)"
 export PATH='/home/rishi/.cargo/bin:'$PATH
 
 # aliases
-alias cp="cp -v"
-alias mv="mv -iv"
+alias mv="mv -i"
 alias rm="rm -I"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
