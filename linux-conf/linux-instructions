@@ -11,6 +11,7 @@ CONFIGURATIONS:
 	- download media codecs for video support (if required)
 	- install fd
 	- install tree
+	- install diff-so-fancy
 	- install fzf
 	- install ttyper
 		- need cargo package manager before installation
@@ -40,7 +41,6 @@ CONFIGURATIONS:
 	- install xournal (optional)
 
 CHECK-OUT COMMAND-LINE TOOLS:
-	- diff-so-fancy
 	- ripgrep
 	- ack vim plugin
 		- use it with ripgrep
