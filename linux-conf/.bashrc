@@ -1,4 +1,9 @@
 # rishi's configuration
+# start Tmux by default at every shell startup
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 # prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e[1;34m\]\w\[\e[0m\] \[\e[1;33m\]$(__git_ps1 "(%s) ")\[\e[0m\]\[\e[1;31m\]✘\[\e[0m\] ' # working_dir (git_dir) ✘
