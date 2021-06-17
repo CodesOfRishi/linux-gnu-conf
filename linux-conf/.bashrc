@@ -61,7 +61,7 @@ _gf() {
   is_in_git_repo || return
   git -c color.status=always status --short |
   fzf-down --height 70% -m --ansi --nth 2..,.. \
-    --preview '(git diff --color=always -- {-1} | sed 1,4d;)' |
+    --preview '(git diff -- {-1} | diff-so-fancy | sed 1,3d;)' |
   cut -c4- | sed 's/.* -> //'
 }
 
@@ -81,7 +81,7 @@ _gh() {
   git log --date=relative --format="%C(black)%C(bold)%cd %C(auto)%h%d %C(white)%s %C(cyan)%an%C(auto)" --graph --color=always |
   fzf-down --height 80% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
-    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always' |
+    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show | diff-so-fancy' |
   grep -o "[a-f0-9]\{7,\}"
 }
 
