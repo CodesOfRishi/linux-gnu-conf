@@ -1,0 +1,28 @@
+#!/bin/bash
+#g++ -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion -std=c++17 $* -o ~/bin/run
+#clang++ -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion -std=c++17 $* -o ~/bin/run
+
+red=`tput setaf 1`
+#green=`tput setaf 2`
+purplelight=`tput setaf 13`
+reset=`tput sgr0`
+
+if [ ! -f $* ]; then
+	tput bold    # Select bold mode
+	echo "${red}(ERROR):${reset} Either an invalid file is provided or the file $* doesn't exist or it's not a regular file!"
+	tput bold
+	echo "${purplelight}(WARNING):${reset} The script requires a CPP file."
+	exit 1
+fi
+
+filename=$(basename -- "$*") # get file name without the path
+extension="${filename##*.}"
+filename="${filename%.*}"  # file name without the extension
+
+if [ $extension = "cpp" ]; then
+	g++ -std=c++17 -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion $* -o $filename
+else 
+	tput bold    # Select bold mode
+	echo "${red}(ERROR):${reset} $* is not a CPP file!"
+	exit 1;
+fi

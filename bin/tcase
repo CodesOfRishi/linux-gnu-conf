@@ -1,0 +1,42 @@
+#!/bin/bash
+
+blue=`tput setaf 4`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+# compile the C++ source file
+makecp $*
+if [ ! $? -eq 0 ]; then
+	exit 1
+fi
+
+filename=$(basename -- "$*") # get file name without the path
+extension="${filename##*.}"
+filename="${filename%.*}"  # file name without the extension
+
+# run test cases
+
+testcase=1
+while [ -f in$testcase ]; do 
+	tput bold  # Select bold mode
+	echo
+	if [ $testcase -eq 1 ]; then
+		tput bold  # Select bold mode
+		echo -n "${blue}~~~~~${reset}"
+		tput bold  # Select bold mode
+		echo -n "${green}  ${reset} "
+		# echo -n "${green}  ${reset} "
+		tput bold  # Select bold mode
+		echo "${blue}TEST-CASE:-$testcase ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${reset}"
+	else 
+		echo "${blue}~~~~~ TEST-CASE:-$testcase ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${reset}"
+	fi
+
+	./$filename < in$testcase
+	if [ ! $? -eq 0 ]
+	then
+		break
+	fi
+	testcase=$(($testcase+1))
+done
+
