@@ -40,7 +40,7 @@ export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND),ctrl-/:togg
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 100% --border --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
-export FZF_ALT_C_COMMAND="fd --hidden --type d"
+export FZF_ALT_C_COMMAND="fd --hidden --exclude .git/ --type d"
 export FZF_ALT_C_OPTS="--bind 'ctrl-r:reload($FZF_ALT_C_COMMAND)' --header 'Press CTRL-R to reload' --height 70% --border --preview 'tree -aC {}'"
 
 # Use ~~ as the trigger sequence instead of the default **
