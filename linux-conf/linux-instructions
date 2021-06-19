@@ -26,6 +26,8 @@ CONFIGURATIONS:
 		- required gawk
 			- install gawk
 	- install starship (a custimzable prompt for any shell)
+	- install pip[3]
+		- install pyWhat
 	- install duf (optional)
 	- install exa (optional)
 		- need cargo package manager before installation
