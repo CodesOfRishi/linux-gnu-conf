@@ -41,6 +41,7 @@ CONFIGURATIONS:
 	- install xournal (optional)
 
 CHECK-OUT COMMAND-LINE TOOLS:
+	- zsh shell
 	- ripgrep
 	- ack vim plugin
 		- use it with ripgrep
