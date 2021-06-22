@@ -4,6 +4,7 @@ CONFIGURATIONS:
 		- create startup files
 			- .zshrc
 			- .zlogout
+		- install oh-my-zsh
 	- install vim
 		- download vim-gtk[3] for clipboard support
 		- install vim-plug plugin manager
