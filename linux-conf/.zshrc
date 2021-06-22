@@ -118,3 +118,77 @@ fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git/ --exclude '.gitignore' --type f"
+export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND),ctrl-/:toggle-preview' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 --color='hl+:1,hl:1'"
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 100% --border --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+export FZF_ALT_C_COMMAND="fd --hidden --exclude .git/ --type d"
+export FZF_ALT_C_OPTS="--bind 'ctrl-r:reload($FZF_ALT_C_COMMAND)' --header 'Press CTRL-R to reload' --height 70% --border --preview 'tree -aC {}'"
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+export FZF_COMPLETION_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 90% --border --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+# fzf git configurations
+is_in_git_repo() { # supporting functions
+  git rev-parse HEAD > /dev/null 2>&1
+}
+
+fzf-down() { # supporting functions
+  fzf --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
+}
+
+# browse git status & select files
+_gf() {
+  is_in_git_repo || return
+  git -c color.status=always status --short |
+  fzf-down --height 70% -m --ansi --nth 2..,.. \
+    --preview '(git diff -- {-1} | diff-so-fancy | sed 1,3d;)' |
+  cut -c4- | sed 's/.* -> //'
+}
+
+# browse & select branches
+_gb() {
+  is_in_git_repo || return
+  git branch -a --color=always | grep -v '/HEAD\s' | sort |
+  fzf-down --height 50% --ansi --multi --tac --preview-window right:70% \
+  --preview 'git log --oneline --graph --date=relative --color=always --pretty="format:%C(black)%C(bold)%cd %C(auto)%h%d %s %C(cyan)%an%C(auto)" $(sed s/^..// <<< {} | cut -d" " -f1)' |
+  sed 's/^..//' | cut -d' ' -f1 |
+  sed 's#^remotes/##'
+}
+
+# browse & select commit hashes
+_gh() {
+  is_in_git_repo || return
+  git log --date=relative --format="%C(black)%C(bold)%cd %C(auto)%h%d %C(white)%s %C(cyan)%an%C(auto)" --graph --color=always |
+  fzf-down --height 80% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
+    --header 'Press CTRL-S to toggle sort' \
+    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show | diff-so-fancy' |
+  grep -o "[a-f0-9]\{7,\}"
+}
+
+# key bindings for fzf git configurations
+# bind ctrl-g ctrl-f for _gf()
+# bind ctrl-g ctrl-b for _gb()
+# bind ctrl-g ctrl-h for _gh()
+
+join-lines() {
+  local item
+  while read item; do
+    echo -n "${(q)item} "
+  done
+}
+
+bind-git-helper() {
+  local c
+  for c in $@; do
+    eval "fzf-g$c-widget() { local result=\$(_g$c | join-lines); zle reset-prompt; LBUFFER+=\$result }"
+    eval "zle -N fzf-g$c-widget"
+    eval "bindkey '^g^$c' fzf-g$c-widget"
+  done
+}
+bind-git-helper f b t r h s
+unset -f bind-git-helper
