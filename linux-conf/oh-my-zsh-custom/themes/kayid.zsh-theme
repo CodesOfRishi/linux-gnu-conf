@@ -137,7 +137,7 @@ nl=$'\n%{\r%}';
 if [ "$USER" = "root" ]; then
 	PROMPT='$nl$username_output$hostname_output$current_dir_output%1(j. [$jobs_bg].)'
 else 
-	PROMPT='$current_dir_output%1(j. [$jobs_bg].)'
+	PROMPT='$nl$current_dir_output%1(j. [$jobs_bg].)'
 fi
 
 #PROMPT='$nl$username_output$hostname_output$current_dir_output%1(j. [$jobs_bg].)'
