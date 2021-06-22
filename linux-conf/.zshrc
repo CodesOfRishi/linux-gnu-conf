@@ -118,6 +118,11 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # RISHI'S ZSH INTERACTIVE SHELL CONFIGURATIONS
 
+# start Tmux by default at every shell startup
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 # You may want to put all your additions into a separate file like
 # ~/.zsh_aliases, instead of adding them here directly.
 
