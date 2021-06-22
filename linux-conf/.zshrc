@@ -130,6 +130,13 @@ if [[ -f ~/.zsh_aliases ]]; then
 	. ~/.zsh_aliases
 fi
 
+# bind 'home' key & 'end' key
+# To know what your terminal reads from a particular key(s)
+# execuate cat command (without arguments) & press the key to check the result
+
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
