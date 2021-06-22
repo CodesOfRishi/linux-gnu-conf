@@ -32,9 +32,7 @@ alias ll="ls -lFA"
 alias showPath="echo '${PATH//:/$'\n'}'"
 
 # fzf
-# checkout `apt info fzf` -> checkout /usr/share/doc/fzf/README.Debian
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git/ --exclude .gitignore --type f"
 export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND),ctrl-/:toggle-preview' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 --color='hl+:1,hl:1'"
