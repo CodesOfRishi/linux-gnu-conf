@@ -8,8 +8,7 @@ export ZSH="/home/rishi/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="kayid"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,13 +70,8 @@ ZSH_THEME="kayid"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
     zsh-autosuggestions
-	fzf
-	ripgrep
 	themes
-	timer
-	# vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,6 +116,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# starship prompt
+eval "$(starship init zsh)"
 
 # You may want to put all your additions into a separate file like
 # ~/.zsh_aliases, instead of adding them here directly.
