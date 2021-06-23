@@ -5,7 +5,6 @@ CONFIGURATIONS:
 			- .zshrc
 			- .zlogout
 		- install oh-my-zsh
-			- install zsh-autosuggestions plugin
 		- change the default shell to zsh
 	- install vim
 		- download vim-gtk[3] for clipboard support
