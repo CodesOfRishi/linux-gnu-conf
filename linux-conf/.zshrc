@@ -121,6 +121,9 @@ fi
 # starship prompt
 eval "$(starship init zsh)"
 
+if [[ -d $HOME/bin ]]; then; export PATH="$HOME/bin:"$PATH; fi
+if [[ -d $HOME/.cargo && -d $HOME/.cargo/bin ]]; then; export PATH="$HOME/.cargo/bin:"$PATH; fi
+
 # You may want to put all your additions into a separate file like
 # ~/.zsh_aliases, instead of adding them here directly.
 
