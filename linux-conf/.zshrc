@@ -72,6 +72,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     zsh-autosuggestions
 	themes
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
