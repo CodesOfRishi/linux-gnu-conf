@@ -16,6 +16,7 @@ CONFIGURATIONS:
 	- install iotop
 	- download media codecs for video support (if required)
 	- install fd
+	- install ripgrep
 	- install tree
 	- install diff-so-fancy
 	- install fzf
@@ -54,7 +55,6 @@ CONFIGURATIONS:
 
 CHECK-OUT COMMAND-LINE TOOLS:
 	- zsh shell
-	- ripgrep
 	- ack vim plugin
 		- use it with ripgrep
 	- fzf vim plugin
