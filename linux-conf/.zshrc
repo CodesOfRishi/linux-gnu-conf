@@ -121,10 +121,12 @@ fi
 # starship prompt
 eval "$(starship init zsh)"
 
+# ---------------------------------------------------------------------------------------------
 # PATH
 if [[ -d $HOME/bin ]]; then; export PATH="$HOME/bin:"$PATH; fi
 if [[ -d $HOME/.cargo && -d $HOME/.cargo/bin ]]; then; export PATH="$HOME/.cargo/bin:"$PATH; fi
 if [[ -d $HOME/.local && -d $HOME/.local/bin ]]; then; export PATH="$HOME/.local/bin:"$PATH; fi
+# ---------------------------------------------------------------------------------------------
 
 # You may want to put all your additions into a separate file like
 # ~/.zsh_aliases, instead of adding them here directly.
@@ -140,6 +142,7 @@ fi
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -156,6 +159,7 @@ export FZF_ALT_C_OPTS="--bind 'ctrl-r:reload($FZF_ALT_C_COMMAND)' --header 'Pres
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_COMPLETION_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 90% --border --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # fzf git configurations
 is_in_git_repo() { # supporting functions
   git rev-parse HEAD > /dev/null 2>&1
@@ -194,11 +198,6 @@ _gh() {
   grep -o "[a-f0-9]\{7,\}"
 }
 
-# key bindings for fzf git configurations
-# bind ctrl-g ctrl-f for _gf()
-# bind ctrl-g ctrl-b for _gb()
-# bind ctrl-g ctrl-h for _gh()
-
 join-lines() {
   local item
   while read item; do
@@ -216,3 +215,5 @@ bind-git-helper() {
 }
 bind-git-helper f b t r h s
 unset -f bind-git-helper
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
