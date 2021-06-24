@@ -16,7 +16,6 @@ symbol = " "
 
 [custom.cpp]
 format = "via [$symbol($output )]($style)"
-when = """ test `fd -e C -e cc -e cpp -e CPP -e c++ -e cp -e cxx -d 1 | wc -l` -gt 0 """
 extensions = ["C", "cc", "cpp", "CPP", "c++", "cp", "cxx"]
 symbol = " "
 style = "blue bold"
