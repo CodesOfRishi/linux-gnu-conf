@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 
 " ----- EDIT --------------------------------------------------------------------------------------------------
 Plug 'maxboisvert/vim-simple-complete' " Provides autocompletion suggestion while you type (it just uses vim's built-in autocomplete feature)
-Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors)
+Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " A mulit-cursor plugin
 Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'tpope/vim-surround' " plugin for quoting/paranthesizing
@@ -16,7 +16,7 @@ Plug 'rip-rip/clang_complete' " Vim plugin that use clang for completing C/C++ c
 Plug 'morhetz/gruvbox' " Retro groove color scheme for Vim
 Plug 'NLKNguyen/papercolor-theme' " Light & Dark color schemes for terminal and GUI Vim awesome editor
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " A port of the Material color scheme for Vim/Neovim.
-Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim
+Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim 
 Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-airline must be installed)
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
@@ -38,7 +38,7 @@ autocmd FileType python nnoremap <C-B> :!python3 %<cr>
 ":set list
 
 syntax on
-colorscheme PaperColor " PaperColor or gruvbox or material
+colorscheme material " PaperColor or gruvbox or material
 set background=dark " (dark OR light) 
 set number relativenumber 
 set autoindent
@@ -66,6 +66,7 @@ set cursorcolumn " highlight the COLUMN on which the cursor is
 noremap <C-a> <Esc>ggvG$ 
 " ctrl-c to copy the selected text to the clipboard
 vnoremap <C-c> "+y 
+vnoremap y "+y 
 
 inoremap {<CR> {<CR>}<ESC>ko
 
@@ -157,7 +158,7 @@ let g:airline_symbols.dirty='⚡'
 "------------------------------------
 " deus theme (check out available airline themes:https://github.com/vim-airline/vim-airline/wiki/Screenshots)
 " vim-airline themes is needed for this
-let g:airline_theme='deus' " material OR deus OR bubblegum
+let g:airline_theme='material' " material OR deus OR bubblegum
 
 " enable/disable enhanced tabline. (c) 
 let g:airline#extensions#tabline#enabled = 1
@@ -193,5 +194,14 @@ let airline#extensions#ale#warning_symbol = "\uf071 :"
 
 " ===== material theme configurations ============================================================
 let g:material_terminal_italics = 1
-"let g:material_theme_style = 'darker'
+let g:material_theme_style = 'darker'
 " ================================================================================================
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
