@@ -28,3 +28,10 @@ extensions = ["vim"]
 symbol = ""
 style = "green"
 disabled = false
+
+[custom.windows]
+format = "via [$symbol($output )]($style)"
+extensions = ["exe", "msi"]
+symbol = "  "
+style = "cyan"
+disabled = false
