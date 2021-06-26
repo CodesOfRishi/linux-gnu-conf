@@ -20,8 +20,8 @@ endif
 augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " For all text files set 'textwidth' to 168 characters.
+  autocmd FileType text setlocal textwidth=168
 augroup END
 
 " Add optional packages.
