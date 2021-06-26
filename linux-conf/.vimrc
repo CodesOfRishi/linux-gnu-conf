@@ -1,4 +1,4 @@
-" ===== Vim-Plug Manager =================================================================================
+" ===== Vim-Plug Manager ====================================================================================================================
 call plug#begin('~/.vim/plugged')
 
 " ----- EDIT --------------------------------------------------------------------------------------------------
@@ -22,50 +22,52 @@ Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last
 
 call plug#end()
 " plugin-specific configuration are at the end of the script
-" ============================================================================================================
+" ===========================================================================================================================================
 
-" ===== file/language specific compilation configuration ==================================
+" =============================================================================
+" ----- file/language specific compilation configuration ----------------------
 " not exactly sure of the working of `autocmd FileType` for now (so be careful)
 autocmd FileType cpp nnoremap <C-B> :!makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
 autocmd FileType cpp nnoremap <C-_> :!tcase %<cr>
 autocmd FileType python nnoremap <C-B> :!python3 %<cr>
-" =========================================================================================
+" -----------------------------------------------------------------------------
 
-" show vertical guide lines between braces
-:set list lcs=tab:\|\ 
-":set listchars=tab:\|\ 
-":set list
-
+" -----------------------------------------------------------------------------
 syntax on
 colorscheme material " PaperColor or gruvbox or material
-set background=dark " (dark OR light) 
-set number relativenumber 
-set autoindent
-set smartindent
-set showcmd
-set ignorecase
-set smartcase " requires ignorcase
-set incsearch " highlight all pattern matches while typing the patter 
-set hlsearch " highlight search result (after pressing ENTER)
-set autowrite 
-set nowrap 
-set tabstop=4
-set shiftwidth=4
-set showmatch
-set cursorline " highlight the ROW on which the cursor is
-set cursorcolumn " highlight the COLUMN on which the cursor is
-set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
+:set list lcs=tab:\|\ " show vertical guide lines between braces
+:set background=dark " (dark OR light) 
+:set number relativenumber 
+:set autoindent
+:set smartindent
+:set showcmd
+:set ignorecase " to search case-INsensitive
+:set smartcase " requires ignorcase
+:set incsearch " highlight all pattern matches while typing the search-string
+:set hlsearch " highlight search result (after pressing ENTER)
+:set autowrite 
+:set nowrap 
+:set tabstop=4
+:set shiftwidth=4
+:set showmatch
+:set cursorline " highlight the ROW on which the cursor is
+:set cursorcolumn " highlight the COLUMN on which the cursor is
+:set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
+" -----------------------------------------------------------------------------
 
+" ---------------------------------------------------------------------
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,InsertLeave,WinEnter * if &nu | set rnu   | endif
 :  autocmd BufLeave,InsertEnter,WinLeave   * if &nu | set nornu | endif
 :augroup END
+" ---------------------------------------------------------------------
 
+" ------------------------------------------------------
 " ctrl-a to select all 
 noremap <C-a> <Esc>ggvG$ 
-" ctrl-c to copy the selected text to the clipboard
+" ctrl-c or y to copy the selected text to the clipboard
 vnoremap <C-c> "+y 
 vnoremap y "+y 
 
@@ -83,24 +85,28 @@ nnoremap <S-Tab> :tabp<cr>
 
 " open vertical terminal to the right
 nnoremap tt :rightbelow vert term<cr>
+" ------------------------------------------------------
+" =============================================================================
 
-" fixing E349 error (probably)
-let g:TerminusFocusReporting=0
-
-" Plugin-specific Configurations
-" ===== gruvbox configuration ===================
+" ===== PLUGIN CONFIGURATIONS ===============================================================================
+" ----- gruvbox theme ---------------------------------------
 " Changes dark mode contrast
 let g:gruvbox_contrast_dark='medium' " soft OR medium OR hard
-" =============================================================
+" -----------------------------------------------------------
 
-" ===== clang_complete configuration ===================
+" ----- material theme --------------
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker'
+" -----------------------------------
+
+" ----- clang_complete --------------------------------------------------------
 let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
 
 " If equal to 1, the preview window will close automatically after a completion
 let g:clang_close_preview='1'
-" ====================================================================
+" -----------------------------------------------------------------------------
 
-" ===== ale configuration ============================================
+" ----- ale ---------------------------------------------------------------------------------------
 " This variable can be changed to use a different executable for a C++ compiler.
 let g:ale_cpp_cc_executable='/usr/bin/g++' 
 
@@ -116,9 +122,9 @@ let g:ale_sign_warning="" " customized ale warning sign
 highlight ALEErrorSign ctermfg=1 
 highlight clear ALEError
 highlight clear ALEWarning
-" =========================================================================
+" -------------------------------------------------------------------------------------------------
 
-" ==== vim airline configurations ==========================================================
+" ---- airline ---------------------------------------------------------------------
 " airline-customization (for this customization you need to install powerline-fonts)
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -155,8 +161,9 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
+" ----------------------------------------------------------------------------------
 
-"------------------------------------
+" -----------------------------------------------------------------------------------------------------------
 " deus theme (check out available airline themes:https://github.com/vim-airline/vim-airline/wiki/Screenshots)
 " vim-airline themes is needed for this
 let g:airline_theme='material' " material OR deus OR bubblegum
@@ -187,22 +194,10 @@ let g:airline#extensions#whitespace#enabled = 0
 
 "" enable/disable syntastic integration 
 "let g:airline#extensions#syntastic#enabled = 1
+" -----------------------------------------------------------------------------------------------------------
 
-" -------------------------- airline-ale configurations --------------------------
+" ----- ale airline ----------------------------------
 let airline#extensions#ale#error_symbol = "\uf05e :"
 let airline#extensions#ale#warning_symbol = "\uf071 :"
-" ==========================================================================================
-
-" ===== material theme configurations ============================================================
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
-" ================================================================================================
-
-" WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
+" ----------------------------------------------------
+" ===========================================================================================================
