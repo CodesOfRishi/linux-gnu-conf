@@ -31,7 +31,7 @@ disabled = false
 
 [custom.windows]
 format = "via [$symbol($output )]($style)"
-extensions = ["exe", "msi"]
+extensions = ["exe", "msi", "msc"]
 symbol = "  "
 style = "cyan"
 disabled = false
