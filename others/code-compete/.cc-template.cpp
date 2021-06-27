@@ -21,14 +21,13 @@
 #include <numeric>
 #include <cassert>
 
+#if __has_include("/home/rishi/.local/include/dbg.h")
 #ifndef DBG_MACRO_NO_WARNING
 #define DBG_MACRO_NO_WARNING
 #endif
-
-#if __has_include("/home/rishi/.local/include/dbg.h")
 #include "/home/rishi/.local/include/dbg.h"
 #else 
-template<typename... Types> void dbg(const Types&... x) { /* nothing!! */ }
+	template<typename... Types> void dbg(const Types&... x) { /* nothing!! */ }
 #endif
 
 using namespace std;
