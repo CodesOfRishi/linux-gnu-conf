@@ -5,6 +5,22 @@
 #define DBG_MACRO_NO_WARNING
 #endif
 #include "/home/rishi/.local/include/dbg.h"
+
+#ifdef _GLIBCXX_STACK
+	template<typename T>
+	std::ostream& operator<<(std::ostream& out, std::stack<T> _st) {
+		out << "{";
+		while (!_st.empty()) {
+			out << _st.top();
+			_st.pop();
+
+			if (!_st.empty()) out << " ";
+		}
+		out << "}";
+		return out;
+	}
+#endif
+
 #else 
 	template<typename... Types> void dbg(const Types&... x) { /* nothing!! */ }
 #endif
