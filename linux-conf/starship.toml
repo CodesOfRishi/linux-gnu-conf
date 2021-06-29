@@ -34,6 +34,7 @@ disabled = false
 [custom.vim]
 command = "vim --version | head -1 | cut -d\" \" -f5"
 format = "via [$symbol v($output )]($style)"
+files = [".vimrc"]
 extensions = ["vim"]
 symbol = ""
 style = "green"
