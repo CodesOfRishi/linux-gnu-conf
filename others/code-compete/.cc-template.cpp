@@ -34,7 +34,6 @@ std::ostream& operator<<(std::ostream& out, std::stack<T> _st) {
 	while (!_st.empty()) {
 		out << _st.top();
 		_st.pop();
-
 		if (!_st.empty()) out << " ";
 	}
 	out << "}";
@@ -44,12 +43,23 @@ std::ostream& operator<<(std::ostream& out, std::stack<T> _st) {
 
 #ifdef _GLIBCXX_QUEUE
 template<typename T>
+std::ostream& operator<<(std::ostream& out, std::queue<T> _qe) {
+	out << "{";
+	while (!_qe.empty()) {
+		out << _qe.front();
+		_qe.pop();
+		if (!_qe.empty()) out << " ";
+	}
+	out << "}";
+	return out;
+}
+
+template<typename T>
 std::ostream& operator<<(std::ostream& out, std::priority_queue<T> _pq) {
 	out << "{";
 	while (!_pq.empty()) {
 		out << _pq.top();
 		_pq.pop();
-
 		if (!_pq.empty()) out << " ";
 	}
 	out << "}";
