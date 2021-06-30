@@ -131,7 +131,7 @@ nnoremap tt :rightbelow vert term<cr>
 command! -bang -complete=dir -nargs=? 
 			\ LS call fzf#run(fzf#wrap({'source': 'fd --hidden --exclude .git/ --exclude ".gitignore" --type f', 
 			\ 'dir': <q-args>, 
-			\ 'options': '--height=100% --margin=0 --multi --reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'}, 
+			\ 'options': '--height=100% --margin=0 --multi --reverse --prompt=$(pwd | sed "s/\/home\/rishi/~/")/ --preview "bat --style=numbers --color=always --line-range :500 {}"'}, 
 			\ <bang>0))
 
 " hide statusline for cleaner look
