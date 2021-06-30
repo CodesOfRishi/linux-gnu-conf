@@ -44,6 +44,8 @@ Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " A mulit-cursor plugin
 Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'tpope/vim-surround' " plugin for quoting/paranthesizing
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'bfrg/vim-cpp-modern' " Keyword and regex-based syntax highlighting for C and C++11/14/17/20 in Vim.
