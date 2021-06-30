@@ -133,6 +133,12 @@ command! -bang -complete=dir -nargs=?
 			\ 'dir': <q-args>, 
 			\ 'options': '--height=100% --margin=0 --multi --reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'}, 
 			\ <bang>0))
+
+" hide statusline for cleaner look
+let g:fzf_layout = { 'down': '30%' }
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " -----------------------------------------------------------------------------------------------------------------------------------------
 
 " ----- gruvbox theme ---------------------------------------
