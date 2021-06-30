@@ -126,7 +126,15 @@ nnoremap tt :rightbelow vert term<cr>
 " ------------------------------------------------------
 " =============================================================================
 
-" ===== PLUGIN CONFIGURATIONS ===============================================================================
+" ===== PLUGIN CONFIGURATIONS =============================================================================================================
+" ----- fzf -------------------------------------------------------------------------------------------------------------------------------
+command! -bang -complete=dir -nargs=? 
+			\ LS call fzf#run(fzf#wrap({'source': 'fd --hidden --exclude .git/ --exclude ".gitignore" --type f', 
+			\ 'dir': <q-args>, 
+			\ 'options': '--height=100% --margin=0 --multi --reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'}, 
+			\ <bang>0))
+" -----------------------------------------------------------------------------------------------------------------------------------------
+
 " ----- gruvbox theme ---------------------------------------
 " Changes dark mode contrast
 let g:gruvbox_contrast_dark='medium' " soft OR medium OR hard
@@ -238,7 +246,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let airline#extensions#ale#error_symbol = "\uf05e :"
 let airline#extensions#ale#warning_symbol = "\uf071 :"
 " ----------------------------------------------------
-" ===========================================================================================================
+" =========================================================================================================================================
 
 " ===== WSL yank support ========================================================================
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
