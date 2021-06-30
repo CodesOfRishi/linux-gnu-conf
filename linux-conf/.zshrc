@@ -214,7 +214,7 @@ _gb() {
 _gh() {
   is_in_git_repo || return
   git log --date=relative --format="%C(black)%C(bold)%cd %C(auto)%h%d %C(white)%s %C(cyan)%an%C(auto)" --graph --color=always |
-  fzf-down --height 80% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
+  fzf-down --height 90% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show | diff-so-fancy' |
   grep -o "[a-f0-9]\{7,\}"
