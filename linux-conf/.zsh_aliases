@@ -6,4 +6,4 @@ alias dict-ehin="dict -d fd-eng-hin"
 alias ll="ls -lFA --group-directories-first"
 alias la='ls -A --group-directories-first'
 alias l='ls -CF --group-directories-first'
-alias ping="prettyping"
+alias pping="prettyping"
