@@ -7,4 +7,3 @@ alias ll="ls -lFA --group-directories-first"
 alias la='ls -A --group-directories-first'
 alias l='ls -CF --group-directories-first'
 alias ping="prettyping"
-alias showPath="echo '${PATH//:/$'\n'}'"
