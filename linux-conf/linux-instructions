@@ -39,6 +39,7 @@ CONFIGURATIONS:
 		- GitHub desktop
 		- SmartGit
 		- Sublime Merge
+	- install prettyping
 	- install duf (optional)
 	- install exa (optional)
 		- need cargo package manager before installation
