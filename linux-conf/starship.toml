@@ -20,7 +20,7 @@ symbol = " "
 [custom.cpp]
 format = "via [$symbol($output )]($style)"
 extensions = ["C", "cc", "cpp", "CPP", "c++", "cp", "cxx"]
-symbol = " "
+symbol = "C++ "
 style = "blue bold"
 disabled = false
 
