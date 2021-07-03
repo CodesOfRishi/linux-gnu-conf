@@ -7,3 +7,4 @@ alias ll="ls -lFA --group-directories-first"
 alias la='ls -A --group-directories-first'
 alias l='ls -CF --group-directories-first'
 alias pping="prettyping"
+alias showPath='echo $PATH | sed "s/:/\n/g" | bat'
