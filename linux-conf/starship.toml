@@ -27,7 +27,7 @@ disabled = false
 [custom.header]
 format = "via [$symbol($output )]($style)"
 extensions = ["h", "hpp"]
-symbol = " "
+symbol = "H\\[PP\\] "
 style = "yellow"
 disabled = false
 
