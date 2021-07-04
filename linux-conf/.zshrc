@@ -169,7 +169,7 @@ bindkey "^[[4~" end-of-line
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git/ --exclude '.gitignore' --type f"
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git/ --exclude '.gitignore'"
 export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND),ctrl-/:toggle-preview' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 --color='hl+:1,hl:1'"
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
