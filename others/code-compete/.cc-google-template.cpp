@@ -20,6 +20,57 @@
 #include <algorithm>
 #include <numeric>
 #include <cassert>
+
+#if __has_include("/home/rishi/.local/include/dbg.h")
+#ifndef DBG_MACRO_NO_WARNING
+#define DBG_MACRO_NO_WARNING
+#endif
+#include "/home/rishi/.local/include/dbg.h"
+
+#ifdef _GLIBCXX_STACK
+template<typename T>
+std::ostream& operator<<(std::ostream& out, std::stack<T> _st) {
+	out << "{";
+	while (!_st.empty()) {
+		out << _st.top();
+		_st.pop();
+		if (!_st.empty()) out << " ";
+	}
+	out << "}";
+	return out;
+}
+#endif
+
+#ifdef _GLIBCXX_QUEUE
+template<typename T>
+std::ostream& operator<<(std::ostream& out, std::queue<T> _qe) {
+	out << "{";
+	while (!_qe.empty()) {
+		out << _qe.front();
+		_qe.pop();
+		if (!_qe.empty()) out << " ";
+	}
+	out << "}";
+	return out;
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& out, std::priority_queue<T> _pq) {
+	out << "{";
+	while (!_pq.empty()) {
+		out << _pq.top();
+		_pq.pop();
+		if (!_pq.empty()) out << " ";
+	}
+	out << "}";
+	return out;
+}
+#endif
+
+#else 
+template<typename... Types> void dbg(const Types&... x) { /* nothing!! */ }
+#endif
+
 using namespace std;
 
 typedef long long ll;
@@ -35,18 +86,13 @@ typedef long double l_double;
 #define all(v) v.begin(), v.end()
 #define rall(v) v.rbegin(), v.rend()
 #define s_cast static_cast // <>
-#define deb(x) cerr << "[" << #x << "] -> [" << x << "] "
-#define deb2(x,y) cerr << "[" << #x << ", " << #y << "] -> [" << x << ", " << y << "] "
-#define deb3(x,y,z) cerr << "[" << #x << ", " << #y << ", " << #z << "] -> [" << x << ", " << y << ", " << z << "] "
-#define debVV(V) cerr << #V << ":\n" << V << endl; // 2D
 #define endl "\n"
-#define ENDL << "\n";  // debug
 
 const double PI {3.1415926535897932384626433832795};
 const int MOD {static_cast<int>(1e9 + 7)};
 const double EPS {1e-9};
 
-/*------------------------------------------Modular Arithmetic------------------------------------------*/
+/*----------------------------------------- Modular Arithmetic -----------------------------------------*/
 template<typename T>
 T ModAdd(const T &a, const T &b, const int &mod = MOD) { return ((a)%mod + (b)%mod)%mod; }
 
@@ -56,7 +102,7 @@ T ModSub(const T &a, const T &b, const int &mod = MOD) { return ((((a%mod) - (b%
 template<typename T>
 T ModMul(const T &a, const T &b, const int &mod = MOD) { return ((a%mod) * (b%mod))%mod; }
 
-/*------------------------------------------Overflow Validation------------------------------------------*/
+/*----------------------------------------- Overflow Validation -----------------------------------------*/
 template<typename T>
 bool AdditionLimitFlow(const T &a, const T &x) {
     T MAXIMUM_INT {a}, MINIMUM_INT {a};
@@ -131,126 +177,7 @@ bool MultiplicationLimitFlow(const T &a, const T &x) {
     }
     return false;
 }
-
-// 1D-----------------------------------------------------
-template<typename T, size_t N>  // array extraction
-istream& operator>>(istream &is, array<T, N> &ARR) {
-    for (T &a: ARR) is >> a;
-    return is;
-}
-
-template<typename T, size_t N>  // array insertion
-ostream& operator<<(ostream &os, array<T, N> &ARR) {
-    for (T const &a: ARR) os << a << " ";
-    return os;
-}
-
-template<typename T>  // vector extraction
-istream& operator>>(istream &is, vector<T> &VEC) {
-    for (T &v: VEC) is >> v;
-    return is;
-}
-
-template <typename T>  // vector insertion
-ostream& operator<<(ostream &os, const vector<T> &VEC) {
-    for (T const &v: VEC) os << v << " ";
-    return os;
-}
-
-template<typename T>  // deque extraction
-istream& operator>>(istream &is, deque<T> &DEQ) {
-    for (T &d: DEQ) is >> d;
-    return is;
-}
-
-template<typename T>  // deque insertion
-ostream& operator<<(ostream &os, const deque<T> &DEQ) {
-    for (const T &d: DEQ) os << d << " ";
-    return os;
-}
-
-template<typename T>  // list extraction
-istream& operator>>(istream &is, list<T> &LIS) {
-    for (T &l: LIS) is >> l;
-    return is;
-}
-
-template<typename T>  // list insertion
-ostream& operator<<(ostream &os, const list<T> &LIS) {
-    for (T const &l: LIS) os << l << " ";
-    return os;
-}
-
-template<typename T>  // set insertion
-ostream& operator<<(ostream &os, const set<T> &ST) {
-    for (auto const &s: ST) os << s << " ";
-    return os;
-}
-
-template<typename T>  // unordered_set insertion
-ostream& operator<<(ostream &os, const unordered_set<T> &U_ST) {
-    for (T const &us: U_ST) os << us << " ";
-    return os;
-}
-
-template<typename T1, typename T2>  // pair extraction
-istream& operator>>(istream &is, pair<T1, T2> &PR) {
-    is >> PR.first >> PR.second;
-    return is;
-}
-
-template<typename T1, typename T2>  // pair debug
-ostream& operator<<(ostream &os, const pair<T1, T2> &PR) {
-    os << "[" << PR.first << ": " << PR.second << "]";
-    return os;
-}
-
-template<typename T1, typename T2>  // map debug
-ostream& operator<<(ostream &os, const map<T1, T2> &MP) {
-    os << "[ ";
-    for (pair<T1, T2> const &m: MP) os << m << " ";
-    os << "]";
-    return os;
-}
-
-template<typename T1, typename T2>  // unordered_map debug
-ostream& operator<<(ostream& os, const unordered_map<T1, T2> &U_MP) {
-    os << "[ ";
-    for (pair<T1, T2> const &um: U_MP) os << um << " ";
-    os << "]";
-    return os;
-}
-
-template<typename T>  // stack debug
-ostream& operator<<(ostream &os, stack<T> STACK) {
-    while (!STACK.empty()) {
-        os << STACK.top() << " ";
-        STACK.pop();
-    }
-    return os;
-}
-
-template<typename T>  // queue debug
-ostream& operator<<(ostream &os, queue<T> QUEUE) {
-    while (!QUEUE.empty()) {
-        os << QUEUE.front() << " ";
-        QUEUE.pop();
-    }
-    return os;
-}
-
-// 2D----------------------------------------------------------------
-template<typename T, size_t R, size_t C>  // 2D array insertion
-ostream& operator<<(ostream &os, array<array<T, C>, R> &MAT) {
-    for (array<T, C> &ROW: MAT) os << ROW << endl;
-    return os;
-}
-
-template<typename T>  // 2D vector insertion
-ostream& operator<<(ostream &os, vector<vector<T>> &MAT) {
-    for (vector<T> &ROW: MAT) os << ROW << endl;
-    return os;
-}
+/*-------------------------------------------------------------------------------------------------------*/
 
 template<typename T>
 T max(const T &A, const T &B, const T &C) {
