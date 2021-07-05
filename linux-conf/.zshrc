@@ -250,3 +250,23 @@ export TLDR_DESCRIPTION='green'
 export TLDR_CODE='red'
 export TLDR_PARAM='blue'
 # -------------------------------------------
+
+# --------------------------------------------------------------------------------
+# COMPETITIVE CODING 
+if [[ -d $HOME/code-compete ]]; then
+	# create a seperate directory for a problem/solution
+	crd() {
+		filename=$(basename -- "$1") # get file name without the path
+		extension="${filename##*.}"
+		#filename="${filename%.*}"  # file name without the extension
+
+		mkdir ~/code-compete/${filename%.*} 2> /dev/null
+		cp ~/code-compete/.cc-template.cpp ~/code-compete/${filename%.*}/$filename
+	}
+
+	# cd into the directory of a particular problem/solution
+	ccd() {
+		cd $HOME/code-compete/$1
+	}
+fi
+# --------------------------------------------------------------------------------
