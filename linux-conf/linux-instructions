@@ -40,6 +40,7 @@ CONFIGURATIONS:
 		- SmartGit
 		- Sublime Merge
 	- install prettyping
+	- install tldr
 	- install dbg-macro {https://github.com/sharkdp/dbg-macro}
 	- install duf (optional)
 	- install exa (optional)
