@@ -46,6 +46,7 @@ Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'tpope/vim-surround' " plugin for quoting/paranthesizing
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'bfrg/vim-cpp-modern' " Keyword and regex-based syntax highlighting for C and C++11/14/17/20 in Vim.
@@ -113,8 +114,6 @@ inoremap {<CR> {<CR>}<ESC>ko
 
 " adding (C++) multi-line comment 
 vnoremap ? xi/**/<Esc>hP
-" (C++) comment selected lines
-vnoremap / <C-v>I//<Esc>i
 
 " switch tabs in RHS-direction
 nnoremap <Tab> :tabn<cr>
@@ -150,6 +149,10 @@ let g:gruvbox_contrast_dark='medium' " soft OR medium OR hard
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'darker'
 " -----------------------------------
+
+" ----- vim-commentary -----------------------------
+autocmd FileType c,cpp setlocal commentstring=//\ %s
+" --------------------------------------------------
 
 " ----- clang_complete --------------------------------------------------------
 let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
