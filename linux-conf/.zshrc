@@ -191,7 +191,9 @@ export FZF_ALT_C_OPTS="--bind 'ctrl-r:reload($FZF_ALT_C_COMMAND)' --header 'Pres
 
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
-export FZF_COMPLETION_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 90% --border --preview 'bat --style=numbers --color=always --line-range :500 {}' --prompt=$(pwd | sed "s/\/home\/rishi/~/")/"
+export FZF_COMPLETION_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'Press CTRL-R to reload' --height 90% --border \
+	--preview '([[ -f {} ]] && (bat --style=numbers --color=always --line-range :500 {})) || ([[ -d {} ]] && (tree -aCI ".git" {}))' \
+	--prompt=$(pwd | sed "s/\/home\/rishi/~/")/"
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # fzf git configurations
