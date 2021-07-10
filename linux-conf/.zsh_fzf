@@ -19,6 +19,8 @@ export FZF_COMPLETION_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header
 	--preview '([[ -f {} ]] && (bat --style=numbers --color=always --line-range :500 {})) || ([[ -d {} ]] && (tree -aCI ".git" {}))' 
 	--prompt='❯ '"
 
+export FZF_CTRL_R_OPTS="--prompt='❯ '"
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # fzf git configurations
 is_in_git_repo() { # supporting functions
