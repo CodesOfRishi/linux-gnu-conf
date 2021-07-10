@@ -32,7 +32,9 @@ CONFIGURATIONS:
 	- install trans (translate-shell) {https://github.com/soimort/translate-shell}
 		- required gawk
 			- install gawk
-	- install starship (a custimzable prompt for any shell)
+	- zsh prompt themes
+		- install starship (a custimzable prompt for any shell)
+		- install Powerlevel10k prompt
 	- install pip[3]
 		- install pyWhat
 	- install a git client
