@@ -164,9 +164,7 @@ if [[ -d $HOME/.local && -d $HOME/.local/bin ]]; then; export PATH="$HOME/.local
 # ~/.zsh_aliases, instead of adding them here directly.
 
 # Aliases
-if [[ -f ~/.zsh_aliases ]]; then
-	. ~/.zsh_aliases
-fi
+[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
 
 # bind 'home' key & 'end' key
 # To know what your terminal reads from a particular key(s)
