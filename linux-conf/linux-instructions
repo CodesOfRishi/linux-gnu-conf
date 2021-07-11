@@ -62,6 +62,7 @@ CHECK-OUT COMMAND-LINE TOOLS:
 	- ack vim plugin
 		- use it with ripgrep
 	- fzf ripgrep configurations
+	- bpytop {https://www.cyberciti.biz/open-source/command-line-hacks/bpytop-awesome-linux-macos-and-freebsd-resource-monitor/}
 
 CHECK-OUT GUIs SOFTWARES:
 	- Alacritty terminal
