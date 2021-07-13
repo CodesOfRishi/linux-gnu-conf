@@ -42,11 +42,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'maxboisvert/vim-simple-complete' " Provides autocompletion suggestion while you type (it just uses vim's built-in autocomplete feature)
 Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " A mulit-cursor plugin
-Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'tpope/vim-surround' " plugin for quoting/paranthesizing
+Plug 'tpope/vim-commentary'
+
+" ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
+" ---------------------
+
+" ----- Git ------------------------------------
+Plug 'tpope/vim-fugitive' " a git plugin for vim
+Plug 'airblade/vim-gitgutter' 
+" ----------------------------------------------
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'bfrg/vim-cpp-modern' " Keyword and regex-based syntax highlighting for C and C++11/14/17/20 in Vim.
@@ -194,10 +201,10 @@ let g:airline_right_sep = '◀'
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
+" let g:airline_symbols.maxlinenr = '㏑'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
@@ -212,6 +219,7 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
+let g:airline_symbols.colnr = ':'
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
