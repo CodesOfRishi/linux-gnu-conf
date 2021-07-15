@@ -48,12 +48,10 @@ Plug 'tpope/vim-commentary'
 " ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-" ---------------------
 
 " ----- Git ------------------------------------
 Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'airblade/vim-gitgutter' 
-" ----------------------------------------------
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'bfrg/vim-cpp-modern' " Keyword and regex-based syntax highlighting for C and C++11/14/17/20 in Vim.
@@ -162,7 +160,7 @@ autocmd FileType c,cpp setlocal commentstring=//\ %s
 " --------------------------------------------------
 
 " ----- clang_complete --------------------------------------------------------
-let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
+let g:clang_library_path='/usr/lib/llvm-11/lib/libclang-11.so.1'
 
 " If equal to 1, the preview window will close automatically after a completion
 let g:clang_close_preview='1'
