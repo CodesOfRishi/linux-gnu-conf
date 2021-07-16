@@ -3,8 +3,11 @@ alias cp="cp -i"
 alias rm="rm -I"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
-alias ll="ls -lFA --group-directories-first"
-alias la='ls -A --group-directories-first'
-alias l='ls -CF --group-directories-first'
 alias pping="prettyping"
 alias showPath='echo $PATH | sed "s/:/\n/g" | bat'
+
+# EXA
+alias ll="exa -lFa --icons --group-directories-first -g --git"
+alias la="exa -Fa --icons --group-directories-first -1"
+alias l="exa -F --icons --group-directories-first -1"
+alias lt="exa -FT --icons"

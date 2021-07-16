@@ -206,6 +206,10 @@ if [[ -d $HOME/code-compete ]]; then
 fi
 # --------------------------------------------------------------------------------
 
+# ----- EXA -------------
+export EXA_ICON_SPACING=2
+# -----------------------
+
 # ----- source Powerlevel10k prompt configuration file ---------
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
