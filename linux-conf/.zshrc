@@ -196,7 +196,7 @@ if [[ -d $HOME/code-compete ]]; then
 	}
 
 	# cd into the directory of a particular problem/solution
-	ccd() {
+	cdd() {
 		cd $HOME/code-compete/$1
 	}
 fi
