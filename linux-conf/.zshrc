@@ -191,12 +191,8 @@ export TLDR_PARAM='blue'
 if [[ -d $HOME/code-compete ]]; then
 	# create a seperate directory for a problem/solution
 	crd() {
-		filename=$(basename -- "$1") # get file name without the path
-		extension="${filename##*.}"
-		#filename="${filename%.*}"  # file name without the extension
-
-		mkdir ~/code-compete/${filename%.*} 2> /dev/null
-		cp ~/code-compete/.cc-template.cpp ~/code-compete/${filename%.*}/$filename
+		mkdir ~/code-compete/$1 2> /dev/null
+		cp ~/code-compete/.cc-template.cpp ~/code-compete/$1/$1.cpp
 	}
 
 	# cd into the directory of a particular problem/solution
