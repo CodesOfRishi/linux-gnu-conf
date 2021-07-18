@@ -56,11 +56,8 @@ Plug 'airblade/vim-gitgutter'
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
-" ----- LSP (ale & deoplete) ------------------------------------------
+" ----- LSP (ale) ------------------------------------------
 Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'morhetz/gruvbox' " Retro groove color scheme for Vim
@@ -162,13 +159,6 @@ let g:material_theme_style = 'darker'
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 " --------------------------------------------------
-
-" ----- deoplete ------------------------------
-let g:deoplete#enable_at_startup = 1
-
-" Use ALE as completion sources for all code.
-call deoplete#custom#source('ale', 'rank', 999)
-" ---------------------------------------------
 
 " ----- ale ---------------------------------------------------------------------------------------
 " This variable can be changed to use a different executable for a C++ compiler.
