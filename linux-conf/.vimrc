@@ -39,8 +39,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " ----- EDIT --------------------------------------------------------------------------------------------------
-Plug 'maxboisvert/vim-simple-complete' " Provides autocompletion suggestion while you type (it just uses vim's built-in autocomplete feature)
-Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " A mulit-cursor plugin
 Plug 'tpope/vim-surround' " plugin for quoting/paranthesizing
 Plug 'tpope/vim-commentary'
@@ -48,14 +46,21 @@ Plug 'tpope/vim-commentary'
 " ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+" ---------------------
 
 " ----- Git ------------------------------------
 Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'airblade/vim-gitgutter' 
+" ----------------------------------------------
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'bfrg/vim-cpp-modern' " Keyword and regex-based syntax highlighting for C and C++11/14/17/20 in Vim.
-Plug 'rip-rip/clang_complete' " Vim plugin that use clang for completing C/C++ code
+
+" ----- LSP (ale & deoplete) ------------------------------------------
+Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'morhetz/gruvbox' " Retro groove color scheme for Vim
@@ -66,7 +71,6 @@ Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-air
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
 call plug#end()
-" plugin-specific configuration are at the end of the script
 " ===========================================================================================================================================
 
 " =============================================================================
@@ -159,12 +163,12 @@ let g:material_theme_style = 'darker'
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 " --------------------------------------------------
 
-" ----- clang_complete --------------------------------------------------------
-let g:clang_library_path='/usr/lib/llvm-11/lib/libclang-11.so.1'
+" ----- deoplete ------------------------------
+let g:deoplete#enable_at_startup = 1
 
-" If equal to 1, the preview window will close automatically after a completion
-let g:clang_close_preview='1'
-" -----------------------------------------------------------------------------
+" Use ALE as completion sources for all code.
+call deoplete#custom#source('ale', 'rank', 999)
+" ---------------------------------------------
 
 " ----- ale ---------------------------------------------------------------------------------------
 " This variable can be changed to use a different executable for a C++ compiler.
