@@ -54,7 +54,7 @@ Plug 'airblade/vim-gitgutter'
 " ----------------------------------------------
 
 " ----- Language Specific ------------------------------------------------------------------------------------
-Plug 'bfrg/vim-cpp-modern' " Keyword and regex-based syntax highlighting for C and C++11/14/17/20 in Vim.
+Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
 " ----- LSP (ale & deoplete) ------------------------------------------
 Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
