@@ -1,0 +1,4 @@
+CompileFlags:
+    Add: ["-Wall", "-Wextra", "-O2", "-fwrapv", "-Wshadow", "-Wfloat-equal", "-Wconversion", "-std=c++17"]
+
+# If all files in a project use the same build flags, you can also put the flags one-per-line in 'compile_flags.txt' in your source root.
