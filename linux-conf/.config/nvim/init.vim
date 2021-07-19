@@ -37,6 +37,7 @@ Plug 'glepnir/lspsaga.nvim'
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'folke/tokyonight.nvim'
 Plug 'marko-cerovac/material.nvim'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
 call plug#end()
@@ -313,6 +314,42 @@ let g:material_theme_style = 'darker'
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 " --------------------------------------------------
+
+" ----- lualine -------------------------------------------------------------------------------------------------
+lua << EOF
+require'lualine'.setup {
+	options = {
+    icons_enabled = true,
+    theme = 'material',
+    section_separators = {'', ''},
+    component_separators = {'', ''},
+    disabled_filetypes = {}
+	},
+	sections = {
+	  lualine_a = {'mode'},
+	  lualine_b = {'branch', 'diff'},
+	  lualine_c = {'filename'},
+	  lualine_x = {
+	    {'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}},
+	    'encoding',
+	    'filetype'
+	  },
+	  lualine_y = {'progress'},
+	  lualine_z = {'location'}
+	},
+	inactive_sections = {
+	  lualine_a = {},
+	  lualine_b = {},
+	  lualine_c = {'filename'},
+	  lualine_x = {'location'},
+	  lualine_y = {},
+	  lualine_z = {}
+	},
+	tabline = {},
+	extensions = {'fugitive'}
+}
+EOF
+" ---------------------------------------------------------------------------------------------------------------
 " =========================================================================================================================================
 
 " ===== WSL yank support ========================================================================
