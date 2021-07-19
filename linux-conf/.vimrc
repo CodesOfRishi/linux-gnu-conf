@@ -129,9 +129,6 @@ vnoremap ? xi/**/<Esc>hP
 nnoremap <Tab> :tabn<cr>
 " swithch tabs in LHS-direction
 nnoremap <S-Tab> :tabp<cr>
-
-" open vertical terminal to the right
-nnoremap tt :rightbelow vert term<cr>
 " ------------------------------------------------------
 " =============================================================================
 
