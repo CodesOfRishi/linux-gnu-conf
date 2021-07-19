@@ -29,7 +29,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
 
 " ----- UI ----------------------------------------------------------------------------------------------------
-Plug 'kaicataldo/material.vim', { 'branch': 'main' } " A port of the Material color scheme for Vim/Neovim.
+Plug 'folke/tokyonight.nvim'
 Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim
 Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-airline must be installed)
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
@@ -47,7 +47,9 @@ autocmd FileType python nnoremap <C-B> :!python3 %<cr>
 " -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
-colorscheme material 
+let g:tokyonight_style = 'night' " available: night, storm
+colorscheme tokyonight 
+
 :set list lcs=tab:\|\ " show vertical guide lines between braces
 :set number relativenumber
 :set smartindent
@@ -349,7 +351,7 @@ let g:airline_symbols.dirty='⚡'
 " -----------------------------------------------------------------------------------------------------------
 " deus theme (check out available airline themes:https://github.com/vim-airline/vim-airline/wiki/Screenshots)
 " vim-airline themes is needed for this
-let g:airline_theme='material' " material OR deus OR bubblegum
+let g:airline_theme = "tokyonight" " material OR deus OR bubblegum
 
 " enable/disable enhanced tabline. (c)
 let g:airline#extensions#tabline#enabled = 1
