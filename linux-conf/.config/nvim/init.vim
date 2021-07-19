@@ -26,6 +26,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " ----- LSP ------------------------------------------
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
 
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " A port of the Material color scheme for Vim/Neovim.
@@ -214,6 +215,55 @@ let g:compe.source.ultisnips = v:true
 let g:compe.source.luasnip = v:true
 let g:compe.source.emoji = v:true
 " ------------------------------------------------------------------------
+
+" ----- lspsaga ----------------------------
+lua << EOF
+local saga = require 'lspsaga'
+
+saga.init_lsp_saga {
+	use_saga_diagnostic_sign = true,
+	error_sign = '',
+	warn_sign = '',
+	hint_sign = ' ',
+	infor_sign = '',
+	dianostic_header_icon = '   ',
+	code_action_icon = ' ',
+	code_action_prompt = {
+	  enable = true,
+	  sign = true,
+	  sign_priority = 20,
+	  virtual_text = true,
+	},
+	finder_definition_icon = '  ',
+	finder_reference_icon = '  ',
+	definition_preview_icon = '  ',
+	-- "single" "double" "round" "plus"
+	border_style = "round", 
+	rename_prompt_prefix = '➤',
+}
+EOF
+
+" lsp provider to find the cursor word definition and reference
+nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+
+" code action
+nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+
+" Hover
+nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+" SignatureHelp
+nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
+
+" Rename
+nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
+
+" Preview Definition
+nnoremap <silent> gd :Lspsaga preview_definition<CR>
+" ------------------------------------------
 
 " ----- nvim-treesitter -------------------------------------------------------------------------------------------
 lua <<EOF
