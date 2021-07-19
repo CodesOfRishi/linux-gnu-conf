@@ -64,8 +64,6 @@ Plug 'prabirshrestha/asyncomplete.vim' " to use auto-completion for vim-lsp
 Plug 'prabirshrestha/asyncomplete-lsp.vim' " to use auto-completion for vim-lsp
 
 " ----- UI ----------------------------------------------------------------------------------------------------
-Plug 'morhetz/gruvbox' " Retro groove color scheme for Vim
-Plug 'NLKNguyen/papercolor-theme' " Light & Dark color schemes for terminal and GUI Vim awesome editor
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " A port of the Material color scheme for Vim/Neovim.
 Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim 
 Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-airline must be installed)
@@ -85,7 +83,7 @@ autocmd FileType python nnoremap <C-B> :!python3 %<cr>
 
 " -----------------------------------------------------------------------------
 syntax on
-colorscheme material " PaperColor or gruvbox or material
+colorscheme material 
 :set list lcs=tab:\|\ " show vertical guide lines between braces
 :set background=dark " (dark OR light) 
 :set number relativenumber 
@@ -146,11 +144,6 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " -----------------------------------------------------------------------------------------------------------------------------------------
-
-" ----- gruvbox theme ---------------------------------------
-" Changes dark mode contrast
-let g:gruvbox_contrast_dark='medium' " soft OR medium OR hard
-" -----------------------------------------------------------
 
 " ----- material theme --------------
 let g:material_terminal_italics = 1
