@@ -180,7 +180,7 @@ highlight clear ALEWarning
 " -------------------------------------------------------------------------------------------------
 
 " ----- vim-lsp -----------------------------------------------
-"  Registering Servers
+"  registering python server
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
@@ -227,6 +227,10 @@ let g:lsp_settings = {
 
 " disable diagnostic support (currently using ALE instead)
 let g:lsp_diagnostics_enabled = 0 
+
+" CTRL-K & CTRL-J to navigate auto-completion list
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
 " -------------------------------------------------------------
 
 " ---- airline ---------------------------------------------------------------------
