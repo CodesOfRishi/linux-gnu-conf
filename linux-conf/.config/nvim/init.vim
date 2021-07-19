@@ -81,8 +81,10 @@ colorscheme material " PaperColor or gruvbox or material
 " ------------------------------------------------------
 " ctrl-a to select all
 noremap <C-a> <Esc>ggvG$
-" " ctrl-c to copy the selected text to the clipboard
-vnoremap <C-c> "+y
+
+" To ALWAYS use the clipboard for ALL operations 
+" (instead of interacting with the '+' and/or '*' registers explicitly):
+set clipboard+=unnamedplus
 
 " To ALWAS use the clipboard for ALL operations 
 " (instead of interacting with the '+' and/or '*' registers explicitly):
