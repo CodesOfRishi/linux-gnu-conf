@@ -48,18 +48,12 @@ autocmd FileType python nnoremap <C-B> :!python3 %<cr>
 " -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
-syntax on
 colorscheme material " PaperColor or gruvbox or material
 :set list lcs=tab:\|\ " show vertical guide lines between braces
-:set background=dark " (dark OR light)
 :set number relativenumber
-:set autoindent
 :set smartindent
-:set showcmd
 :set ignorecase " to search case-INsensitive
 :set smartcase " requires ignorcase
-:set incsearch " highlight all pattern matches while typing the search-string
-:set hlsearch " highlight search result (after pressing ENTER)
 :set autowrite
 :set nowrap
 :set tabstop=4
