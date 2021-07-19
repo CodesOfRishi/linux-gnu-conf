@@ -1,6 +1,12 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
+" file opens with the cursor at the same position where last left off 
+autocmd BufReadPost *
+\ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+\ |   exe "normal! g`\""
+\ | endif
+
 " ===== Vim-Plug Manager ====================================================================================================================
 call plug#begin('~/.vim/plugged')
 
