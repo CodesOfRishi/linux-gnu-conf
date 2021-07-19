@@ -48,7 +48,7 @@ autocmd FileType python nnoremap <C-B> :!python3 %<cr>
 " -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
-colorscheme material " PaperColor or gruvbox or material
+colorscheme material 
 :set list lcs=tab:\|\ " show vertical guide lines between braces
 :set number relativenumber
 :set smartindent
@@ -110,11 +110,6 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " -----------------------------------------------------------------------------------------------------------------------------------------
-
-" ----- gruvbox theme ---------------------------------------
-" Changes dark mode contrast
-let g:gruvbox_contrast_dark='medium' " soft OR medium OR hard
-" -----------------------------------------------------------
 
 " ----- material theme --------------
 let g:material_terminal_italics = 1
