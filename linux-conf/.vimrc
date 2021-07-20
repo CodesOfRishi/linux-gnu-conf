@@ -78,7 +78,7 @@ call plug#end()
 autocmd FileType cpp nnoremap <C-B> :!makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
 autocmd FileType cpp nnoremap <C-_> :!tcase %<cr>
-autocmd FileType python nnoremap <C-B> :!python3 %<cr>
+autocmd FileType python nnoremap <C-_> :!python3 %<cr>
 " -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
