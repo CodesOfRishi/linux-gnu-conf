@@ -82,8 +82,11 @@ autocmd FileType python nnoremap <C-_> :!python3 %<cr>
 " -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
-syntax on
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'palenight'
 colorscheme material 
+
+syntax on
 :set list lcs=tab:\|\ " show vertical guide lines between braces
 :set background=dark " (dark OR light) 
 :set number relativenumber 
@@ -146,11 +149,6 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 " -----------------------------------------------------------------------------------------------------------------------------------------
-
-" ----- material theme --------------
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
-" -----------------------------------
 
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
