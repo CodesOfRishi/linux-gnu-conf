@@ -56,9 +56,6 @@ Plug 'airblade/vim-gitgutter'
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
-" ----- LSP (ale) ------------------------------------------
-Plug 'dense-analysis/ale' " ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax checking and semantic errors) 
-
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " A port of the Material color scheme for Vim/Neovim.
 Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim 
@@ -150,24 +147,6 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 " --------------------------------------------------
 
-" ----- ale ---------------------------------------------------------------------------------------
-" This variable can be changed to use a different executable for a C++ compiler.
-let g:ale_cpp_cc_executable='/usr/bin/g++' 
-
-" This variable can be change to modify flags given to the C++ compiler.
-let g:ale_cpp_cc_options='-Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion -std=c++17'
-
-let g:ale_sign_error="" " customized ale error sign
-let g:ale_sign_warning="" " customized ale warning sign
-"let g:ale_sign_error=""
-"let g:ale_sign_warning=""
-"let g:ale_sign_error="◉"
-"let g:ale_sign_warning="◉"
-highlight ALEErrorSign ctermfg=1 
-highlight clear ALEError
-highlight clear ALEWarning
-" -------------------------------------------------------------------------------------------------
-
 " ---- airline ---------------------------------------------------------------------
 " airline-customization (for this customization you need to install powerline-fonts)
 let g:airline_powerline_fonts = 1
@@ -240,11 +219,6 @@ let g:airline#extensions#whitespace#enabled = 0
 "" enable/disable syntastic integration 
 "let g:airline#extensions#syntastic#enabled = 1
 " -----------------------------------------------------------------------------------------------------------
-
-" ----- ale airline ----------------------------------
-let airline#extensions#ale#error_symbol = "\uf05e :"
-let airline#extensions#ale#warning_symbol = "\uf071 :"
-" ----------------------------------------------------
 " =========================================================================================================================================
 
 " ===== WSL yank support ========================================================================
