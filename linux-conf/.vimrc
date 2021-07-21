@@ -363,6 +363,11 @@ let g:airline#extensions#whitespace#enabled = 0
 "" enable/disable syntastic integration 
 "let g:airline#extensions#syntastic#enabled = 1
 " -----------------------------------------------------------------------------------------------------------
+
+" ----- airline-coc -----------------------------
+let airline#extensions#coc#error_symbol = ' :'
+let airline#extensions#coc#warning_symbol = ' :'
+" -----------------------------------------------
 " =========================================================================================================================================
 
 " ===== WSL yank support ========================================================================
