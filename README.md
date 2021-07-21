@@ -4,6 +4,5 @@ Contains configurations/settings &amp; requirements related to my Linux operatin
 [License](LICENSE)
 ------------------
 
-The MIT License (MIT)
-
+The MIT License (MIT)<br/>
 Copyright (c) 2021 Rishi K.
