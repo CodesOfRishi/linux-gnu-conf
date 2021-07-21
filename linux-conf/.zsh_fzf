@@ -3,8 +3,7 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git/ --exclude '.gitignore'"
- export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND),ctrl-/:toggle-preview' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 \
-	 --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672"
+export FZF_DEFAULT_OPTS="--bind 'ctrl-r:reload($FZF_DEFAULT_COMMAND),ctrl-/:toggle-preview' --header 'Press CTRL-R to reload' --height 70% --reverse --border --margin=1 --color='hl+:#ec59ac,hl:#c433ff'"
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--bind 'ctrl-r:reload($FZF_CTRL_T_COMMAND)' --header 'CTRL-R to reload | CTRL-F for files | CTRL-D for directories' --height 100% --border \
