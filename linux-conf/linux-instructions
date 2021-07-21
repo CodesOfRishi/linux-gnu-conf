@@ -15,6 +15,8 @@ CONFIGURATIONS:
 	- install clangd-12 (if required)
 		- To be able to use 'clangd-xx', make it as default 'clangd' {https://clangd.llvm.org/installation}
 		- Or if using coc.nvim in (neo)vim check-out coc-clangd {https://github.com/clangd/coc-clangd}
+	- install nvm (if required)
+		- install node.js, npm {https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl}
 	- install htop
 	- install iotop
 	- download media codecs for video support (if required)
