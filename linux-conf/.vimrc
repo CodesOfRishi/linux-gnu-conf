@@ -33,7 +33,6 @@ augroup END
 if has('syntax') && has('eval')
   packadd! matchit
 endif
-" =============================================================================
 
 " ===== Vim-Plug Manager ====================================================================================================================
 call plug#begin('~/.vim/plugged')
@@ -46,12 +45,10 @@ Plug 'tpope/vim-commentary'
 " ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-" ---------------------
 
 " ----- Git ------------------------------------
 Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'airblade/vim-gitgutter' 
-" ----------------------------------------------
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
@@ -66,7 +63,6 @@ Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-air
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
 call plug#end()
-" ===========================================================================================================================================
 
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
@@ -75,7 +71,6 @@ autocmd FileType cpp nnoremap <C-B> :!makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
 autocmd FileType cpp nnoremap <C-_> :!tcase %<cr>
 autocmd FileType python nnoremap <C-_> :!python3 %<cr>
-" -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
 let g:material_terminal_italics = 1
@@ -101,7 +96,6 @@ syntax on
 :set cursorline " highlight the ROW on which the cursor is
 :set cursorcolumn " highlight the COLUMN on which the cursor is
 :set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
-" -----------------------------------------------------------------------------
 
 " ---------------------------------------------------------------------
 :augroup numbertoggle
@@ -109,7 +103,6 @@ syntax on
 :  autocmd BufEnter,InsertLeave,WinEnter * if &nu | set rnu   | endif
 :  autocmd BufLeave,InsertEnter,WinLeave   * if &nu | set nornu | endif
 :augroup END
-" ---------------------------------------------------------------------
 
 " ------------------------------------------------------
 " ctrl-a to select all 
@@ -128,8 +121,6 @@ vnoremap ? xi/**/<Esc>hP
 nnoremap <Tab> :tabn<cr>
 " swithch tabs in LHS-direction
 nnoremap <S-Tab> :tabp<cr>
-" ------------------------------------------------------
-" =============================================================================
 
 " ===== PLUGIN CONFIGURATIONS =============================================================================================================
 " ----- fzf -------------------------------------------------------------------------------------------------------------------------------
@@ -144,11 +135,9 @@ let g:fzf_layout = { 'down': '30%' }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" -----------------------------------------------------------------------------------------------------------------------------------------
 
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
-" --------------------------------------------------
 
 " ---- coc -----------------------------------------------------------------------------
 " TextEdit might fail if hidden is not set 
@@ -289,7 +278,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-" --------------------------------------------------------------------------------------
 
 " ---- airline ---------------------------------------------------------------------
 " airline-customization (for this customization you need to install powerline-fonts)
@@ -329,12 +317,11 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
-" ----------------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------------------------------------
 " deus theme (check out available airline themes:https://github.com/vim-airline/vim-airline/wiki/Screenshots)
 " vim-airline themes is needed for this
-let g:airline_theme='material' " material OR deus OR bubblegum
+let g:airline_theme='material' 
 
 " enable/disable enhanced tabline. (c) 
 let g:airline#extensions#tabline#enabled = 1
@@ -362,13 +349,10 @@ let g:airline#extensions#whitespace#enabled = 0
 
 "" enable/disable syntastic integration 
 "let g:airline#extensions#syntastic#enabled = 1
-" -----------------------------------------------------------------------------------------------------------
 
 " ----- airline-coc -----------------------------
 let airline#extensions#coc#error_symbol = ' :'
 let airline#extensions#coc#warning_symbol = ' :'
-" -----------------------------------------------
-" =========================================================================================================================================
 
 " ===== WSL yank support ========================================================================
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
@@ -378,4 +362,3 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
-" ===============================================================================================
