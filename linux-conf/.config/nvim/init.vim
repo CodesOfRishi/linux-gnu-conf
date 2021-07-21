@@ -7,6 +7,13 @@ autocmd BufReadPost *
 \ |   exe "normal! g`\""
 \ | endif
 
+" a workaround for the issue: https://github.com/neovim/neovim/issues/1496
+command! -nargs=+ -complete=file T
+    \ tab new | setlocal nonumber nolist noswapfile bufhidden=wipe |
+    \ call termopen([<f-args>]) |
+    \ startinsert
+cabbrev ! T
+
 " ===== Vim-Plug Manager ====================================================================================================================
 call plug#begin('~/.vim/plugged')
 
@@ -46,10 +53,10 @@ call plug#end()
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
 " not exactly sure of the working of `autocmd FileType` for now (so be careful)
-autocmd FileType cpp nnoremap <C-B> :!makecp %<cr>
+autocmd FileType cpp nnoremap <C-B> :T makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
-autocmd FileType cpp nnoremap <C-_> :!tcase %<cr>
-autocmd FileType python nnoremap <C-_> :!python3 %<cr>
+autocmd FileType cpp nnoremap <C-_> :T tcase %<cr>
+autocmd FileType python nnoremap <C-_> :T python3 %<cr>
 " -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
