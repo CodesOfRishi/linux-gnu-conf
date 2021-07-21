@@ -58,6 +58,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'kaicataldo/material.vim', { 'branch': 'main' } " A port of the Material color scheme for Vim/Neovim.
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim 
 Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-airline must be installed)
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
@@ -75,7 +76,8 @@ autocmd FileType python nnoremap <C-_> :!python3 %<cr>
 " -----------------------------------------------------------------------------
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'palenight'
-colorscheme material 
+" colorscheme material 
+colorscheme onedark 
 
 syntax on
 :set list lcs=tab:\|\ " show vertical guide lines between braces
@@ -321,7 +323,7 @@ let g:airline_symbols.dirty='⚡'
 " -----------------------------------------------------------------------------------------------------------
 " deus theme (check out available airline themes:https://github.com/vim-airline/vim-airline/wiki/Screenshots)
 " vim-airline themes is needed for this
-let g:airline_theme='material' 
+let g:airline_theme='onedark'
 
 " enable/disable enhanced tabline. (c) 
 let g:airline#extensions#tabline#enabled = 1
