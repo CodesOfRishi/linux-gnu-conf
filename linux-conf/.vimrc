@@ -68,7 +68,7 @@ call plug#end()
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
 " not exactly sure of the working of `autocmd FileType` for now (so be careful)
-autocmd FileType cpp nnoremap <C-B> :!makecp %<cr>
+autocmd FileType cpp nnoremap <C-p> :!makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
 autocmd FileType cpp nnoremap <C-_> :!tcase %<cr>
 autocmd FileType python nnoremap <C-_> :!python3 %<cr>
