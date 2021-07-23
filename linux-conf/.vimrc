@@ -98,6 +98,7 @@ syntax on
 :set cursorline " highlight the ROW on which the cursor is
 :set cursorcolumn " highlight the COLUMN on which the cursor is
 :set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
+set foldmethod=marker " markers are used to specify folds.
 
 " ---------------------------------------------------------------------
 :augroup numbertoggle
