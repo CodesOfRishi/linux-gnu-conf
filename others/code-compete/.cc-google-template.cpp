@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>// {{{
 #include <iomanip>
 #include <vector>
 #include <array>
@@ -19,8 +19,9 @@
 #include <iterator>
 #include <algorithm>
 #include <numeric>
-#include <cassert>
+#include <cassert>// }}}
 
+// Debug{{{
 #if __has_include("/home/rishi/.local/include/dbg.h")
 #ifndef DBG_MACRO_NO_WARNING
 #define DBG_MACRO_NO_WARNING
@@ -69,15 +70,17 @@ std::ostream& operator<<(std::ostream& out, std::priority_queue<T> _pq) {
 
 #else 
 template<typename... Types> void dbg(const Types&... x) { /* nothing!! */ }
-#endif
+#endif// }}}
 
 using namespace std;
 
+// typedef{{{
 typedef long long ll;
 typedef unsigned long long ull;
 typedef unsigned uint;
-typedef long double l_double;
+typedef long double l_double;// }}}
 
+// macros{{{
 #define gcd __gcd
 #define FFS(var) __builtin_ffs(var)
 #define CLZ(var) __builtin_clz(var)
@@ -86,13 +89,14 @@ typedef long double l_double;
 #define all(v) v.begin(), v.end()
 #define rall(v) v.rbegin(), v.rend()
 #define s_cast static_cast // <>
-#define endl "\n"
+#define endl "\n"// }}}
 
+// global variables{{{
 const double PI {3.1415926535897932384626433832795};
 const int MOD {static_cast<int>(1e9 + 7)};
-const double EPS {1e-9};
+const double EPS {1e-9};// }}}
 
-/*----------------------------------------- Modular Arithmetic -----------------------------------------*/
+// Modular Arithmetic{{{
 template<typename T>
 T ModAdd(const T &a, const T &b, const int &mod = MOD) { return ((a)%mod + (b)%mod)%mod; }
 
@@ -100,9 +104,9 @@ template<typename T>
 T ModSub(const T &a, const T &b, const int &mod = MOD) { return ((((a%mod) - (b%mod))%mod)+mod)%mod; }
 
 template<typename T>
-T ModMul(const T &a, const T &b, const int &mod = MOD) { return ((a%mod) * (b%mod))%mod; }
+T ModMul(const T &a, const T &b, const int &mod = MOD) { return ((a%mod) * (b%mod))%mod; }// }}}
 
-/*----------------------------------------- Overflow Validation -----------------------------------------*/
+// Limitflow Validation{{{
 template<typename T>
 bool AdditionLimitFlow(const T &a, const T &x) {
     T MAXIMUM_INT {a}, MINIMUM_INT {a};
@@ -176,10 +180,9 @@ bool MultiplicationLimitFlow(const T &a, const T &x) {
         return underflow;
     }
     return false;
-}
-/*-------------------------------------------------------------------------------------------------------*/
+}// }}}
 
-template<typename T>
+template<typename T>// {{{
 T max(const T &A, const T &B, const T &C) {
     T mx {A};
     (mx < B) && (mx = B);
@@ -202,10 +205,8 @@ template<typename T>
 bool isPowOfTwo(const T &N) { return (N && (!(N&(N-1)))); }
 
 template<typename T>
-bool dblEqual(const T &a, const T &b) { return abs(a - b) < EPS; }
-
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
+bool dblEqual(const T &a, const T &b) { return abs(a - b) < EPS; }// }}}
+/* --------------------------------------------------------------------------------------------------------------------------------------- */
 
 //
 
