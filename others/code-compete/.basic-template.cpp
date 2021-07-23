@@ -1,6 +1,6 @@
 #include <iostream>
 
-#if __has_include("/home/rishi/.local/include/dbg.h")
+#if __has_include("/home/rishi/.local/include/dbg.h")// {{{
 #ifndef DBG_MACRO_NO_WARNING
 #define DBG_MACRO_NO_WARNING
 #endif
@@ -48,7 +48,7 @@ std::ostream& operator<<(std::ostream& out, std::priority_queue<T> _pq) {
 
 #else 
 template<typename... Types> void dbg(const Types&... x) { /* nothing!! */ }
-#endif
+#endif// }}}
 
 using namespace std;
 
