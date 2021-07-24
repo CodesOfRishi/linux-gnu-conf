@@ -81,6 +81,7 @@ plugins=(
 	themes
 	zsh-syntax-highlighting
 	colored-man-pages
+	autoupdate
 )
 
 source $ZSH/oh-my-zsh.sh
