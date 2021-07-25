@@ -1,4 +1,4 @@
-" ===== DEFAULT ==============================================================
+" ===== DEFAULT =============================================================={{{
 " An example for a vimrc file.
 " copied from $VIMRUNTIME/vimrc_example.vim
 
@@ -32,9 +32,9 @@ augroup END
 " loaded during initialization.
 if has('syntax') && has('eval')
   packadd! matchit
-endif
+endif"}}}
 
-" ===== Vim-Plug Manager ====================================================================================================================
+" ===== Vim-Plug Manager ===================================================================================================================={{{
 call plug#begin('~/.vim/plugged')
 
 " ----- EDIT --------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ Plug 'vim-airline/vim-airline' " Lean & mean status/tabline for vim
 Plug 'vim-airline/vim-airline-themes' " Official themes for vim-airline (vim-airline must be installed)
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
-call plug#end()
+call plug#end()"}}}
 
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
@@ -126,7 +126,7 @@ nnoremap <Tab> :tabn<cr>
 nnoremap <S-Tab> :tabp<cr>
 
 " ===== PLUGIN CONFIGURATIONS =============================================================================================================
-" ----- fzf -------------------------------------------------------------------------------------------------------------------------------
+" ----- fzf -------------------------------------------------------------------------------------------------------------------------------{{{
 command! -bang -complete=dir -nargs=? 
 			\ LS call fzf#run(fzf#wrap({'source': 'fd --hidden --exclude .git/ --exclude ".gitignore" --type f', 
 			\ 'dir': <q-args>, 
@@ -137,12 +137,12 @@ command! -bang -complete=dir -nargs=?
 let g:fzf_layout = { 'down': '30%' }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler"}}}
 
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 
-" ---- coc -----------------------------------------------------------------------------
+" ---- coc -----------------------------------------------------------------------------{{{
 " TextEdit might fail if hidden is not set 
 set hidden
 
@@ -280,9 +280,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>"}}}
 
-" ---- airline ---------------------------------------------------------------------
+" ---- airline ---------------------------------------------------------------------{{{
 " airline-customization (for this customization you need to install powerline-fonts)
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -355,13 +355,13 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " ----- airline-coc -----------------------------
 let airline#extensions#coc#error_symbol = ' :'
-let airline#extensions#coc#warning_symbol = ' :'
+let airline#extensions#coc#warning_symbol = ' :'"}}}
 
-" ===== WSL yank support ========================================================================
+" ===== WSL yank support ========================================================================{{{
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 if executable(s:clip)
     augroup WSLYank
         autocmd!
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
-endif
+endif"}}}
