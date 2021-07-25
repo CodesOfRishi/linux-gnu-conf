@@ -45,6 +45,7 @@ Plug 'tpope/vim-commentary'
 " ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree'
 
 " ----- Git ------------------------------------
 Plug 'tpope/vim-fugitive' " a git plugin for vim
@@ -138,6 +139,9 @@ let g:fzf_layout = { 'down': '30%' }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler"}}}
+
+" ----- undotree -----------------------------
+nnoremap <C-U> :UndotreeToggle<CR>
 
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
