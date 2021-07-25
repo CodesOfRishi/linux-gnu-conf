@@ -1,18 +1,12 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
+" -------------------------------------------------------------------
 " file opens with the cursor at the same position where last left off 
 autocmd BufReadPost *
 \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 \ |   exe "normal! g`\""
 \ | endif
-
-" a workaround for the issue: https://github.com/neovim/neovim/issues/1496
-command! -nargs=+ -complete=file T
-    \ tab new | setlocal nonumber nolist noswapfile bufhidden=wipe |
-    \ call termopen([<f-args>]) |
-    \ startinsert
-cabbrev ! T
 
 " ===== Vim-Plug Manager ===================================================================================================================={{{
 call plug#begin('~/.vim/plugged')
@@ -48,6 +42,13 @@ Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last
 call plug#end()"}}}
 
 " =============================================================================
+" a workaround for the issue: https://github.com/neovim/neovim/issues/1496
+command! -nargs=+ -complete=file T
+    \ tab new | setlocal nonumber nolist noswapfile bufhidden=wipe |
+    \ call termopen([<f-args>]) |
+    \ startinsert
+cabbrev ! T
+
 " ----- file/language specific compilation configuration ----------------------
 " not exactly sure of the working of `autocmd FileType` for now (so be careful)
 autocmd FileType cpp nnoremap <C-B> :T makecp %<cr>
