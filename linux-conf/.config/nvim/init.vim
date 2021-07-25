@@ -19,6 +19,7 @@ Plug 'tpope/vim-commentary'
 " ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree'
 
 " ----- Git ------------------------------------
 Plug 'tpope/vim-fugitive' " a git plugin for vim
@@ -292,6 +293,9 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "}}}
+
+" ----- undotree -----------------
+nnoremap <C-U> :UndotreeToggle<CR>
 
 " ----- fzf -------------------------------------------------------------------------------------------------------------------------------{{{
 command! -bang -complete=dir -nargs=?
