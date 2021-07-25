@@ -25,12 +25,10 @@ Plug 'tpope/vim-commentary'
 " ----- Searching -----
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-" ---------------------
 
 " ----- Git ------------------------------------
 Plug 'tpope/vim-fugitive' " a git plugin for vim
 Plug 'airblade/vim-gitgutter'
-" ----------------------------------------------
 
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
@@ -48,7 +46,6 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
 call plug#end()
-" ===========================================================================================================================================
 
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
@@ -57,27 +54,25 @@ autocmd FileType cpp nnoremap <C-B> :T makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
 autocmd FileType cpp nnoremap <C-_> :T tcase %<cr>
 autocmd FileType python nnoremap <C-_> :T python3 %<cr>
-" -----------------------------------------------------------------------------
 
 " -----------------------------------------------------------------------------
 let g:tokyonight_style = 'night' " available: night, storm
 let g:material_style = 'darker'
 colorscheme material 
 
-:set list lcs=tab:\|\ " show vertical guide lines between braces
-:set number relativenumber
-:set smartindent
-:set ignorecase " to search case-INsensitive
-:set smartcase " requires ignorcase
-:set autowrite
-:set nowrap
-:set tabstop=4
-:set shiftwidth=4
-:set showmatch
-:set cursorline " highlight the ROW on which the cursor is
-:set cursorcolumn " highlight the COLUMN on which the cursor is
-:set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
-" -----------------------------------------------------------------------------
+set list lcs=tab:\|\ " show vertical guide lines between braces
+set number relativenumber
+set smartindent
+set ignorecase " to search case-INsensitive
+set smartcase " requires ignorcase
+set autowrite
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set showmatch
+set cursorline " highlight the ROW on which the cursor is
+set cursorcolumn " highlight the COLUMN on which the cursor is
+set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
 
 " ---------------------------------------------------------------------
 :augroup numbertoggle
@@ -85,7 +80,6 @@ colorscheme material
 :  autocmd BufEnter,InsertLeave,WinEnter * if &nu | set rnu   | endif
 :  autocmd BufLeave,InsertEnter,WinLeave   * if &nu | set nornu | endif
 :augroup END
-" ---------------------------------------------------------------------
 
 " ------------------------------------------------------
 " ctrl-a to select all
@@ -104,8 +98,6 @@ vnoremap ? xi/**/<Esc>hP
 nnoremap <Tab> :tabn<cr>
 " swithch tabs in LHS-direction
 nnoremap <S-Tab> :tabp<cr>
-" ------------------------------------------------------
-" =============================================================================
 
 " ===== PLUGIN CONFIGURATIONS =============================================================================================================
 
@@ -139,7 +131,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 EOF
-" ------------------------------------------------------------------------------
 
 " ----- nvim-compe -------------------------------------------------------
 set completeopt=menuone,noselect
@@ -230,7 +221,6 @@ let g:compe.source.vsnip = v:true
 let g:compe.source.ultisnips = v:true
 let g:compe.source.luasnip = v:true
 let g:compe.source.emoji = v:true
-" ------------------------------------------------------------------------
 
 " ----- lspsaga ----------------------------
 lua << EOF
@@ -279,7 +269,6 @@ nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
 
 " Preview Definition
 nnoremap <silent> gd :Lspsaga preview_definition<CR>
-" ------------------------------------------
 
 " ----- nvim-treesitter -------------------------------------------------------------------------------------------
 lua <<EOF
@@ -297,7 +286,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-" -----------------------------------------------------------------------------------------------------------------
 
 " ----- fzf -------------------------------------------------------------------------------------------------------------------------------
 command! -bang -complete=dir -nargs=?
@@ -311,11 +299,9 @@ let g:fzf_layout = { 'down': '30%' }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" -----------------------------------------------------------------------------------------------------------------------------------------
 
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
-" --------------------------------------------------
 
 " ----- lualine -------------------------------------------------------------------------------------------------
 lua << EOF
@@ -351,8 +337,6 @@ require'lualine'.setup {
 	extensions = {'fugitive'}
 }
 EOF
-" ---------------------------------------------------------------------------------------------------------------
-" =========================================================================================================================================
 
 " ===== WSL yank support ========================================================================
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
@@ -362,4 +346,3 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
-" ===============================================================================================
