@@ -39,6 +39,7 @@ Plug 'glepnir/lspsaga.nvim'
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'folke/tokyonight.nvim'
 Plug 'marko-cerovac/material.nvim'
+Plug 'joshdick/onedark.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
@@ -55,7 +56,8 @@ autocmd FileType python nnoremap <C-_> :FloatermNew python3 %<cr>
 " -----------------------------------------------------------------------------
 let g:tokyonight_style = 'night' " available: night, storm
 let g:material_style = 'darker'
-colorscheme material 
+" colorscheme material 
+colorscheme onedark 
 
 set list lcs=tab:\|\ " show vertical guide lines between braces
 set number relativenumber
