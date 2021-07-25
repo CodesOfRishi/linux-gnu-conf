@@ -14,7 +14,7 @@ command! -nargs=+ -complete=file T
     \ startinsert
 cabbrev ! T
 
-" ===== Vim-Plug Manager ====================================================================================================================
+" ===== Vim-Plug Manager ===================================================================================================================={{{
 call plug#begin('~/.vim/plugged')
 
 " ----- EDIT --------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
 
-call plug#end()
+call plug#end()"}}}
 
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
@@ -102,7 +102,7 @@ nnoremap <S-Tab> :tabp<cr>
 
 " ===== PLUGIN CONFIGURATIONS =============================================================================================================
 
-" ----- nvim-lspconfig ---------------------------------------------------------
+" ----- nvim-lspconfig ---------------------------------------------------------{{{
 lua << EOF
 require'lspconfig'.clangd.setup{}
 EOF
@@ -133,7 +133,9 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
-" ----- nvim-compe -------------------------------------------------------
+"}}}
+
+" ----- nvim-compe -------------------------------------------------------{{{
 set completeopt=menuone,noselect
 
 lua << EOF
@@ -221,9 +223,9 @@ let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:true
 let g:compe.source.ultisnips = v:true
 let g:compe.source.luasnip = v:true
-let g:compe.source.emoji = v:true
+let g:compe.source.emoji = v:true"}}}
 
-" ----- lspsaga ----------------------------
+" ----- lspsaga ----------------------------{{{
 lua << EOF
 local saga = require 'lspsaga'
 
@@ -288,7 +290,9 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" ----- fzf -------------------------------------------------------------------------------------------------------------------------------
+"}}}
+
+" ----- fzf -------------------------------------------------------------------------------------------------------------------------------{{{
 command! -bang -complete=dir -nargs=?
 			\ LS call fzf#run(fzf#wrap({'source': 'fd --hidden --exclude .git/ --exclude ".gitignore" --type f',
 			\ 'dir': <q-args>,
@@ -299,12 +303,12 @@ command! -bang -complete=dir -nargs=?
 let g:fzf_layout = { 'down': '30%' }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler"}}}
 
 " ----- vim-commentary -----------------------------
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 
-" ----- lualine -------------------------------------------------------------------------------------------------
+" ----- lualine -------------------------------------------------------------------------------------------------{{{
 lua << EOF
 require'lualine'.setup {
 	options = {
@@ -338,6 +342,8 @@ require'lualine'.setup {
 	extensions = {'fugitive'}
 }
 EOF
+
+"}}}
 
 " ===== WSL yank support ========================================================================
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
