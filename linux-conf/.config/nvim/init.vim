@@ -11,7 +11,7 @@ autocmd BufReadPost *
 " ===== Vim-Plug Manager ===================================================================================================================={{{
 call plug#begin('~/.vim/plugged')
 
-" ----- EDIT --------------------------------------------------------------------------------------------------
+" ----- EdiT --------------------------------------------------------------------------------------------------
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " A mulit-cursor plugin
 Plug 'tpope/vim-surround' " plugin for quoting/paranthesizing
 Plug 'tpope/vim-commentary'
@@ -28,6 +28,9 @@ Plug 'airblade/vim-gitgutter'
 " ----- Language Specific ------------------------------------------------------------------------------------
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 
+" ----- Terminal -----------
+Plug 'voldikss/vim-floaterm'
+
 " ----- LSP ------------------------------------------
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
@@ -42,19 +45,12 @@ Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last
 call plug#end()"}}}
 
 " =============================================================================
-" a workaround for the issue: https://github.com/neovim/neovim/issues/1496
-command! -nargs=+ -complete=file T
-    \ tab new | setlocal nonumber nolist noswapfile bufhidden=wipe |
-    \ call termopen([<f-args>]) |
-    \ startinsert
-cabbrev ! T
-
 " ----- file/language specific compilation configuration ----------------------
 " not exactly sure of the working of `autocmd FileType` for now (so be careful)
-autocmd FileType cpp nnoremap <C-B> :T makecp %<cr>
+autocmd FileType cpp nnoremap <C-p> :FloatermNew makecp %<cr>
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
-autocmd FileType cpp nnoremap <C-_> :T tcase %<cr>
-autocmd FileType python nnoremap <C-_> :T python3 %<cr>
+autocmd FileType cpp nnoremap <C-_> :FloatermNew tcase %<cr>
+autocmd FileType python nnoremap <C-_> :FloatermNew python3 %<cr>
 
 " -----------------------------------------------------------------------------
 let g:tokyonight_style = 'night' " available: night, storm
@@ -273,6 +269,9 @@ nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
 
 " Preview Definition
 nnoremap <silent> gd :Lspsaga preview_definition<CR>"}}}
+
+" ----- vim-floaterm --------------------
+let g:floaterm_keymap_new = 'tt'
 
 " ----- undotree -----------------
 nnoremap <C-U> :UndotreeToggle<CR>
