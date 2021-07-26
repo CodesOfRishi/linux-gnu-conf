@@ -368,6 +368,8 @@ EOF
 
 " ----- vim-floaterm --------------------
 let g:floaterm_keymap_new = 'tt'
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.7
 
 " ----- undotree -----------------
 nnoremap <C-U> :UndotreeToggle<CR>
