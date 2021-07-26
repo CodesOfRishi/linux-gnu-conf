@@ -123,6 +123,8 @@ require'lspconfig'.pyright.setup{
 		}
 	}
 }
+
+require'lspconfig'.vimls.setup{}
 EOF
 
 lua << EOF
