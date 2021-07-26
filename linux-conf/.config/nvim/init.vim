@@ -43,7 +43,7 @@ Plug 'folke/tokyonight.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'joshdick/onedark.vim'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'ryanoasis/vim-devicons' " add icons (always load devicons as the very last plugin)
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()"}}}
 
