@@ -242,8 +242,8 @@ EOF
 nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 
 " code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
+nnoremap <silent><leader>a <cmd>lua require('lspsaga.codeaction').code_action()<CR>
+vnoremap <silent><leader>a :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
 
 " Hover
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
@@ -260,10 +260,10 @@ nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
 nnoremap <silent> gd :Lspsaga preview_definition<CR>
 
 " Show Diagnostic
-nnoremap <silent><leader>cd <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
+nnoremap <silent><leader>d <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
 
 " only show diagnostic if cursor is over the area
-nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
+nnoremap <silent><leader>c <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
 
 " jump diagnostic
 nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
@@ -319,7 +319,7 @@ require("trouble").setup {
 }
 EOF
 
-"}}}
+nnoremap <leader>t <cmd>TroubleToggle<cr>"}}}
 
 " ----- lspkind-nvim --------------------------------{{{
 lua << EOF
