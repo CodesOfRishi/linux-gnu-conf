@@ -216,9 +216,9 @@ local saga = require 'lspsaga'
 
 saga.init_lsp_saga {
 	use_saga_diagnostic_sign = true,
-	error_sign = '',
-	warn_sign = '',
-	hint_sign = ' ',
+	error_sign = '',
+	warn_sign = '',
+	hint_sign = ' ',
 	infor_sign = '',
 	dianostic_header_icon = '   ',
 	code_action_icon = ' ',
@@ -342,7 +342,7 @@ lua << EOF
 require'lualine'.setup {
 	options = {
     icons_enabled = true,
-    theme = 'material',
+    theme = 'onedark',
     section_separators = {'', ''},
     component_separators = {'', ''},
     disabled_filetypes = {}
@@ -352,7 +352,7 @@ require'lualine'.setup {
 	  lualine_b = {'branch', 'diff'},
 	  lualine_c = {{'filename', path = 1}},
 	  lualine_x = {
-	    {'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}},
+	    {'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}},
 	    'filetype',
 	    'encoding'
 	  },
