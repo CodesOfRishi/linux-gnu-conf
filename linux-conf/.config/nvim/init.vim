@@ -103,7 +103,9 @@ nnoremap <S-Tab> :tabp<cr>
 
 " ----- nvim-lspconfig ---------------------------------------------------------{{{
 lua << EOF
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.clangd.setup{
+	cmd = {"clangd-12"},
+}
 EOF
 
 lua << EOF
