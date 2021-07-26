@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 red=`tput setaf 1`
 blue=`tput setaf 4`
@@ -25,12 +25,11 @@ else
 	exit 1
 fi
 
-
 testcase=1
-while [ -f in$testcase ]; do 
+while [[ -f in$testcase ]]; do 
 	tput bold  # Select bold mode
 	echo
-	if [ $testcase -eq 1 ]; then
+	if [[  $testcase -eq 1  ]]; then
 		tput bold  # Select bold mode
 		echo -n "${blue}~~~~~${reset}"
 		tput bold  # Select bold mode
@@ -43,9 +42,6 @@ while [ -f in$testcase ]; do
 	fi
 
 	$filepath/$filename < in$testcase
-	if [ $? -ne 0 ]
-	then
-		break
-	fi
+	[[ $? -ne 0 ]] && break;
 	testcase=$(($testcase+1))
 done
