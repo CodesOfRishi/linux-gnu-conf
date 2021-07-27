@@ -1,17 +1,15 @@
 #!/bin/bash
 
-COMPILE_FLAGS="-std=c++17 -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion -Wsign-conversion"
+COMPILE_FLAGS="-std=c++17 -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion"
 
-red=`tput setaf 1`
-#green=`tput setaf 2`
-purplelight=`tput setaf 13`
+red=`tput setaf 196`
+orange=`tput setaf 214`
+green=`tput setaf 46`
 reset=`tput sgr0`
 
-if [ ! -f $* ]; then
-	tput bold    # Select bold mode
-	echo "${red}(ERROR):${reset} Either an invalid file is provided or the file $* doesn't exist or it's not a regular file!"
-	tput bold
-	echo "${purplelight}(WARNING):${reset} The script requires a CPP file."
+if [[ ! -f $1 ]]; then
+	echo "${red}(ERROR):${reset} Either the file '$1' it's not a regular file or it doesn't exist!"
+	echo "${orange}(WARNING):${reset} The script requires a C++ file."
 	exit 1
 fi
 
@@ -19,10 +17,22 @@ filename=$(basename -- "$*") # get file name without the path
 extension="${filename##*.}"
 filename="${filename%.*}"  # file name without the extension
 
-if [ $extension = "cpp" ]; then
-	g++ $COMPILE_FLAGS $* -o $filename
+if [[ $extension = "cpp" ]] || \
+	[[ $extension = "C" ]] || \
+	[[ $extension = "cc" ]] || \
+	[[ $extension = "CPP" ]] || \
+	[[ $extension = "c++" ]] || \
+	[[ $extension = "cp" ]] || \
+	[[ $extension = "cxx" ]]; then
+
+	clang++-11 $COMPILE_FLAGS $1 -o $filename
+	if [[ $? -ne 0 ]]; then
+		echo; echo "${red}Failed compilation ${reset}"; echo
+		exit 1
+	else
+		echo; echo "${green}Successful compilation 﫠${rest}"; echo
+	fi
 else 
-	tput bold    # Select bold mode
-	echo "${red}(ERROR):${reset} $* is not a CPP file!"
+	echo "${red}(ERROR):${reset} '$1' is not a C++ file!"
 	exit 1;
 fi
