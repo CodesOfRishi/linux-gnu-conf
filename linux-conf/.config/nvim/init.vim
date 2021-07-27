@@ -170,6 +170,14 @@ require('vim.lsp.protocol').CompletionItemKind = {
     '', -- TypeParameter
 }
 EOF
+
+lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, { 
+		virtual_text = false,
+    }
+)
+EOF
 "}}}
 
 " ----- nvim-compe -------------------------------------------------------{{{
@@ -364,7 +372,8 @@ require("trouble").setup {
 }
 EOF
 
-nnoremap <leader>t <cmd>TroubleToggle<cr>"}}}
+nnoremap <leader>t <cmd>TroubleToggle<cr>
+"}}}
 
 " ----- vim-floaterm --------------------
 let g:floaterm_keymap_new = 'tt'
