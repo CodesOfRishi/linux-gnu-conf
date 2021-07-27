@@ -143,31 +143,31 @@ EOF
 
 lua << EOF
 require('vim.lsp.protocol').CompletionItemKind = {
-    '  Text', -- Text
-    '  Method', -- Method
-    '  Function', -- Function
-    '  Constructor', -- Constructor
-    '  Field', -- Field
-    '  Variable', -- Variable
-    '  Class', -- Class
-    'ﰮ  Interface', -- Interface
-    '  Module', -- Module
-    '  Property', -- Property
-    '  Unit', -- Unit
-    '  Value', -- Value
-    '了 Enum', -- Enum
-    '  Keyword', -- Keyword
-    '﬌  Snippet', -- Snippet
-    '  Color', -- Color
-    '  File', -- File
-    '  Reference', -- Reference
-    '  Folder', -- Folder
-    '  EnumMember', -- EnumMember
-    '  Constant', -- Constant
-    '  Struct', -- Struct
-    '  Event', -- Event
-    'ﬦ  Operator', -- Operator
-    '  TypeParameter', -- TypeParameter
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
+    '', -- Field
+    '', -- Variable
+    '', -- Class
+    'ﰮ', -- Interface
+    '', -- Module
+    '', -- Property
+    '', -- Unit
+    '', -- Value
+    '了', -- Enum
+    '', -- Keyword
+    '﬌', -- Snippet
+    '', -- Color
+    '', -- File
+    '', -- Reference
+    '', -- Folder
+    '', -- EnumMember
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    'ﬦ', -- Operator
+    '', -- TypeParameter
 }
 EOF
 "}}}
