@@ -35,7 +35,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'onsails/lspkind-nvim'
 Plug 'folke/trouble.nvim'
 
 " ----- UI ----------------------------------------------------------------------------------------------------
@@ -142,6 +141,35 @@ local on_attach = function(client, bufnr)
 end
 EOF
 
+lua << EOF
+require('vim.lsp.protocol').CompletionItemKind = {
+    '  Text', -- Text
+    '  Method', -- Method
+    '  Function', -- Function
+    '  Constructor', -- Constructor
+    '  Field', -- Field
+    '  Variable', -- Variable
+    '  Class', -- Class
+    'ﰮ  Interface', -- Interface
+    '  Module', -- Module
+    '  Property', -- Property
+    '  Unit', -- Unit
+    '  Value', -- Value
+    '了 Enum', -- Enum
+    '  Keyword', -- Keyword
+    '﬌  Snippet', -- Snippet
+    '  Color', -- Color
+    '  File', -- File
+    '  Reference', -- Reference
+    '  Folder', -- Folder
+    '  EnumMember', -- EnumMember
+    '  Constant', -- Constant
+    '  Struct', -- Struct
+    '  Event', -- Event
+    'ﬦ  Operator', -- Operator
+    '  TypeParameter', -- TypeParameter
+}
+EOF
 "}}}
 
 " ----- nvim-compe -------------------------------------------------------{{{
@@ -337,56 +365,6 @@ require("trouble").setup {
 EOF
 
 nnoremap <leader>t <cmd>TroubleToggle<cr>"}}}
-
-" ----- lspkind-nvim --------------------------------{{{
-lua << EOF
-require('lspkind').init({
-    -- enables text annotations
-    --
-    -- default: true
-    with_text = true,
-
-    -- default symbol map
-    -- can be either 'default' or
-    -- 'codicons' for codicon preset (requires vscode-codicons font installed)
-    --
-    -- default: 'default'
-    preset = 'codicons',
-
-    -- override preset symbols
-    --
-    -- default: {}
-    symbol_map = {
-      Text = ' ',
-      Method = 'ƒ ',
-      Function = ' ',
-      Constructor = ' ',
-      Variable = ' ',
-      Class = ' ',
-      Interface = 'ﰮ ',
-      Module = ' ',
-      Property = ' ',
-      Unit = ' ',
-      Value = ' ',
-      Enum = '了 ',
-      Keyword = ' ',
-      Snippet = '﬌ ',
-      Color = ' ',
-      File = ' ',
-      Folder = ' ',
-      EnumMember = ' ',
-      Constant = ' ',
-      Struct = ' ',
-	  Field = ' ',
-	  Reference = ' ',
-	  Event = ' ',
-	  Operator = 'ﬦ ',
-	  TypeParameter = ' '
-    },
-})
-EOF
-
-"}}}
 
 " ----- vim-floaterm --------------------
 let g:floaterm_keymap_new = 'tt'
