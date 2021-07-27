@@ -345,7 +345,7 @@ require('lspkind').init({
       Function = ' ',
       Constructor = ' ',
       Variable = ' ',
-      Class = ' ',
+      Class = ' ',
       Interface = 'ﰮ ',
       Module = ' ',
       Property = ' ',
@@ -359,7 +359,12 @@ require('lspkind').init({
       Folder = ' ',
       EnumMember = ' ',
       Constant = ' ',
-      Struct = ' '
+      Struct = ' ',
+	  Field = ' ',
+	  Reference = ' ',
+	  Event = ' ',
+	  Operator = 'ﬦ ',
+	  TypeParameter = ' '
     },
 })
 EOF
