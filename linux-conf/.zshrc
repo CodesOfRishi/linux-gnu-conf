@@ -187,21 +187,8 @@ export TLDR_CODE='red'
 export TLDR_PARAM='blue'
 # -------------------------------------------
 
-# --------------------------------------------------------------------------------
-# COMPETITIVE CODING 
-if [[ -d $HOME/code-compete ]]; then
-	# create a seperate directory for a problem/solution
-	crd() {
-		mkdir ~/code-compete/$1 2> /dev/null
-		cp ~/code-compete/.cc-template.cpp ~/code-compete/$1/$1.cpp
-	}
-
-	# cd into the directory of a particular problem/solution
-	cdd() {
-		cd $HOME/code-compete/$1
-	}
-fi
-# --------------------------------------------------------------------------------
+# ------ Competitive Coding Utilities --------------------------------------------------------------------------
+[[ -f $HOME/code-compete/.cc-utilities.sh ]] && source $HOME/code-compete/.cc-utilities.sh
 
 # ----- EXA -------------
 export EXA_ICON_SPACING=2
