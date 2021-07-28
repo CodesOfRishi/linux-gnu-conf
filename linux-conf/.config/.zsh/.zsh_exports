@@ -1,0 +1,19 @@
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# PATH
+# '-U' stands for unique 
+# it keeps only the first occurrence (from left) 
+# of each duplicated value in $path.
+typeset -U path 
+[[ -d $HOME/.cargo/bin ]] && path=('$HOME/.cargo/bin' $path)
+[[ -d $HOME/.local/bin ]] && path=('$HOME/.local/bin' $path)
+[[ -d $HOME/bin ]] && path=('$HOME/bin' $path)
+
+export PATH
+
+# EDITOR
+[[ `which nvim` = "/usr/bin/nvim" ]] && export EDITOR="nvim"
+
+# EXA
+[[ `which exa` = "/usr/local/bin/exa" ]] && export EXA_ICON_SPACING=2

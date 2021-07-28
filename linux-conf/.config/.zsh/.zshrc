@@ -117,15 +117,21 @@ source $ZSH/oh-my-zsh.sh
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # RISHI'S ZSH INTERACTIVE SHELL CONFIGURATIONS
 
-# start Tmux by default at every shell startup
+# ----- Tmux -------------------------------------------------------------------------------------------------------------------
+# start Tmux by default at every shell startup (must be before aliases) 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# ----- Aliases --------------------------------
+# You may want to put all your additions into a separate file like
+# ~/.zsh_aliases, instead of adding them here directly.
+[[ -f $HOME/.config/.zsh/.zsh_aliases ]] && source $HOME/.config/.zsh/.zsh_aliases
+
+# ----- Exports --------------------------------
+[[ -f $HOME/.config/.zsh/.zsh_exports ]] && source $HOME/.config/.zsh/.zsh_exports
 
 # ----- Powerlevel10k prompt ---------------------------------------------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -134,9 +140,8 @@ fi
  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 	 source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
  fi
-# ------------------------------------------------------------------------------------
 
-# starship prompt
+# ----- starship prompt ---
 # eval "$(starship init zsh)"
 
 # -------------------------------------------------------------------------------
@@ -154,56 +159,33 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 # -------------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------------------------
-# PATH
-if [[ -d $HOME/bin ]]; then; export PATH="$HOME/bin:"$PATH; fi
-if [[ -d $HOME/.cargo && -d $HOME/.cargo/bin ]]; then; export PATH="$HOME/.cargo/bin:"$PATH; fi
-if [[ -d $HOME/.local && -d $HOME/.local/bin ]]; then; export PATH="$HOME/.local/bin:"$PATH; fi
-# ---------------------------------------------------------------------------------------------
-
-# ----- OTHER EXPORTS -----
-export EDITOR="nvim"
-# -------------------------
-
-# You may want to put all your additions into a separate file like
-# ~/.zsh_aliases, instead of adding them here directly.
-
-# Aliases
-[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases
-
 # bind 'home' key & 'end' key
 # To know what your terminal reads from a particular key(s)
 # execuate cat command (without arguments) & press the key to check the result
-
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 # FZF
-[[ -f ~/.zsh_fzf ]] && source ~/.zsh_fzf
+[[ -f $HOME/.config/.zsh/.zsh_fzf ]] && source $HOME/.config/.zsh/.zsh_fzf
 
-# -------------------------------------------
-# tldr
-complete -W "$(tldr 2>/dev/null --list)" tldr  # enable shell compeletion
-export TLDR_HEADER='magenta bold underline'
-export TLDR_QUOTE='italic'
-export TLDR_DESCRIPTION='green'
-export TLDR_CODE='red'
-export TLDR_PARAM='blue'
-# -------------------------------------------
+# ----- tldr --------------------------------------
+if [[ `which tldr` = "$HOME/bin/tldr" ]]; then
+	complete -W "$(tldr 2>/dev/null --list)" tldr  # enable shell compeletion
+	export TLDR_HEADER='magenta bold underline'
+	export TLDR_QUOTE='italic'
+	export TLDR_DESCRIPTION='green'
+	export TLDR_CODE='red'
+	export TLDR_PARAM='blue'
+fi
 
 # ------ Competitive Coding Utilities --------------------------------------------------------------------------
 [[ -f $HOME/code-compete/.cc-utilities.sh ]] && source $HOME/code-compete/.cc-utilities.sh
 
-# ----- EXA -------------
-export EXA_ICON_SPACING=2
-# -----------------------
-
 # ----- source Powerlevel10k prompt configuration file ---------
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# --------------------------------------------------------------
 
-# nvm (Node Version Manager) 
+# ----- nvm (Node Version Manager) -------------------------------
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
