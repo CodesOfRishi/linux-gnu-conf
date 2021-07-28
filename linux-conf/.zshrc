@@ -161,6 +161,10 @@ if [[ -d $HOME/.cargo && -d $HOME/.cargo/bin ]]; then; export PATH="$HOME/.cargo
 if [[ -d $HOME/.local && -d $HOME/.local/bin ]]; then; export PATH="$HOME/.local/bin:"$PATH; fi
 # ---------------------------------------------------------------------------------------------
 
+# ----- OTHER EXPORTS -----
+export EDITOR="nvim"
+# -------------------------
+
 # You may want to put all your additions into a separate file like
 # ~/.zsh_aliases, instead of adding them here directly.
 
