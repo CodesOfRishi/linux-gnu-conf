@@ -2,15 +2,23 @@
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # PATH
-# '-U' stands for unique 
-# it keeps only the first occurrence (from left) 
-# of each duplicated value in $path.
-typeset -U path 
+typeset -U path  # to keep only unique values (from left) in $PATH
+
 [[ -d $HOME/.cargo/bin ]] && path=("$HOME/.cargo/bin" $path)
 [[ -d $HOME/.local/bin ]] && path=("$HOME/.local/bin" $path)
 [[ -d $HOME/bin ]] && path=("$HOME/bin" $path)
 
 export PATH
+
+# CDPATH
+typeset -U cdpath  # to keep only unique values (from left) in $CDPATH
+setopt auto_cd
+
+cdpath=("." $cdpath)
+[[ -d $HOME/.config ]] && cdpath=($cdpath "$HOME/.config")
+[[ -d $HOME/git-repos ]] && cdpath=($cdpath "$HOME/git-repos")
+
+export CDPATH
 
 # EDITOR
 [[ `which nvim` = "/usr/bin/nvim" ]] && export EDITOR="nvim"
