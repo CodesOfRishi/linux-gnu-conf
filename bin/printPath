@@ -1,0 +1,9 @@
+#!/usr/bin/zsh
+
+displayPath() {
+	for p in $path; do 
+		echo $p 
+	done
+}
+
+displayPath | bat
