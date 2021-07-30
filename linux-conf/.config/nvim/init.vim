@@ -61,6 +61,7 @@ let g:material_style = 'darker'
 " colorscheme material 
 colorscheme onedark 
 
+set termguicolors
 set list lcs=tab:\|\ " show vertical guide lines between braces
 set number relativenumber
 set smartindent
