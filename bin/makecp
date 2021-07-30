@@ -30,7 +30,7 @@ if [[ $extension = "cpp" ]] || \
 		echo; echo "${red}Failed compilation ${reset}"; echo
 		exit 1
 	else
-		echo; echo "${green}Successful compilation 﫠${reset}"; echo
+		echo; echo "${green}Successful compile 﫠${reset}"; echo
 	fi
 else 
 	echo "${red}(ERROR):${reset} '$1' is not a C++ file!"
