@@ -101,8 +101,11 @@ vnoremap ? xi/**/<Esc>hP
 
 " switch tabs in RHS-direction
 nnoremap <Tab> :tabn<cr>
-" swithch tabs in LHS-direction
+" switch tabs in LHS-direction
 nnoremap <S-Tab> :tabp<cr>
+
+" source current file
+nnoremap <C-s> :source %<cr>
 
 " ===== PLUGIN CONFIGURATIONS =============================================================================================================
 
