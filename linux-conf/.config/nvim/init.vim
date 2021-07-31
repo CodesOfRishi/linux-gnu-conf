@@ -42,6 +42,7 @@ Plug 'folke/trouble.nvim'
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'folke/tokyonight.nvim'
 Plug 'marko-cerovac/material.nvim'
+Plug 'navarasu/onedark.nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -59,10 +60,15 @@ autocmd FileType python nnoremap <C-_> :FloatermNew ./%<cr>
 autocmd FileType lua nnoremap <C-_> :FloatermNew ./%<cr>
 
 " -----------------------------------------------------------------------------
-let g:tokyonight_style = 'night' " night OR storm
 let g:material_style = 'deep ocean' " darker OR deep ocean OR lighter OR oceanic OR palenight
-colorscheme material 
+" colorscheme material 
+
+let g:tokyonight_style = 'night' " night OR storm
 " colorscheme tokyonight
+
+let g:onedark_transparent_background = 1
+let g:onedark_style = 'deep' " dark OR darker OR cool OR deep OR warm OR warmer
+colorscheme onedark
 
 set termguicolors
 set list lcs=tab:\|\ " show vertical guide lines between braces
@@ -552,7 +558,7 @@ lua << EOF
 require'lualine'.setup {
 	options = {
     icons_enabled = true,
-    theme = 'material',
+    theme = 'onedark',
     section_separators = {'', ''},
     component_separators = {'', ''},
     disabled_filetypes = {}
