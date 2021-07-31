@@ -49,11 +49,14 @@ call plug#end()"}}}
 
 " =============================================================================
 " ----- file/language specific compilation configuration ----------------------
-" not exactly sure of the working of `autocmd FileType` for now (so be careful)
+" not exactly sure of the working of `autocmd FileType` for now (so be careful) !!!
+
 autocmd FileType cpp nnoremap <C-p> :FloatermNew makecp %<cr>
+
 " actually mapped CTRL-/, linux recognizes CTRL-/ as CTRL-_
 autocmd FileType cpp nnoremap <C-_> :FloatermNew tcase %<cr>
-autocmd FileType python nnoremap <C-_> :FloatermNew python3 %<cr>
+autocmd FileType python nnoremap <C-_> :FloatermNew ./%<cr>
+autocmd FileType lua nnoremap <C-_> :FloatermNew ./%<cr>
 
 " -----------------------------------------------------------------------------
 let g:tokyonight_style = 'night' " night OR storm
