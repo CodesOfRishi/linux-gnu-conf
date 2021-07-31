@@ -42,7 +42,6 @@ Plug 'folke/trouble.nvim'
 " ----- UI ----------------------------------------------------------------------------------------------------
 Plug 'folke/tokyonight.nvim'
 Plug 'marko-cerovac/material.nvim'
-Plug 'joshdick/onedark.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -59,8 +58,7 @@ autocmd FileType python nnoremap <C-_> :FloatermNew python3 %<cr>
 " -----------------------------------------------------------------------------
 let g:tokyonight_style = 'night' " night OR storm
 let g:material_style = 'deep ocean' " darker OR deep ocean OR lighter OR oceanic OR palenight
-" colorscheme material 
-colorscheme onedark 
+colorscheme material 
 " colorscheme tokyonight
 
 set termguicolors
@@ -551,7 +549,7 @@ lua << EOF
 require'lualine'.setup {
 	options = {
     icons_enabled = true,
-    theme = 'onedark',
+    theme = 'material',
     section_separators = {'', ''},
     component_separators = {'', ''},
     disabled_filetypes = {}
