@@ -283,7 +283,7 @@ saga.init_lsp_saga {
 	error_sign = '',
 	warn_sign = '',
 	hint_sign = ' ',
-	infor_sign = '',
+	infor_sign = '',
 	dianostic_header_icon = '   ',
 	code_action_icon = ' ',
 	code_action_prompt = {
@@ -461,10 +461,10 @@ let g:nvim_tree_icons = {
     \   'symlink_open': "",
     \   },
     \   'lsp': {
-    \     'hint': "",
-    \     'info': "",
-    \     'warning': "",
-    \     'error': "",
+    \     'hint': "",
+    \     'info': "",
+    \     'warning': "",
+    \     'error': "",
     \   }
     \ }
 
