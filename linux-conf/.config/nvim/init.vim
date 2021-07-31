@@ -304,7 +304,7 @@ saga.init_lsp_saga {
 	definition_preview_icon = '  ',
 	-- "single" "double" "round" "plus"
 	border_style = "round", 
-	rename_prompt_prefix = '➤',
+	rename_prompt_prefix = '❯',
 }
 EOF
 
