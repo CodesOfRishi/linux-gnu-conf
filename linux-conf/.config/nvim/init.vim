@@ -44,6 +44,7 @@ Plug 'folke/tokyonight.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'hoob3rt/lualine.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()"}}}
@@ -201,7 +202,6 @@ EOF
 set completeopt=menuone,noselect
 
 lua << EOF
--- Compe setup
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
@@ -478,6 +478,12 @@ let g:nvim_tree_icons = {
 nnoremap te :NvimTreeToggle<CR>
 nnoremap tr :NvimTreeRefresh<CR>
 nnoremap tf :NvimTreeFindFile<CR>
+"}}}
+
+" ----- nvim-colorizer ---------------------------------{{{
+lua << EOF
+require'colorizer'.setup()
+EOF
 "}}}
 
 " ----- vim-floaterm --------------------
