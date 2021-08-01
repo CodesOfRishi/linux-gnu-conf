@@ -71,22 +71,6 @@ let g:onedark_transparent_background = 1
 let g:onedark_style = 'deep' " dark OR darker OR cool OR deep OR warm OR warmer
 colorscheme onedark
 
-set termguicolors
-set list lcs=tab:\|\ " show vertical guide lines between braces
-set number relativenumber
-set smartindent
-set ignorecase " to search case-INsensitive
-set smartcase " requires ignorcase
-set autowrite
-set nowrap
-set tabstop=4
-set shiftwidth=4
-set showmatch
-set cursorline " highlight the ROW on which the cursor is
-set cursorcolumn " highlight the COLUMN on which the cursor is
-set scrolloff=5 " minimal no. of screen lines to keep above & below the cursor
-set foldmethod=marker " markers are used to specify folds
-
 " ---------------------------------------------------------------------
 :augroup numbertoggle
 :  autocmd!
@@ -98,9 +82,6 @@ set foldmethod=marker " markers are used to specify folds
 " ctrl-a to select all
 noremap <C-a> <Esc>ggVG$
 
-" To ALWAYS use the clipboard for ALL operations 
-" (instead of interacting with the '+' and/or '*' registers explicitly):
-set clipboard+=unnamedplus
 
 inoremap {<CR> {<CR>}<ESC>ko
 
@@ -595,6 +576,17 @@ require'lualine'.setup {
 EOF
 
 "}}}
+
+lua << EOF
+-- load nvim configuration modules
+local nvim_configuration_modules = {
+    "options"
+}
+
+for i = 1, #nvim_configuration_modules, 1 do
+	require(nvim_configuration_modules[i])
+end
+EOF
 
 " ===== WSL yank support ========================================================================{{{
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
