@@ -96,7 +96,7 @@ set foldmethod=marker " markers are used to specify folds
 
 " ------------------------------------------------------
 " ctrl-a to select all
-noremap <C-a> <Esc>ggvG$
+noremap <C-a> <Esc>ggVG$
 
 " To ALWAYS use the clipboard for ALL operations 
 " (instead of interacting with the '+' and/or '*' registers explicitly):
