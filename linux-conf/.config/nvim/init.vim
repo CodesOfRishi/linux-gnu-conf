@@ -1,6 +1,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
+
 " -------------------------------------------------------------------
 " file opens with the cursor at the same position where last left off 
 autocmd BufReadPost *
@@ -79,22 +80,6 @@ colorscheme onedark
 :augroup END
 
 " ------------------------------------------------------
-" ctrl-a to select all
-noremap <C-a> <Esc>ggVG$
-
-
-inoremap {<CR> {<CR>}<ESC>ko
-
-" adding (C++) multi-line comment
-vnoremap ? xi/**/<Esc>hP
-
-" switch tabs in RHS-direction
-nnoremap <Tab> :tabn<cr>
-" switch tabs in LHS-direction
-nnoremap <S-Tab> :tabp<cr>
-
-" source current file
-nnoremap <C-s> :source %<cr>
 
 " ===== PLUGIN CONFIGURATIONS =============================================================================================================
 
@@ -216,50 +201,7 @@ require'compe'.setup {
     luasnip = true;
   };
 }
-
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
-end
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-n>"
-  elseif check_back_space() then
-    return t "<Tab>"
-  else
-    return vim.fn['compe#complete']()
-  end
-end
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
-  else
-    return t "<S-Tab>"
-  end
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 EOF
-
-inoremap <silent><expr> <cr>  compe#confirm('<cr>')
-inoremap <silent><expr> <c-q> compe#close('<c-q>')
-inoremap <silent><expr> <C-f> compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-b> compe#scroll({ 'delta': -4 })
 "}}}
 
 " ----- lspsaga ----------------------------{{{
@@ -288,38 +230,6 @@ saga.init_lsp_saga {
 	rename_prompt_prefix = '❯',
 }
 EOF
-
-" lsp provider to find the cursor word definition and reference
-nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
-
-" code action
-nnoremap <silent><leader>a <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>a :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
-
-" Hover
-nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-
-" SignatureHelp
-nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-
-" Rename
-nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
-
-" Preview Definition
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
-
-" Show Diagnostic
-nnoremap <silent><leader>d <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
-
-" only show diagnostic if cursor is over the area
-nnoremap <silent><leader>c <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-
-" jump diagnostic
-nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
-nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
-
 "}}}
 
 " ----- trouble ----------{{{
@@ -369,8 +279,6 @@ require("trouble").setup {
     use_lsp_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
 EOF
-
-nnoremap <leader>t <cmd>TroubleToggle<cr>
 "}}}
 
 " ----- nvim-tree -------------------------------------------{{{
@@ -455,10 +363,6 @@ let g:nvim_tree_icons = {
     \     'error': "",
     \   }
     \ }
-
-nnoremap te :NvimTreeToggle<CR>
-nnoremap tr :NvimTreeRefresh<CR>
-nnoremap tf :NvimTreeFindFile<CR>
 "}}}
 
 " ----- nvim-colorizer ---------------------------------{{{
@@ -471,9 +375,6 @@ EOF
 let g:floaterm_keymap_new = 'tt'
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.7
-
-" ----- undotree -----------------
-nnoremap <C-U> :UndotreeToggle<CR>
 
 " ----- fzf -------------------------------------------------------------------------------------------------------------------------------{{{
 command! -bang -complete=dir -nargs=?
@@ -574,13 +475,13 @@ require'lualine'.setup {
 	extensions = {'fugitive'}
 }
 EOF
-
 "}}}
 
 lua << EOF
 -- load nvim configuration modules
 local nvim_configuration_modules = {
-    "options"
+    "options",
+    "mappings"
 }
 
 for i = 1, #nvim_configuration_modules, 1 do
