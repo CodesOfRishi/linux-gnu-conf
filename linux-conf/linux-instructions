@@ -51,6 +51,7 @@ CONFIGURATIONS:
 		- Sublime Merge
 	- install prettyping
 	- install tldr
+	- Install win32yank.exe (if required, preferably for wsl clipboard)
 	- JDK (Java Development Kit) (if required) (currently installed openjdk-16-jdk)
 	- install dbg-macro {https://github.com/sharkdp/dbg-macro}
 	- install duf (optional)
