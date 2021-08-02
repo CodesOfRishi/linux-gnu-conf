@@ -6,9 +6,6 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- local cmd = vim.cmd
--- local opt = {}
-
 -- CTRL-a to select all
 map("n", "<C-a>", "<Esc>ggVG$", {})
 
@@ -106,8 +103,7 @@ map("n", "]e", "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<
 --}}}
 
 -- Trouble plugin{{{
-map("n", "<leader>t", "<Cmd>TroubleToggle<CR>", {})
---}}}
+map("n", "<leader>t", "<Cmd>TroubleToggle<CR>", {})--}}}
 
 -- Nvim-Tree plugin{{{
 map("n", "te", "<Cmd>NvimTreeToggle<CR>", {})
@@ -116,6 +112,7 @@ map("n", "tf", "<Cmd>NvimTreeFindFile<CR>", {})
 --}}}
 
 -- Undotree plugin{{{
-map("n", "<C-u>", "<Cmd>UndotreeToggle<CR>", {})
---}}}
+map("n", "<C-u>", "<Cmd>UndotreeToggle<CR>", {})--}}}
 
+-- vim-floaterm{{{
+map("n", "tt", "<Cmd>FloatermToggle<CR>", {})--}}}
