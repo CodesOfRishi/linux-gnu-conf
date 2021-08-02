@@ -9,9 +9,6 @@ CONFIGURATIONS:
 			- .zlogout
 		- install oh-my-zsh
 		- change the default shell to zsh
-	- install vim
-		- download vim-gtk[3] for clipboard support
-		- install vim-plug plugin manager
 	- install neofetch
 	- install onefetch
 	- install clang-12 (if required)
