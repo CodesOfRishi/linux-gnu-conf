@@ -45,6 +45,10 @@ return require('packer').startup(function()
 		event = "BufRead"
 	} --}}}
 
+	use { 'b3nj5m1n/kommentary',--{{{
+		event = "BufRead"
+	}--}}}
+
 	-- Language specific
 	use { 'nvim-treesitter/nvim-treesitter', --{{{
 		event = "BufRead",
