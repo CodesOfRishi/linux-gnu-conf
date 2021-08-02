@@ -1,8 +1,10 @@
-- Install a Nerd font (preferably UbuntoMono Nerd font)
+- Install a Nerd font (preferably UbuntoMono Nerd font).
+- Use "Windows Terminal" instead of the ubuntu terminal to use the wsl linux.
 - Modify the JSON file
 	- map paste to ctrl-shift-v
 	- map copy to ctrl-shift-c
 	- in the JSON settings add `"multiLinePasteWarning": false` in the global section
-
-Reccommendations
-	- Use "Windows Terminal" instead of the ubuntu terminal to use the wsl linux
+- Clipboard support:
+	- Install win32yank & ensure win32yank.exe resides in $path
+	- set clipboard+=unnamedplus in init.vim (or .vimrc) 
+		or vim.opt.clipboard:append("unnamedplus") in init.lua
