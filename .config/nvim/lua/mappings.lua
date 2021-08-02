@@ -112,7 +112,7 @@ map("n", "tf", "<Cmd>NvimTreeFindFile<CR>", {})
 --}}}
 
 -- Undotree plugin{{{
-map("n", "<C-u>", "<Cmd>UndotreeToggle<CR>", {})--}}}
+map("n", "<leader>ut", "<Cmd>UndotreeToggle<CR>", {})--}}}
 
 -- vim-floaterm{{{
 map("n", "tt", "<Cmd>FloatermToggle<CR>", {})--}}}

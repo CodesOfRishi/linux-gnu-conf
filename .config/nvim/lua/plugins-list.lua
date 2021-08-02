@@ -59,6 +59,11 @@ return require('packer').startup(function()
 		cmd = { "NvimTreeToggle", "NvimTreeRefresh", "NvimTreeFindFile" }
 	}--}}}
 
+	use { 'karb94/neoscroll.nvim',--{{{
+		event = "WinScrolled",
+		config = function() require('neoscroll').setup() end
+	}--}}}
+
 	use { 'mbbill/undotree',--{{{
 		cmd = { "UndotreeToggle" },
 		event = "BufRead"
