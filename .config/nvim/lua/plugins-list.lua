@@ -57,6 +57,15 @@ return require('packer').startup(function()
 		config = function() require'plugins-conf.nvim-treesitter' end
 	}--}}}
 
+	use { "lukas-reineke/indent-blankline.nvim",--{{{
+		event = "BufRead",
+		config = function()
+			vim.g.indent_blankline_char = '⋮'
+			vim.g.indent_blankline_use_treesitter = true
+			vim.g.indent_blankline_show_first_indent_level = false
+		end
+	}--}}}
+
 	-- Search & Explore
 	use { 'kyazdani42/nvim-tree.lua', --{{{
 		config = function() require'plugins-conf.nvim-tree' end,
