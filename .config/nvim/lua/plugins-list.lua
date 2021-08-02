@@ -45,6 +45,14 @@ return require('packer').startup(function()
 		event = "BufRead"
 	} --}}}
 
+	-- Language specific
+	use { 'nvim-treesitter/nvim-treesitter', --{{{
+		event = "BufRead",
+		branch = "0.5-compat", 
+		run = ":TSUpdate",
+		config = function() require'plugins-conf.nvim-treesitter' end
+	}--}}}
+
 	-- Search & Explore
 	use { 'kyazdani42/nvim-tree.lua', --{{{
 		config = function() require'plugins-conf.nvim-tree' end,
