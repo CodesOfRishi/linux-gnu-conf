@@ -72,7 +72,7 @@ map("i", "<C-b>", "compe#scroll({ 'delta': -4 }", { expr = true })
 -- lspsaga plugin{{{
 -- lsp provider to find the cursor word definition and reference
 -- NOTE: mapped to Telescope's lsp picker
--- map("n", "gh", "<Cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", {})
+map("n", "gh", "<Cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", {})
 
 -- code action
 -- NOTE: mapped to Telescope's lsp picker
@@ -106,7 +106,7 @@ map("n", "]e", "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<
 --}}}
 
 -- Trouble plugin{{{
-map("n", "<leader>t", "<Cmd>TroubleToggle<CR>", {})--}}}
+map("n", "<leader>da", "<Cmd>TroubleToggle lsp_document_diagnostics<CR>", {})--}}}
 
 -- Nvim-Tree plugin{{{
 map("n", "te", "<Cmd>NvimTreeToggle<CR>", {})
@@ -127,11 +127,9 @@ map("n", "<leader>fG", "<Cmd>Telescope live_grep grep_open_files=true<CR>", {})
 map("n", "<leader>ls", "<Cmd>Telescope file_browser hidden=true<CR>", {})
 
 -- telescope lsp
-map("n", "gh", "<Cmd>Telescope lsp_references theme=get_cursor<CR>", {})
 map("n", "gd", "<Cmd>Telescope lsp_definitions theme=get_cursor<CR>", {})
 map("n", "<leader>a", "<Cmd>Telescope lsp_code_actions theme=get_cursor<CR>", {})
 map("n", "<leader>dw", "<Cmd>Telescope lsp_workspace_diagnostics<CR>", {})
-map("n", "<leader>da", "<Cmd>Telescope lsp_document_diagnostics<CR>", {})
 
 -- telescope git
 map("n", "<C-g><C-h>", "<Cmd>Telescope git_commits<CR>", {})
