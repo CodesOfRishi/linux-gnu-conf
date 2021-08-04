@@ -19,3 +19,13 @@ vim.opt.listchars = { space = ' ', tab = '⋮ ', extends = '', precedes = '�
 -- To ALWAYS use the clipboard for ALL operations 
 -- (instead of interacting with the '+' and/or '*' registers explicitly):
 vim.opt.clipboard:append("unnamedplus")
+
+-- disable built-in plugin(s)
+local disabled_built_ins = {
+	"netrw",
+	"netrwPlugin"
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+	vim.g["loaded_" .. plugin] = 1
+end
