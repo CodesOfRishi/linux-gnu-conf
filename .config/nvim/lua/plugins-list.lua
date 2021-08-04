@@ -79,6 +79,12 @@ return require('packer').startup(function()
 		config = function() require'plugins-conf.telescope' end
 	}--}}}
 
+	use { 'nvim-telescope/telescope-fzf-native.nvim', --{{{
+		requires = { "nvim-telescope/telescope.nvim" },
+		run = 'make',
+		cmd = { "Telescope" }
+	}--}}}
+
 	-- Git
 	use 'tpope/vim-fugitive'
 
