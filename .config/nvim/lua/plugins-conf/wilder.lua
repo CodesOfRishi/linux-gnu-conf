@@ -39,3 +39,8 @@ call wilder#set_option('modes', ['/', '?', ':'])
 vim.cmd([[
 call wilder#set_option('pipeline', [wilder#branch( wilder#cmdline_pipeline({ 'language': 'python', 'fuzzy': 1, }), wilder#python_search_pipeline({ 'pattern': wilder#python_fuzzy_pattern(), 'sorter': wilder#python_difflib_sorter(), 'engine': 're', }), [ wilder#check({_, x -> empty(x)}), wilder#history(), ], wilder#python_file_finder_pipeline({ 'file_command': ['fd', '--hidden', '--type', 'f',], 'dir_command': ['fd', '--hidden', '--type', 'd'], 'filters': ['fuzzy_filter', 'difflib_sorter'], }), wilder#cmdline_pipeline(), wilder#search_pipeline(),), ])
 ]])
+
+-- Popup menu renderer with devicons icons
+vim.cmd([[
+call wilder#set_option('renderer', wilder#renderer_mux({ ':': wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), 'left': [ wilder#popupmenu_devicons(), ], }), }))
+]])
