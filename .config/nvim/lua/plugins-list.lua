@@ -85,6 +85,10 @@ return require('packer').startup(function()
 		cmd = { "Telescope" }
 	}--}}}
 
+	use { 'gelguy/wilder.nvim',--{{{
+		config = function() require'plugins-conf.wilder' end
+	}--}}}
+
 	-- Git
 	use 'tpope/vim-fugitive'
 
