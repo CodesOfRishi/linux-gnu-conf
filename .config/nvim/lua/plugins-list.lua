@@ -135,8 +135,8 @@ return require('packer').startup(function()
 	}--}}}
 
 	use { 'norcalli/nvim-colorizer.lua',--{{{
-		config = function() require'colorizer'.setup() end,
-		event = "BufRead"
+		event = "BufReadPre",
+		config = function() require'colorizer'.setup() end
 	}--}}}
 
 	use 'kyazdani42/nvim-web-devicons'
