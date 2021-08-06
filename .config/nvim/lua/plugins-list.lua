@@ -45,8 +45,14 @@ return require('packer').startup(function()
 		event = "BufRead"
 	} --}}}
 
-	use { 'b3nj5m1n/kommentary',--{{{
-		event = "BufRead"
+	use { "terrortylor/nvim-comment",--{{{
+		event = "BufRead",
+		cmd = "CommentToggle",
+		config = function() 
+			require('nvim_comment').setup({
+				comment_empty = false
+			}) 
+		end
 	}--}}}
 
 	-- Language specific
