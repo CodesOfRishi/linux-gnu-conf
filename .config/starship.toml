@@ -22,6 +22,10 @@ symbol = " "
 [golang]
 symbol = " "
 
+[lua]
+symbol = " "
+style = "#00afff"
+
 [custom.cpp]
 format = "via [$symbol($output )]($style)"
 extensions = ["C", "cc", "cpp", "CPP", "c++", "cp", "cxx"]
