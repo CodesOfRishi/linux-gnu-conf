@@ -113,35 +113,39 @@ return require('packer').startup(function()
 	}--}}}
 
 	-- UI
-	use { 'folke/tokyonight.nvim',--{{{
-		config = function() 
-			vim.g.tokyonight_style = "night" -- night OR storm 
-			vim.cmd[[colorscheme tokyonight]]
-		end,
-		disable = true,
-		lock = true
-	}--}}}
+	-- use { 'folke/tokyonight.nvim',--{{{
+	-- 	config = function() 
+	-- 		vim.g.tokyonight_style = "night" -- night OR storm 
+	-- 		vim.cmd[[colorscheme tokyonight]]
+	-- 	end
+	-- }--}}}
 
-	use { 'marko-cerovac/material.nvim', --{{{
-		config = function() 
-			vim.g.material_style = "deep ocean" -- darker OR deep ocean OR lighter OR oceanic OR palenight
-			require('material').set()
-		end,
-		disable = true,
-		lock = true
-	}--}}}
+	-- use { 'marko-cerovac/material.nvim', --{{{
+	-- 	config = function() 
+	-- 		vim.g.material_style = "deep ocean" -- darker OR deep ocean OR lighter OR oceanic OR palenight
+	-- 		require('material').set()
+	-- 	end,
+	-- }--}}}
 
-	use { 'navarasu/onedark.nvim',--{{{
+	-- use { 'navarasu/onedark.nvim',--{{{
+	-- 	config = function() 
+	-- 		vim.g.onedark_transparent_background = 1
+	-- 		vim.g.onedark_style = "deep" -- dark OR darker OR cool OR deep OR warm OR warmer
+	-- 		require('onedark').setup()
+	-- 	end
+	-- }--}}}
+
+	use { "projekt0n/github-nvim-theme",--{{{
 		config = function() 
-			vim.g.onedark_transparent_background = 1
-			vim.g.onedark_style = "deep" -- dark OR darker OR cool OR deep OR warm OR warmer
-			require('onedark').setup()
+			require("github-theme").setup({
+				themeStyle = "dark"
+			})
 		end
 	}--}}}
 
 	use { 'hoob3rt/lualine.nvim', --{{{
 		config = function() require'plugins-conf.lualine' end,
-		after = { 'onedark.nvim' }
+		after = { 'github-nvim-theme' }
 	}--}}}
 
 	use { 'norcalli/nvim-colorizer.lua',--{{{
