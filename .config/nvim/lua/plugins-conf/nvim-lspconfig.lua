@@ -33,31 +33,31 @@ local on_attach = function(client, bufnr)
 end
 
 require('vim.lsp.protocol').CompletionItemKind = {
-    '', -- Text
+    '', -- Text
     '', -- Method
     '', -- Function
     '', -- Constructor
-    '', -- Field
-    '', -- Variable
+    '[]', -- Field
+    '', -- Variable
     '', -- Class
     'ﰮ', -- Interface
     '', -- Module
     '', -- Property
-    '', -- Unit
+    '塞', -- Unit
     '', -- Value
-    '了', -- Enum
+    '練', -- Enum
     '', -- Keyword
-    '﬌', -- Snippet
+    '', -- Snippet
     '', -- Color
     '', -- File
-    '', -- Reference
-    '', -- Folder
+    '', -- Reference
+    'ﱮ', -- Folder
     '', -- EnumMember
     '', -- Constant
-    '', -- Struct
+    ' ', -- Struct
     '', -- Event
-    'ﬦ', -- Operator
-    '', -- TypeParameter
+    '', -- Operator
+    '<>', -- TypeParameter
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
