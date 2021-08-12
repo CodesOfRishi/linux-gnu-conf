@@ -78,7 +78,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     zsh-autosuggestions
-	themes
 	zsh-syntax-highlighting
 	colored-man-pages
 	autoupdate
