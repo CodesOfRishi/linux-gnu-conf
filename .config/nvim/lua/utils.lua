@@ -10,3 +10,8 @@ vim.cmd([[
 		autocmd BufLeave,InsertEnter,WinLeave   * if &nu | set nornu | endif
 	augroup END
 ]])
+
+-- for highlighting a selection on yank
+vim.cmd([[
+	au TextYankPost * silent! lua vim.highlight.on_yank { timeout = 650 }
+]])
