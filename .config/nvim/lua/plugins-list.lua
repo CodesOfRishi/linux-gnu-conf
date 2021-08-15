@@ -35,6 +35,13 @@ return require('packer').startup(function()
 		cmd = { "Trouble", "TroubleToggle" }
 	}--}}}
 
+	use { "ray-x/lsp_signature.nvim",--{{{
+		requires = { 'neovim/nvim-lspconfig' },
+		config = function() require"lsp_signature".setup({
+			use_lspsaga = true
+		}) end
+	}--}}}
+
 	-- Editing
 	use { 'mg979/vim-visual-multi', --{{{
 		branch = 'master',
