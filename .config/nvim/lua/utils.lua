@@ -13,5 +13,5 @@ vim.cmd([[
 
 -- for highlighting a selection on yank
 vim.cmd([[
-	au TextYankPost * silent! lua vim.highlight.on_yank { timeout = 650 }
+	au TextYankPost * silent! lua vim.highlight.on_yank { timeout = 450 }
 ]])
