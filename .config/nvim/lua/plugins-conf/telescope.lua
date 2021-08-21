@@ -14,7 +14,7 @@ require('telescope').setup{
     },
 	hidden = true,
     prompt_prefix = "❯ ",
-    selection_caret = "> ",
+    selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
