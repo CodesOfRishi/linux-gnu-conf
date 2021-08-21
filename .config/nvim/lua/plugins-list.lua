@@ -36,9 +36,8 @@ return require('packer').startup(function()
 	}--}}}
 
 	use { "ray-x/lsp_signature.nvim",--{{{
-		requires = { 'neovim/nvim-lspconfig' },
 		config = function() require"lsp_signature".setup({
-			use_lspsaga = true
+			hint_prefix = "💡 "
 		}) end
 	}--}}}
 
