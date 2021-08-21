@@ -3,7 +3,9 @@
     log = delta
     reflog = delta
     show = delta
+
 [delta]
+	paging = always
     features = decorations interactive
 
 [delta "interactive"]
