@@ -15,6 +15,7 @@ vim.opt.scrolloff = 5 -- minimal no. of screen lines to keep above & below the c
 vim.opt.foldmethod = "marker" -- markers are used to specify folds
 vim.opt.list = true
 vim.opt.listchars = { space = ' ', tab = '⋮ ', extends = '', precedes = '', eol = '↵' }
+vim.opt.hidden = true
 
 -- To ALWAYS use the clipboard for ALL operations 
 -- (instead of interacting with the '+' and/or '*' registers explicitly):
