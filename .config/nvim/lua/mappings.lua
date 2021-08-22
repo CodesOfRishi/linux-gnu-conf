@@ -126,6 +126,7 @@ map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", {})
 map("n", "<leader>fG", "<Cmd>Telescope live_grep grep_open_files=true<CR>", {})
 map("n", "<leader>ls", "<Cmd>Telescope file_browser hidden=true<CR>", {})
 map("n", "<leader>fc", "<Cmd>Telescope commands<CR>", {})
+map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", {})
 
 -- telescope lsp
 map("n", "gd", "<Cmd>Telescope lsp_definitions theme=get_cursor<CR>", {})
