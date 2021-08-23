@@ -63,10 +63,15 @@ return require('packer').startup(function()
 
 	-- Language specific
 	use { 'nvim-treesitter/nvim-treesitter', --{{{
-		event = "BufRead",
 		branch = "0.5-compat", 
 		run = ":TSUpdate",
 		config = function() require'plugins-conf.nvim-treesitter' end
+	}--}}}
+
+	use { "SmiteshP/nvim-gps",--{{{
+		requires = "nvim-treesitter/nvim-treesitter",
+		after = { "nvim-treesitter" },
+		config = function() require'plugins-conf.nvim-gps' end
 	}--}}}
 
 	-- Search & Explore
@@ -152,7 +157,7 @@ return require('packer').startup(function()
 
 	use { 'hoob3rt/lualine.nvim', --{{{
 		config = function() require'plugins-conf.lualine' end,
-		after = { 'github-nvim-theme' }
+		after = { 'github-nvim-theme', 'nvim-gps' }
 	}--}}}
 
 	use { 'norcalli/nvim-colorizer.lua',--{{{
