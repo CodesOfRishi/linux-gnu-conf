@@ -32,34 +32,6 @@ local on_attach = function(client, bufnr)
 	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
-require('vim.lsp.protocol').CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
-    '[]', -- Field
-    '', -- Variable
-    '', -- Class
-    'ﰮ', -- Interface
-    '', -- Module
-    '', -- Property
-    '塞', -- Unit
-    '', -- Value
-    '練', -- Enum
-    '', -- Keyword
-    '', -- Snippet
-    '', -- Color
-    '', -- File
-    '', -- Reference
-    'ﱮ', -- Folder
-    '', -- EnumMember
-    '', -- Constant
-    ' ', -- Struct
-    '', -- Event
-    '', -- Operator
-    '<>', -- TypeParameter
-}
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, { 
 		virtual_text = false,
