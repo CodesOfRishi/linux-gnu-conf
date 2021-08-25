@@ -16,9 +16,10 @@ return require('packer').startup(function()
 
 	-- completion
 	use { 'hrsh7th/nvim-cmp', --{{{
-		after = { "nvim-lspconfig" },
+		after = { "lspkind-nvim" },
 		requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-path", "hrsh7th/cmp-calc" },
 		config = function() 
+			local lspkind = require('lspkind')
 			local cmp = require('cmp')
 
 			cmp.setup {
@@ -34,6 +35,12 @@ return require('packer').startup(function()
 						behavior = cmp.ConfirmBehavior.Insert,
 						select = true,
 					})
+				},
+				formatting = {
+					format = function(entry, vim_item)
+						vim_item.kind = lspkind.presets.default[vim_item.kind]
+						return vim_item
+					end
 				},
 
 				-- You should specify your *installed* sources.
@@ -52,6 +59,40 @@ return require('packer').startup(function()
 	use { 'neovim/nvim-lspconfig',--{{{
 		config = function() require'plugins-conf.nvim-lspconfig' end
 	}--}}}
+
+	use { "onsails/lspkind-nvim", 
+		config = function() 
+			require('lspkind').init({
+				symbol_map = {
+					Text = "",
+					Method = "",
+					Function = "",
+					Constructor = "",
+					Field = "",
+					Variable = "",
+					Class = "",
+					Interface = "",
+					Module = "",
+					Property = "ﰠ",
+					Unit = "塞",
+					Value = "",
+					Enum = "練",
+					Keyword = "",
+					Snippet = "",
+					Color = "",
+					File = "",
+					Reference = "",
+					Folder = "ﱮ",
+					EnumMember = "",
+					Constant = "",
+					Struct = "פּ",
+					Event = "",
+					Operator = "",
+					TypeParameter = ""
+				}
+			})
+		end
+	}
 
 	use { 'glepnir/lspsaga.nvim',--{{{
 		config = function() require'plugins-conf.lspsaga' end,
