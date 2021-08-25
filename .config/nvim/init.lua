@@ -12,7 +12,8 @@ local nvim_configuration_modules = {
     "options",
 	"plugins-list",
     "mappings",
-	"utils"
+	"utils",
+	"autocmds"
 }
 
 for i = 1, #nvim_configuration_modules, 1 do

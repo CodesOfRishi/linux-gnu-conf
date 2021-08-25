@@ -1,17 +1,11 @@
--- file opens with the cursor at the same position where last left off 
-vim.cmd([[
-	autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit' | exe "normal! g`\"" | endif
-]])
+local M = {}
 
-vim.cmd([[
-	augroup numbertoggle
-		autocmd!
-		autocmd BufEnter,InsertLeave,WinEnter * if &nu | set rnu   | endif
-		autocmd BufLeave,InsertEnter,WinLeave   * if &nu | set nornu | endif
-	augroup END
-]])
+function M.map(mode, lhs, rhs, opts)
+    local options = {noremap = true, silent = true}
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
--- for highlighting a selection on yank
-vim.cmd([[
-	au TextYankPost * silent! lua vim.highlight.on_yank { timeout = 450 }
-]])
+return M
