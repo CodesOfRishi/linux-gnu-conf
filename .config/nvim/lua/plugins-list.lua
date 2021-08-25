@@ -16,11 +16,36 @@ return require('packer').startup(function()
 
 	-- completion
 	use { 'hrsh7th/nvim-cmp', --{{{
-		after = { "lspkind-nvim" },
 		requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-path", "hrsh7th/cmp-calc" },
 		config = function() 
-			local lspkind = require('lspkind')
 			local cmp = require('cmp')
+			local cmp_kind = {
+				Text = "",
+				Method = "",
+				Function = "",
+				Constructor = "",
+				Field = "",
+				Variable = "",
+				Class = "",
+				Interface = "",
+				Module = "",
+				Property = "ﰠ",
+				Unit = "塞",
+				Value = "",
+				Enum = "練",
+				Keyword = "",
+				Snippet = "",
+				Color = "",
+				File = "",
+				Reference = "",
+				Folder = "ﱮ",
+				EnumMember = "",
+				Constant = "",
+				Struct = "פּ",
+				Event = "",
+				Operator = "",
+				TypeParameter = ""
+			}
 
 			cmp.setup {
 				-- You must set mapping if you want.
@@ -38,7 +63,7 @@ return require('packer').startup(function()
 				},
 				formatting = {
 					format = function(entry, vim_item)
-						vim_item.kind = lspkind.presets.default[vim_item.kind]
+						vim_item.kind = cmp_kind[vim_item.kind]
 						return vim_item
 					end
 				},
@@ -59,40 +84,6 @@ return require('packer').startup(function()
 	use { 'neovim/nvim-lspconfig',--{{{
 		config = function() require'plugins-conf.nvim-lspconfig' end
 	}--}}}
-
-	use { "onsails/lspkind-nvim", 
-		config = function() 
-			require('lspkind').init({
-				symbol_map = {
-					Text = "",
-					Method = "",
-					Function = "",
-					Constructor = "",
-					Field = "",
-					Variable = "",
-					Class = "",
-					Interface = "",
-					Module = "",
-					Property = "ﰠ",
-					Unit = "塞",
-					Value = "",
-					Enum = "練",
-					Keyword = "",
-					Snippet = "",
-					Color = "",
-					File = "",
-					Reference = "",
-					Folder = "ﱮ",
-					EnumMember = "",
-					Constant = "",
-					Struct = "פּ",
-					Event = "",
-					Operator = "",
-					TypeParameter = ""
-				}
-			})
-		end
-	}
 
 	use { 'glepnir/lspsaga.nvim',--{{{
 		config = function() require'plugins-conf.lspsaga' end,
