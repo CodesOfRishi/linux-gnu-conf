@@ -9,10 +9,10 @@
 
 -- load nvim configurations modules
 local nvim_configuration_modules = {
+	"utils",
     "options",
 	"plugins-list",
     "mappings",
-	"utils",
 	"autocmds"
 }
 
