@@ -14,7 +14,7 @@ vim.opt.cursorcolumn = true -- highlight the COLUMN on which the cursor is
 vim.opt.scrolloff = 5 -- minimal no. of screen lines to keep above & below the cursor
 vim.opt.foldmethod = "marker" -- markers are used to specify folds
 vim.opt.list = true
-vim.opt.listchars = { space = ' ', tab = '⋮ ', extends = '', precedes = '', eol = '↵' }
+vim.opt.listchars = { space = ' ', tab = '⋮ ', eol = '↵' }
 vim.opt.hidden = true
 
 -- To ALWAYS use the clipboard for ALL operations 
