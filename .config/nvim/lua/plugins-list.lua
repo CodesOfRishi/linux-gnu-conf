@@ -173,12 +173,8 @@ return require('packer').startup(function()
 	}--}}}
 
 	-- Terminal
-	use { 'voldikss/vim-floaterm', --{{{
-		config = function() 
-			vim.g.floaterm_width = 0.8
-			vim.g.floaterm_height = 0.7
-		end,
-		cmd = { "FloatermNew", "FloatermToggle", "FloatermNext", "FloatermPrev", "FloatermFirst", "FloatermLast", "FloatermUpdate", "FloatermShow", "FloatermSend" }
+	use { "akinsho/toggleterm.nvim",--{{{
+		config = function() require ("plugins-conf.toggleterm") end
 	}--}}}
 
 	-- UI

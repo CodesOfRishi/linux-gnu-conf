@@ -66,9 +66,6 @@ map("n", "tf", "<Cmd>NvimTreeFindFile<CR>", {})
 -- Undotree plugin{{{
 map("n", "<leader>ut", "<Cmd>UndotreeToggle<CR>", {})--}}}
 
--- vim-floaterm{{{
-map("n", "tt", "<Cmd>FloatermToggle<CR>", {})--}}}
-
 -- telescope{{{
 map("n", "<leader>ff", "<Cmd>Telescope find_files hidden=true<CR>", {})
 map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", {})
