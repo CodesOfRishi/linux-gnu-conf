@@ -203,8 +203,8 @@ return require('packer').startup(function()
 	use { "projekt0n/github-nvim-theme",--{{{
 		config = function() 
 			require("github-theme").setup({
-				themeStyle = "dark",
-				commentStyle = "NONE"
+				theme_style = "dark",
+				comment_style = "NONE"
 			})
 		end
 	}--}}}
