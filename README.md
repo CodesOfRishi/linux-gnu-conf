@@ -1,8 +1,6 @@
 # linux-gnu-conf
 
-<aside>
-    Contains configurations/settings & requirements related to my Linux operating systems(s).
-</aside>
+**Contains configurations/settings & requirements related to my Linux operating systems(s).**
 
 - [**(Neo)Vim** configuration](https://github.com/CodesOfRishi/linux-gnu-conf/tree/main/.config/nvim)
 - [**ZSH** configuration](https://github.com/CodesOfRishi/linux-gnu-conf/tree/main/.config/.zsh)
