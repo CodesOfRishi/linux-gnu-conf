@@ -1,15 +1,13 @@
 # linux-gnu-conf
 
 <aside>
-ℹ️ Contains configurations/settings & requirements related to my Linux operating system(s).
-
+    Contains configurations/settings & requirements related to my Linux operating systems(s).
 </aside>
 
-[linux-gnu-conf/.config/nvim at main · CodesOfRishi/linux-gnu-conf](https://github.com/CodesOfRishi/linux-gnu-conf/tree/main/.config/nvim)
+- [**(Neo)Vim** configuration](https://github.com/CodesOfRishi/linux-gnu-conf/tree/main/.config/nvim)
+- [**ZSH** configuration](https://github.com/CodesOfRishi/linux-gnu-conf/tree/main/.config/.zsh)
 
-[linux-gnu-conf/.config/.zsh at main · CodesOfRishi/linux-gnu-conf](https://github.com/CodesOfRishi/linux-gnu-conf/tree/main/.config/.zsh)
-
-# [LICENSE](https://github.com/CodesOfRishi/linux-gnu-conf/blob/main/LICENSE)
+## [LICENSE](https://github.com/CodesOfRishi/linux-gnu-conf/blob/main/LICENSE)
 
 The MIT License (MIT)
 
