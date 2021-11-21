@@ -1,6 +1,6 @@
 alias mv="mv -i"
 alias cp="cp -i"
-alias rm="rm -I"
+alias rm="rm -i"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
 alias pping="prettyping"
