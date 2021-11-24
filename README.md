@@ -1,4 +1,4 @@
-# linux-gnu-conf
+# dotfiles
 
 **Contains configurations/settings & requirements related to my Linux operating systems(s).**
 
