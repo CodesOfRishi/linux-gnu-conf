@@ -70,3 +70,6 @@ vim.g.nvim_tree_icons = {
 		error =  "",
 	}
 }
+
+-- Note that options under g: command should be set BEFORE running the setup function.
+require 'nvim-tree'.setup{}
