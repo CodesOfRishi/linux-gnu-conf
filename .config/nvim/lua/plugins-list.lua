@@ -199,18 +199,29 @@ return require('packer').startup(function()
 	-- 	end
 	-- }--}}}
 
-	use { "projekt0n/github-nvim-theme",--{{{
-		config = function() 
-			require("github-theme").setup({
-				theme_style = "dark",
-				comment_style = "NONE"
+	-- use { "projekt0n/github-nvim-theme",--{{{
+	-- 	config = function() 
+	-- 		require("github-theme").setup({
+	-- 			theme_style = "dark",
+	-- 			comment_style = "NONE",
+	-- 			keyword_style = "NONE"
+	-- 		})
+	-- 	end
+	-- }--}}}
+
+	use { "rmehri01/onenord.nvim",--{{{
+		config = function()
+			require('onenord').setup({
+				italics = {
+					keywords = false
+				}
 			})
 		end
 	}--}}}
 
 	use { 'hoob3rt/lualine.nvim', --{{{
 		config = function() require'plugins-conf.lualine' end,
-		after = { 'github-nvim-theme', 'nvim-gps' }
+		after = { 'onenord.nvim', 'nvim-gps' }
 	}--}}}
 
 	use { 'norcalli/nvim-colorizer.lua',--{{{
