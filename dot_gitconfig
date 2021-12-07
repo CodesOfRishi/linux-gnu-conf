@@ -1,0 +1,28 @@
+[user]
+	email = contact.rishikmr@gmail.com
+	name = Rishi Kumar
+[init]
+	defaultBranch = main
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+	paging = always
+    features = decorations interactive
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+	relative-paths = true
+
+[delta "decorations"]
+	side-by-side = true
+	color-only = false
+	file-style = "#fbff00" 
+	file-decoration-style = "#ff9104 ul ol"
+	hunk-header-decoration-style = "#005fff box ul"
+	line-numbers-left-style = "#005fff"
+	line-numbers-right-style = "#005fff"

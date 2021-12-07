@@ -1,1 +1,10 @@
-.config/nvim/plugin/
+# nvim
+dot_config/nvim/plugin
+
+# oh-my-zsh
+dot_oh-my-zsh/custom/example.zsh
+dot_oh-my-zsh/custom/themes
+dot_oh-my-zsh/custom/plugins
+
+# zsh
+dot_config/dot_zsh/dot_zcompdump*
