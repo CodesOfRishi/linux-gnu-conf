@@ -15,7 +15,7 @@
    ```
    This will check out the repo and any submodules and optionally create a `chezmoi` config file for you.
 
-3. Check what changes that `chezmoi` will make to your home directory by running:
+3. Check what changes that `chezmoi` will make to your `$HOME` directory by running:
 
    ```bash
    chezmoi diff
@@ -35,13 +35,11 @@
 
 6. Or, invoke a merge tool (by default `vimdiff`) to merge changes between the current contents of the file, the file in your working copy, and the computed contents of the file:
 
-   ```
+   ```bash
    chezmoi merge $FILE
    ```
 
----
-
-You can pull & apply the latest changes from your repo with:
+You can also directly pull & apply the latest changes from your repo with:
 
 ```bash
 chezmoi update -v
