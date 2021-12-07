@@ -13,3 +13,6 @@ alias lt="exa -FT --icons"
 
 # neovim
 alias vi="nvim"
+
+# chezmoi dotfiles management system
+alias d="chezmoi"
