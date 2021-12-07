@@ -27,5 +27,15 @@ export CDPATH
 # EXA
 [[ `which exa` = "/usr/local/bin/exa" ]] && export EXA_ICON_SPACING=2
 
+# tldr
+if [[ `which tldr` = "$HOME/bin/tldr" ]]; then
+	complete -W "$(tldr 2>/dev/null --list)" tldr  # enable shell compeletion
+	export TLDR_HEADER='magenta bold underline'
+	export TLDR_QUOTE='italic'
+	export TLDR_DESCRIPTION='green'
+	export TLDR_CODE='red'
+	export TLDR_PARAM='blue'
+fi
+
 # JAVA
 [[ -d "/usr/lib/jvm/java-16-openjdk-amd64" ]] && export JAVA_HOME="/usr/lib/jvm/java-16-openjdk-amd64"

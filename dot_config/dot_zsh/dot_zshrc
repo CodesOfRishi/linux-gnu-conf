@@ -164,16 +164,6 @@ bindkey "^[[4~" end-of-line
 # FZF
 [[ -f $HOME/.config/.zsh/.zsh_fzf ]] && source $HOME/.config/.zsh/.zsh_fzf
 
-# ----- tldr --------------------------------------
-if [[ `which tldr` = "$HOME/bin/tldr" ]]; then
-	complete -W "$(tldr 2>/dev/null --list)" tldr  # enable shell compeletion
-	export TLDR_HEADER='magenta bold underline'
-	export TLDR_QUOTE='italic'
-	export TLDR_DESCRIPTION='green'
-	export TLDR_CODE='red'
-	export TLDR_PARAM='blue'
-fi
-
 # ------ Competitive Coding Utilities --------------------------------------------------------------------------
 [[ -f $HOME/code-compete/.cc-utilities.sh ]] && source $HOME/code-compete/.cc-utilities.sh
 
