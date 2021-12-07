@@ -16,3 +16,4 @@ alias vi="nvim"
 
 # chezmoi dotfiles management system
 alias d="chezmoi"
+[[ -d $HOME/.local/share/chezmoi ]] && alias dotfiles="cd $HOME/.local/share/chezmoi"
