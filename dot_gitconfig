@@ -19,7 +19,7 @@
 	relative-paths = true
 
 [delta "decorations"]
-	side-by-side = true
+	side-by-side = false
 	color-only = false
 	file-style = "#fbff00" 
 	file-decoration-style = "#ff9104 ul ol"
