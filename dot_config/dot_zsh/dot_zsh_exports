@@ -17,7 +17,7 @@ setopt auto_cd
 
 cdpath=("." $cdpath)
 [[ -d $HOME/.config ]] && cdpath=($cdpath "$HOME/.config")
-[[ -d $HOME/git-repos ]] && cdpath=($cdpath "$HOME/git-repos")
+[[ -d $HOME/git-repos ]] && cdpath=($cdpath "$HOME/.local/share")
 
 export CDPATH
 
