@@ -1,7 +1,0 @@
-alias mv="mv -i"
-alias cp="cp -i"
-alias rm="rm -I"
-alias dict="dict -d gcide"
-alias dict-ehin="dict -d fd-eng-hin"
-alias ll="ls -lFA"
-alias showPath="echo '${PATH//:/$'\n'}'"
