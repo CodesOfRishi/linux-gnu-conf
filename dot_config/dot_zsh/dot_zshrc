@@ -4,6 +4,9 @@
 #     ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
 # ██╗███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ Rishi K.
+
+# zsh-defer
+[[ -f $HOME/.config/.zsh/zsh-defer/zsh-defer.plugin.zsh ]] && source $HOME/.config/.zsh/zsh-defer/zsh-defer.plugin.zsh
                                                                      
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
