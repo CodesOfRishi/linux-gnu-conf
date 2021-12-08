@@ -4,7 +4,7 @@
 
 <hr style="border:2px solid gray"> </hr>
 
-# Applying the Dotfiles Configuration on your Local Machine
+## Applying the Dotfiles Configuration on your Local Machine
 
 1. Install [Chezmoi](https://github.com/twpayne/chezmoi), a dotfiles management system.
 
