@@ -11,7 +11,7 @@
 2. Initialize `chezmoi` with your dotfiles repo.
 
    ```bash
-   chezmoi init https://github.com/username/dotfiles.git
+   chezmoi init https://github.com/CodesOfRishi/dotfiles.git
    ```
    This will check out the repo and any submodules and optionally create a `chezmoi` config file for you.
 
