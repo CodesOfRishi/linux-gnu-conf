@@ -14,7 +14,7 @@ require'lualine'.setup {
 		lualine_b = {'branch', 'b:gitsigns_status'},
 		lualine_c = {{'filename', path = 1}, {gps.get_location, condition = gps.is_available}},
 		lualine_x = {
-			{'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}},
+			{'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}},
 			'filetype',
 			'encoding'
 		},
