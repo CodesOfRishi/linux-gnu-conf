@@ -5,20 +5,17 @@
 # ██╗███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ Rishi K.
 
-# zsh-defer
-[[ -f $HOME/.config/.zsh/zsh-defer/zsh-defer.plugin.zsh ]] && source $HOME/.config/.zsh/zsh-defer/zsh-defer.plugin.zsh
-                                                                     
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/rishi/.oh-my-zsh"
+export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -79,11 +76,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    zsh-autosuggestions
-	zsh-syntax-highlighting
-	colored-man-pages
-)
+# plugins=(
+# 	#     zsh-autosuggestions
+# 	# zsh-syntax-highlighting
+# 	# colored-man-pages
+# )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,14 +123,17 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
-# ----- Aliases --------------------------------
-[[ -f $HOME/.config/.zsh/.zsh_aliases ]] && source $HOME/.config/.zsh/.zsh_aliases
-
 # ----- Exports --------------------------------
 [[ -f $HOME/.config/.zsh/.zsh_exports ]] && source $HOME/.config/.zsh/.zsh_exports
 
+# sheldon shell plugins manager (always after exports)
+eval "$(sheldon source)"
+
 # ----- starship prompt ---
 # eval "$(starship init zsh)"
+
+# Aliases (source after sheldon)
+[[ -f $HOME/.config/.zsh/.zsh_aliases ]] && source $HOME/.config/.zsh/.zsh_aliases
 
 # -------------------------------------------------------------------------------
 # This speeds up pasting w/ autosuggest
