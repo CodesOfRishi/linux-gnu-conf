@@ -117,13 +117,13 @@ source $ZSH/oh-my-zsh.sh
 
 # RISHI'S ZSH INTERACTIVE SHELL CONFIGURATIONS
 
-# ----- Tmux -------------------------------------------------------------------------------------------------------------------
+# Tmux
 # start Tmux by default at every shell startup (must be before aliases) 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
 
-# ----- Exports --------------------------------
+# Exports
 [[ -f $HOME/.config/.zsh/.zsh_exports ]] && source $HOME/.config/.zsh/.zsh_exports
 
 # FZF
@@ -132,7 +132,7 @@ fi
 # sheldon shell plugins manager (always after sourcing exports & fzf)
 eval "$(sheldon source)"
 
-# ----- starship prompt ---
+# Starship prompt
 # eval "$(starship init zsh)"
 
 # Aliases (source after sheldon)
@@ -159,18 +159,14 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
-# ------ Competitive Coding Utilities --------------------------------------------------------------------------
+# Competitive Coding Utilities
 [[ -f $HOME/code-compete/.cc-utilities.sh ]] && source $HOME/code-compete/.cc-utilities.sh
 
-# ----- source Powerlevel10k prompt configuration file ---------
+# Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# # ----- smartcd test -----------------
-# export REC_LISTING_CMD="tree -d -C"
-# [[ -f $HOME/.local/share/smartcd/smartcd ]] && source $HOME/.local/share/smartcd/smartcd
-
-# ----- nvm (Node Version Manager) -------------------------------
+# nvm (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && zsh-defer source "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && zsh-defer source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
