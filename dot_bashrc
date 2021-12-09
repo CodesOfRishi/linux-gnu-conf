@@ -191,3 +191,6 @@ if [[ $- =~ i ]]; then
 	bind '"\C-g\C-b": "$(_gb)\e\C-e\er"' # bind ctrl-g ctrl-b for _gb()
 	bind '"\C-g\C-h": "$(_gh)\e\C-e\er"' # bind ctrl-g ctrl-h for _gh()
 fi
+
+# smartcd
+[[ -f $HOME/.local/share/smartcd/smartcd.sh ]] && source $HOME/.local/share/smartcd/smartcd.sh
