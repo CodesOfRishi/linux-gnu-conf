@@ -44,5 +44,8 @@ if [[ `which tldr` = "$HOME/bin/tldr" ]]; then
 	export TLDR_PARAM='blue'
 fi
 
+# SmartCd
+export REC_LISTING_CMD="tree -d -C"
+
 # JAVA
 [[ -d "/usr/lib/jvm/java-16-openjdk-amd64" ]] && export JAVA_HOME="/usr/lib/jvm/java-16-openjdk-amd64"

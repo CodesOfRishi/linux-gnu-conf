@@ -18,11 +18,14 @@ github ="ohmyzsh/ohmyzsh"
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
 
-[templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
-
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
+
+[plugins.smartcd]
+local = "~/.local/share/smartcd"
+
+[templates]
+defer = { value = 'zsh-defer source "{{ file }}"', each = true }
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
