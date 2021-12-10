@@ -5,4 +5,4 @@ local map = require("utils").map
 
 -- create mappings for compiling & running C++ files
 map("n", "<C-p>", ":TermExec cmd='makecp %'<CR>", {})
-map("n", "<C-O>", ":TermExec cmd='tcase %'<CR>", {}) -- actually mapped CTRL-/, my linux machine recognizes CTRL-/ as CTRL-O
+map("n", "<C-_>", ":TermExec cmd='tcase %'<CR>", {}) -- actually mapped CTRL-/, my linux machine recognizes CTRL-/ as CTRL-_
