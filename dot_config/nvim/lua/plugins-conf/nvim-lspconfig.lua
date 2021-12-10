@@ -2,6 +2,8 @@ require'lspconfig'.clangd.setup{
 	cmd = {"clangd-12"},
 }
 
+require'lspconfig'.bashls.setup{}
+
 require'lspconfig'.pyright.setup{
 	settings = {
 		pyright = {
