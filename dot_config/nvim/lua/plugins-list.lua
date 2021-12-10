@@ -25,35 +25,6 @@ return require('packer').startup(function()
 		config = function() require'plugins-conf.nvim-lspconfig' end
 	}--}}}
 
-	use { 'glepnir/lspsaga.nvim',--{{{
-		requires = { 'neovim/nvim-lspconfig' },
-		config = function()
-			local saga = require 'lspsaga'
-
-			saga.init_lsp_saga {
-				use_saga_diagnostic_sign = true,
-				error_sign = '',
-				warn_sign = '',
-				hint_sign = ' ',
-				infor_sign = '',
-				dianostic_header_icon = '   ',
-				code_action_icon = ' ',
-				code_action_prompt = {
-				  enable = true,
-				  sign = true,
-				  sign_priority = 20,
-				  virtual_text = true,
-				},
-				finder_definition_icon = '  ',
-				finder_reference_icon = '  ',
-				definition_preview_icon = '  ',
-				-- "single" "double" "round" "plus"
-				border_style = "round", 
-				rename_prompt_prefix = '❯',
-			}
-		end
-	}--}}}
-
 	use { 'folke/trouble.nvim',--{{{
 		config = function() require'plugins-conf.trouble' end,
 		requires = { 'neovim/nvim-lspconfig' },

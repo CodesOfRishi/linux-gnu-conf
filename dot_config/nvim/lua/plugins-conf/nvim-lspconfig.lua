@@ -1,3 +1,4 @@
+-- language server setup{{{
 require'lspconfig'.clangd.setup{
 	cmd = {"clangd-12"},
 }
@@ -20,7 +21,26 @@ require'lspconfig'.pyright.setup{
 	}
 }
 
-require'lspconfig'.vimls.setup{}
+require'lspconfig'.vimls.setup{}--}}}
+
+-- lsp handlers{{{
+local border_style = {
+	{ "╭", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "╮", "FloatBorder" },
+	{ "│", "FloatBorder" },
+	{ "╯", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "╰", "FloatBorder" },
+	{ "│", "FloatBorder" },
+}
+
+local pop_opts = { border = border_style }
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, pop_opts)
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, pop_opts)--}}}
+
+--disable virtual_text
+vim.diagnostic.config({virtual_text = false})
 
 local nvim_lsp = require('lspconfig')
 
@@ -32,6 +52,6 @@ local on_attach = function(client, bufnr)
 
 	--Enable completion triggered by <c-x><c-o>
 	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 end
 
-vim.diagnostic.config({virtual_text = false})

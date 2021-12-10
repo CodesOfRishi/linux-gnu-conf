@@ -18,41 +18,17 @@ map("n", "<S-Tab>", "<Cmd>tabp<CR>", {})
 -- source current file
 map("n", "<C-s>", "<Cmd>source %<CR>", {})
 
--- lspsaga plugin{{{
--- lsp provider to find the cursor word definition and reference
--- NOTE: mapped to Telescope's lsp picker
-map("n", "gh", "<Cmd>lua require'lspsaga.provider'.lsp_finder()<CR>", {})
-
--- code action
--- NOTE: mapped to Telescope's lsp picker
---[[ map("n", "<leader>a", "<Cmd>lua require('lspsaga.codeaction').code_action()<CR>", {})
-map("v", "<leader>a", "<Cmd><C-u>lua require('lspsaga.codeaction').range_code_action()<CR>", {}) ]]
-
--- hover
-map("n", "K", "<Cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", {})
-map("n", "<C-f>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", {})
-map("n", "<C-b>", "<Cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", {})
-
--- signature help
-map("n", "gs", "<Cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", {})
-
--- renaming
-map("n", "<leader>rn", "<Cmd>lua require('lspsaga.rename').rename()<CR>", {})
-
--- preview definition
--- NOTE: mapped to Telescope's lsp picker
--- map("n", "gd", "<Cmd>lua require'lspsaga.provider'.preview_definition()<CR>", {})
-
--- show diagnostics
-map("n", "<leader>dd", "<Cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", {})
-
--- only show diagnostics if cursor is over the area
-map("n", "<leader>dc", "<Cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>", {})
-
--- jump diagnostics
-map("n", "[e", "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>", {})
-map("n", "]e", "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>", {});
---}}}
+-- nvim-lspconfig{{{
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {})
+map("n", "<leader>dd", "<cmd>lua vim.diagnostic.open_float()<CR>", {})
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
+map("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<CR>", {})
+map("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>", {})
+map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {})
+map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", {})
+map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", {})
+map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {})--}}}
 
 -- Trouble plugin{{{
 map("n", "<leader>da", "<Cmd>TroubleToggle lsp_document_diagnostics<CR>", {})--}}}
