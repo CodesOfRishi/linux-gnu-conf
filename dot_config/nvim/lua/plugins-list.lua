@@ -14,6 +14,11 @@ return require('packer').startup(function()
 	-- Packer can manage itself 
 	use 'wbthomason/packer.nvim'
 
+	-- notification{{{
+	use { 'rcarriga/nvim-notify', 
+		config = function() require ("plugins-conf.notify") end
+	}--}}}
+	
 	-- completion
 	use { 'hrsh7th/nvim-cmp', --{{{
 		requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-path", "hrsh7th/cmp-calc" },
