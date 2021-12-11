@@ -31,7 +31,7 @@ map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", {})
 map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {})--}}}
 
 -- Trouble plugin{{{
-map("n", "<leader>da", "<Cmd>TroubleToggle lsp_document_diagnostics<CR>", {})--}}}
+map("n", "<leader>da", "<Cmd>TroubleToggle document_diagnostics<CR>", {})--}}}
 
 -- Nvim-Tree plugin{{{
 map("n", "te", "<Cmd>NvimTreeToggle<CR>", {})
