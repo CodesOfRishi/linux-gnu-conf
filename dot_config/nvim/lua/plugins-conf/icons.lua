@@ -32,9 +32,12 @@ local icons = {
 	},
 	diagnostic = {
 		error = "",
-		warning = "",
+		warn = "",
 		hint = "",
 		info = "",
+		error1 = "",
+		warn1 = "",
+		info1 = ""
 	},
 	git = {
 		branch = ""
@@ -65,9 +68,11 @@ local icons = {
 	},
 	other = {
 		enter = "↵",
+		magnifier = "",
 		bug = "",
 		bulb_on = "",
 		bulb_off = "",
+		bulb_off1 = "",
 		bulb_colored = "💡",
 		dotted_circle = "◌",
 		left_para = "",
