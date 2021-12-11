@@ -8,7 +8,7 @@
 
 1. Install [Chezmoi](https://github.com/twpayne/chezmoi), a dotfiles management system.
 
-2. Initialize `chezmoi` with your dotfiles repo.
+2. Initialize `chezmoi` with the dotfiles repo.
 
    ```bash
    chezmoi init https://github.com/CodesOfRishi/dotfiles.git
