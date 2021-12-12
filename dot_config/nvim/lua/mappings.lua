@@ -52,7 +52,7 @@ map("n", "<leader>ls", "<Cmd>Telescope file_browser hidden=true<CR>", {})
 
 -- telescope lsp
 map("n", "<leader>a", "<Cmd>Telescope lsp_code_actions theme=get_cursor<CR>", {})
-map("n", "<leader>dw", "<Cmd>Telescope lsp_workspace_diagnostics<CR>", {})
+map("n", "<leader>dw", "<Cmd>Telescope diagnostics<CR>", {})
 
 -- telescope git
 map("n", "<C-g><C-h>", "<Cmd>Telescope git_commits<CR>", {})
