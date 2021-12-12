@@ -51,7 +51,6 @@ map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", {})
 map("n", "<leader>ls", "<Cmd>Telescope file_browser hidden=true<CR>", {})
 
 -- telescope lsp
-map("n", "gd", "<Cmd>Telescope lsp_definitions theme=get_cursor<CR>", {})
 map("n", "<leader>a", "<Cmd>Telescope lsp_code_actions theme=get_cursor<CR>", {})
 map("n", "<leader>dw", "<Cmd>Telescope lsp_workspace_diagnostics<CR>", {})
 
