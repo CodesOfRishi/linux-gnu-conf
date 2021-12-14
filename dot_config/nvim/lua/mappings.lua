@@ -18,6 +18,10 @@ map("n", "<S-Tab>", "<Cmd>tabp<CR>", {})
 -- source current file
 map("n", "<C-s>", "<Cmd>source %<CR>", {})
 
+-- CTRL-j & CTRL-k to move selected lines down & up respectively
+map("v", "<C-j>", ":m '>+1<CR>gv=gv", {})
+map("v", "<C-k>", ":m '<-2<CR>gv=gv", {})
+
 -- nvim-lspconfig{{{
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {})
