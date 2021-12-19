@@ -43,7 +43,7 @@ _gf() {
 # browse & select branches
 _gb() {
   is_in_git_repo || return
-  git branch -a --color=always | grep -v '/HEAD\s' | sort |
+  git branch -a --color=always | rg -v '/HEAD\s' | sort |
   fzf-down --height 50% --ansi --multi --tac --preview-window right:70% \
   --preview 'git log --oneline --graph --date=relative --color=always --pretty="format:%C(black)%C(bold)%cd %C(auto)%h%d %s %C(cyan)%an%C(auto)" $(sed s/^..// <<< {} | cut -d" " -f1)' |
   sed 's/^..//' | cut -d' ' -f1 |
@@ -56,8 +56,8 @@ _gh() {
   git log --date=relative --format="%C(black)%C(bold)%cd %C(auto)%h%d %C(white)%s %C(cyan)%an%C(auto)" --graph --color=always |
   fzf-down --height 90% --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
-    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show | diff-so-fancy' |
-  grep -o "[a-f0-9]\{7,\}"
+    --preview 'rg -o "[a-f0-9]\{7,\}" <<< {} | xargs git show | diff-so-fancy' |
+  rg -o "[a-f0-9]\{7,\}"
 }
 
 # browse & select git tags
