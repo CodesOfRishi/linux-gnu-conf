@@ -126,11 +126,14 @@ fi
 # Exports
 [[ -f $HOME/.config/.zsh/.zsh_exports ]] && source $HOME/.config/.zsh/.zsh_exports
 
+# sheldon shell plugins manager (always after sourcing exports & fzf)
+eval "$(sheldon source)"
+
 # FZF
 [[ -f $HOME/.config/.zsh/.zsh_fzf ]] && source $HOME/.config/.zsh/.zsh_fzf
 
-# sheldon shell plugins manager (always after sourcing exports & fzf)
-eval "$(sheldon source)"
+# SmartCd
+[[ -f ${HOME}/.local/share/smartcd/smartcd.sh ]] && source ${HOME}/.local/share/smartcd/smartcd.sh
 
 # Starship prompt
 # eval "$(starship init zsh)"
