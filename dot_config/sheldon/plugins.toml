@@ -21,17 +21,12 @@ github = "romkatv/zsh-defer"
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
 
-[templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
-
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-apply = ["defer"]
 
 [plugins.colored-man-pages]
 local = "~/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/colored-man-pages"
-apply = ["defer"]
