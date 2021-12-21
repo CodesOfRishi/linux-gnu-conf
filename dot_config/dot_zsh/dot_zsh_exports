@@ -45,7 +45,8 @@ if [[ `which tldr` = "$HOME/bin/tldr" ]]; then
 fi
 
 # SmartCd
-export SMARTCD_REC_LISTING_CMD="tree -d -C"
+# export SMARTCD_REC_LISTING_CMD="exa -T -D -a --git -I '.git'"
+export SMARTCD_REC_LISTING_CMD="tree -I '.git' -C -d -a"
 
 # JAVA
 [[ -d "/usr/lib/jvm/java-16-openjdk-amd64" ]] && export JAVA_HOME="/usr/lib/jvm/java-16-openjdk-amd64"
