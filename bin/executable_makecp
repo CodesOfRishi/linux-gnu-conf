@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 red=`tput setaf 196`
 orange=`tput setaf 214`

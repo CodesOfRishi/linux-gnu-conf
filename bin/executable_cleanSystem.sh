@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env bash
 
 echo
 echo "!! This script cleans up many files from many places of the file system."
