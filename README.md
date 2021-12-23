@@ -1,4 +1,8 @@
-# dotfiles
+<h1 align="center">
+	<br>
+	<img src="https://i.imgur.com/QQcV4sJ.png" width="400" height="400">
+	<br>
+</h1>
 
 **Contains configurations/settings & requirements related to my Linux operating systems(s).**
 
