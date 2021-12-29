@@ -123,7 +123,6 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 # starship prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init bash)"
 
 # PATH
