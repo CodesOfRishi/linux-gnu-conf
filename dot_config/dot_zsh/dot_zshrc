@@ -176,6 +176,9 @@ bindkey "^[[4~" end-of-line
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# extras
+[[ -f $HOME/.config/.zsh/.zsh_extra ]] && source $HOME/.config/.zsh/.zsh_extra
+
 # nvm (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && zsh-defer source "$NVM_DIR/nvm.sh"  # This loads nvm

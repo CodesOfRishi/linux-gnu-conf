@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+weather() {
+	local location=""
+	[[ -z $1 ]] && location="varanasi" || location="$1"
+	curl wttr.in/${location}\?F
+}
