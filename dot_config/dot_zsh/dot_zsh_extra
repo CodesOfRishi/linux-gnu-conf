@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+help() {
+	"$@" --help | bat -l man -p
+}
+
 weather() {
 	local location=""
 	[[ -z $1 ]] && location="varanasi" || location="$1"
