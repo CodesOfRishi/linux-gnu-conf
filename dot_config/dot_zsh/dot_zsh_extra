@@ -9,7 +9,7 @@ help() {
 }
 
 weather() {
-	local location=""
+	local location
 	[[ -z $1 ]] && location="varanasi" || location="$1"
-	curl wttr.in/${location}\?F
+	curl wttr.in/"${location}"\?F
 }
