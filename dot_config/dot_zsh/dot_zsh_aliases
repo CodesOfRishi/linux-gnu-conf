@@ -4,6 +4,7 @@ alias rm="rm -i"
 alias dict="dict -d gcide"
 alias dict-ehin="dict -d fd-eng-hin"
 alias pping="prettyping"
+alias dk="docker"
 
 # EXA
 alias ll="exa -lFa --icons --group-directories-first -g --git"
