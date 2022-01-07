@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-red=`tput setaf 196`
-orange=`tput setaf 214`
-green=`tput setaf 46`
-reset=`tput sgr0`
+red=$( tput setaf 196 )
+orange=$( tput setaf 214 )
+green=$( tput setaf 46 )
+reset=$( tput sgr0 )
 
 if [[ ! -f $1 ]]; then
 	echo "${red}(ERROR):${reset} Either the file '$1' is not a regular file or it doesn't exist!"
@@ -25,8 +25,8 @@ if [[ $extension = "cpp" ]] || \
 
 	COMPILE_FLAGS="-std=c++17 -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion"
 
-	clang++-12 $COMPILE_FLAGS $1 -o $filename
-	if [[ $? -ne 0 ]]; then
+	clang++-12 "${COMPILE_FLAGS}" "$1" -o "${filename}"
+	if ! clang++-12 "${COMPILE_FLAGS}" "$1" -o "${filename}"; then
 		echo; echo "${red}Failed compilation ${reset}"; echo
 		exit 1
 	else

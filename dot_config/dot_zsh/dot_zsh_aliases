@@ -1,20 +1,16 @@
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
-alias dict="dict -d gcide"
-alias dict-ehin="dict -d fd-eng-hin"
 alias pping="prettyping"
-alias dk="docker"
+alias d="chezmoi"
+alias dots="${HOME}/.local/share/chezmoi"
 
-# EXA
+# Exa
+alias ls="exa"
 alias ll="exa -lFa --icons --group-directories-first -g --git"
 alias la="exa -Fa --icons --group-directories-first -1"
 alias l="exa -Fa --icons --group-directories-first"
 alias lt="exa -FT --icons"
 
-# neovim
+# Editor
 alias vi="nvim"
-
-# chezmoi dotfiles management system
-alias d="chezmoi"
-[[ -d $HOME/.local/share/chezmoi ]] && alias dotfiles="cd $HOME/.local/share/chezmoi"

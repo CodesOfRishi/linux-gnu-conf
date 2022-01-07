@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 
-red=`tput setaf 196`
-blue=`tput setaf 21`
-green=`tput setaf 46`
-reset=`tput sgr0`
+red=$( tput setaf 196 )
+blue=$( tput setaf 21 )
+green=$( tput setaf 46 )
+reset=$( tput sgr0 )
 
-filepath="$(dirname "$1")"
+filepath="$( dirname "$1" )"
 if [[ -f $1 ]]; then
 	if [[ -x $1 ]]; then
 		filename=$(basename -- "$1") # get file name without the path
-	elif [[ `echo $1 | rg '.cpp$'` ]] || [[ `echo $1 | rg '.C$'` ]] || [[ `echo $1 | rg '.cc$'` ]] || [[ `echo $1 | rg '.CPP$'` ]] || [[ `echo $1 | rg '.c++$'` ]] || [[ `echo $1 | rg '.cp$'` ]] || [[ `echo $1 | rg '.cxx$'` ]]; then
-		makecp $1
-		[[ $? -ne 0 ]] && exit 1
+	elif [[ $( echo "$1" | rg '.cpp$' ) ]] || \
+		[[ $( echo "$1" | rg '.C$' ) ]] || \
+		[[ $( echo "$1" | rg '.cc$' ) ]] || \
+		[[ $( echo "$1" | rg '.CPP$' ) ]] || \
+		[[ $( echo "$1" | rg '.c++$' ) ]] || \
+		[[ $( echo "$1" | rg '.cp$' ) ]] || \
+		[[ $( echo "$1" | rg '.cxx$' ) ]]; then
+		if ! makecp "$1"; then exit 1; fi
 
 		filename=$(basename -- "$1") # get file name without the path
 		filename="${filename%.*}"  # file name without the extension
@@ -34,7 +39,6 @@ while [[ -f in$testcase ]]; do
 		echo "${blue}╼╼╼╼╼ TestCase: ($testcase) ╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼╼${reset}"
 	fi
 
-	$filepath/$filename < in$testcase
-	[[ $? -ne 0 ]] && break;
-	testcase=$(($testcase+1))
+	if ! ${filepath}/"${filename}" < in${testcase}; then break; fi
+	testcase=$(( testcase + 1 ))
 done

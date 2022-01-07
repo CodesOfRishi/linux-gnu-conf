@@ -1,6 +1,7 @@
 [user]
 	email = contact.rishikmr@gmail.com
-	name = Rishi Kumar
+	name = Rishi K.
+
 [init]
 	defaultBranch = main
 
@@ -19,10 +20,10 @@
 	relative-paths = true
 
 [delta "decorations"]
-	side-by-side = false
-	color-only = false
+	; side-by-side = false
+	; color-only = false
 	file-style = "#fbff00" 
-	file-decoration-style = "#ff9104 ul ol"
-	hunk-header-decoration-style = "#005fff box ul"
-	line-numbers-left-style = "#005fff"
-	line-numbers-right-style = "#005fff"
+	file-decoration-style = "#fbff00 ul ol"
+	; hunk-header-decoration-style = "#005fff box ul"
+	; line-numbers-left-style = "#005fff"
+	; line-numbers-right-style = "#005fff"

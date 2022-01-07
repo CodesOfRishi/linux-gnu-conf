@@ -1,52 +1,26 @@
 # XDG Base Directory Specification
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_STATE_HOME="${HOME}/.local/state"
 export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export XDG_CACHE_HOME="${HOME}/.cache"
 
 # PATH
-typeset -U path  # to keep only unique values (from left) in $PATH
-
-[[ -d $HOME/.cargo/bin ]] && path=("$HOME/.cargo/bin" $path)
-# [[ -d /usr/lib/jvm/java-16-openjdk-amd64/bin ]] && path=("/usr/lib/jvm/java-16-openjdk-amd64/bin" $path)
-[[ -d $HOME/.local/bin ]] && path=("$HOME/.local/bin" $path)
-[[ -d $HOME/bin ]] && path=("$HOME/bin" $path)
-
+typeset -U path
+[[ -d ${HOME}/.local/bin ]] && path=( "${HOME}/.local/bin" ${path} )
+[[ -d ${HOME}/bin ]] && path=( "${HOME}/bin" ${path} )
 export PATH
 
 # CDPATH
-typeset -U cdpath  # to keep only unique values (from left) in $CDPATH
+typeset -U cdpath
 setopt auto_cd
-
-cdpath=("." $cdpath)
-[[ -d $HOME/.config ]] && cdpath=($cdpath "$HOME/.config")
-[[ -d $HOME/git-repos ]] && cdpath=($cdpath "$HOME/.local/share")
-
+[[ -d ${HOME}/.local/share ]] && cdpath=( "${HOME}/.local/share" ${cdpath} )
+[[ -d ${HOME}/.config ]] && cdpath=( "${HOME}/.config" ${cdpath} )
+cdpath=( "." ${cdpath} )
 export CDPATH
 
 # EDITOR
-[[ `which nvim` = "/usr/bin/nvim" ]] && export EDITOR="nvim"
+[[ $( whereis -b nvim | awk '{print $2}' ) = *nvim ]] && export EDITOR="nvim"
 
-# EXA
-[[ `which exa` = "/usr/local/bin/exa" ]] && export EXA_ICON_SPACING=2
-
-# tldr
-if [[ `which tldr` = "$HOME/bin/tldr" ]]; then
-	complete -W "$(tldr 2>/dev/null --list)" tldr  # enable shell compeletion
-	export TLDR_HEADER='magenta bold underline'
-	export TLDR_QUOTE='italic'
-	export TLDR_DESCRIPTION='green'
-	export TLDR_CODE='red'
-	export TLDR_PARAM='blue'
-fi
-
-# SmartCd
-export SMARTCD_FZF_PREVIEW_CMD="exa -Fa --icons -1"
-export SMARTCD_SELECT_ONE="1"
-
-# JAVA
-[[ -d "/usr/lib/jvm/java-16-openjdk-amd64" ]] && export JAVA_HOME="/usr/lib/jvm/java-16-openjdk-amd64"
+# Exa
+[[ $( whereis -b exa | awk '{print $2}' ) = *exa ]] && export EXA_ICON_SPACING=2

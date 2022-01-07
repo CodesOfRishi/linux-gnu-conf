@@ -1,7 +1,13 @@
 alias mv="mv -i"
 alias cp="cp -i"
-alias rm="rm -I"
-alias dict="dict -d gcide"
-alias dict-ehin="dict -d fd-eng-hin"
-alias ll="ls -lFA"
-alias showPath="echo '${PATH//:/$'\n'}'"
+alias rm="rm -i"
+
+# Exa
+alias ls="exa"
+alias ll="exa -lFa --icons --group-directories-first -g --git"
+alias la="exa -Fa --icons --group-directories-first -1"
+alias l="exa -Fa --icons --group-directories-first"
+alias lt="exa -FT --icons"
+
+# Editor
+alias vi="nvim"
