@@ -6,12 +6,18 @@ alias pping="prettyping"
 alias d="chezmoi"
 alias dots="${HOME}/.local/share/chezmoi"
 
-# Exa
-alias ls="exa"
-alias ll="exa -lFa --icons --group-directories-first -g --git"
-alias la="exa -Fa --icons --group-directories-first -1"
-alias l="exa -Fa --icons --group-directories-first"
-alias lt="exa -FT --icons"
+# Exa/ls
+if [[ $( whereis -b exa | awk '{print $2}' ) = *exa ]]; then
+	alias ls="exa"
+	alias ll="exa -lFa --icons --group-directories-first -g --git"
+	alias la="exa -Fa --icons --group-directories-first -1"
+	alias l="exa -Fa --icons --group-directories-first"
+	alias lt="exa -FT --icons"
+else
+	alias ls="ls --color=auto"
+	alias ll="ls -laF --group-directories-first"
+	alias l="ls -aF --group-directories-first"
+fi
 
 # Editor
 alias vi="nvim"
