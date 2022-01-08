@@ -1,9 +1,9 @@
-# ███████╗███████╗██╗  ██╗██████╗  ██████╗
-# ╚══███╔╝██╔════╝██║  ██║██╔══██╗██╔════╝
-#   ███╔╝ ███████╗███████║██████╔╝██║     
-#  ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
-# ███████╗███████║██║  ██║██║  ██║╚██████╗
-# ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ Rishi K.
+#    ███████╗███████╗██╗  ██╗██████╗  ██████╗
+#    ╚══███╔╝██╔════╝██║  ██║██╔══██╗██╔════╝
+#      ███╔╝ ███████╗███████║██████╔╝██║     
+#     ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
+# ██╗███████╗███████║██║  ██║██║  ██║╚██████╗
+# ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ Rishi K.
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/.zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -24,10 +24,13 @@ setopt histignorealldups sharehistory globdots
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+# Location for ${USER}'s zsh configurations
+export ZSH="${HOME}/.config/.zsh"
+
+# Keep 1000 lines of history within the shell and save it to ~/.config/.zsh/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.config/.zsh/.zsh_history
+HISTFILE="${ZSH}/.zsh_history"
 
 # Use modern completion system
 autoload -Uz compinit
@@ -64,7 +67,6 @@ fi
 source ${HOME}/.config/.zsh/.zsh_zinit
 
 # Aliases, Exports & others
-export ZSH="${HOME}/.config/.zsh"
 source ${ZSH}/.zsh_extra
 source ${ZSH}/.zsh_exports
 source ${ZSH}/.zsh_aliases
