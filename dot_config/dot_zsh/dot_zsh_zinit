@@ -41,10 +41,18 @@ zinit ice depth=1
 zinit light "junegunn/fzf"
 source ${HOME}/.config/.zsh/.zsh_fzf
 
-# SmartCd
-zinit snippet "${HOME}/.local/share/smartcd/smartcd.sh"
-compdef __smartcd__=cd
-export SMARTCD_SELECT_ONE="1"
-
 # Competitive Coding
 [[ -f ${HOME}/code-compete/.cc-utilities.sh ]] && zinit snippet "${HOME}/code-compete/.cc-utilities.sh"
+
+# NVM (Node Version Manager)
+# To install/update nvm, check out: https://github.com/nvm-sh/nvm#installing-and-updating
+export NVM_DIR="${HOME}/.config/nvm"
+if [[ -s ${NVM_DIR}/nvm.sh ]]; then 
+	zinit ice wait
+	zinit snippet "${NVM_DIR}/nvm.sh"
+fi
+
+# SmartCd
+source "${HOME}/.local/share/smartcd/smartcd.sh"
+compdef __smartcd__=cd
+export SMARTCD_SELECT_ONE="1"
