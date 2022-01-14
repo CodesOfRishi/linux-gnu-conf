@@ -53,6 +53,6 @@ if [[ -s ${NVM_DIR}/nvm.sh ]]; then
 fi
 
 # SmartCd
-source "${HOME}/.local/share/smartcd/smartcd.sh"
-compdef __smartcd__=cd
 export SMARTCD_SELECT_ONE="1"
+source "${HOME}/.local/share/smartcd/smartcd.sh" \
+	&& compdef __smartcd__=cd
