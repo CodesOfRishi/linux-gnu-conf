@@ -54,5 +54,4 @@ fi
 
 # SmartCd
 export SMARTCD_SELECT_ONE="1"
-source "${HOME}/.local/share/smartcd/smartcd.sh" \
-	&& compdef __smartcd__=cd
+source "${HOME}/.local/share/smartcd/smartcd.sh"
