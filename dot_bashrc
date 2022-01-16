@@ -121,6 +121,7 @@ fi
 
 # SmartCd
 if [[ -f ${HOME}/.local/share/smartcd/smartcd.sh ]]; then
-	source ${HOME}/.local/share/smartcd/smartcd.sh 
 	export SMARTCD_SELECT_ONE="1"
+	source ${HOME}/.local/share/smartcd/smartcd.sh 
 fi
+
