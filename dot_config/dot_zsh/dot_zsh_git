@@ -34,21 +34,24 @@ g() {
 			git stash ${arguments}
 		fi
 	elif [[ $1 = "cc" ]]; then
-		# sources:
-		# https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
-		# https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
-		# https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716#gistcomment-3460311
-		printf '%s\n' "Conventional Commits:"
-		printf '%s\n' "feat ..................... new features for the user"
-		printf '%s\n' "fix ...................... bug fix for the user"
-		printf '%s\n' "docs ..................... changes to the documentation"
-		printf '%s\n' "style .................... changes that do not affect the meaning of the code (white-space, formatting, missing semi-colon, etc)"
-		printf '%s\n' "refactor ................. refactoring production code; neither fixes a bug nor adds a feature"
-		printf '%s\n' "perf ..................... a code change that improvemes performance"
-		printf '%s\n' "test ..................... adding missing tests, refactoring tests, etc"
-		printf '%s\n' "build .................... changes that affect the build system or external dependencies"
-		printf '%s\n' "chore .................... updating grunt tasks (other changes that don't modify src or test files)"
-		printf '%s\n' "revert ................... reverts the previous commit"
+		local colr1=$( tput setaf 12 )
+		local colr2=$( tput setaf 11 )
+		local reset=$( tput sgr0 )
+		printf '%s\n' "${colr1}Conventional Commits:"
+		printf '%s\n' "${colr1}feat${reset} ..................... ${colr2}new features for the user"
+		printf '%s\n' "${colr1}fix${reset} ...................... ${colr2}bug fix for the user"
+		printf '%s\n' "${colr1}docs${reset} ..................... ${colr2}changes to the documentation"
+		printf '%s\n' "${colr1}style${reset} .................... ${colr2}changes that do not affect the meaning of the code (white-space, formatting, missing semi-colron, etc)"
+		printf '%s\n' "${colr1}refactor${reset} ................. ${colr2}refactoring production code; neither fixes a bug nor adds a feature"
+		printf '%s\n' "${colr1}perf${reset} ..................... ${colr2}a code change that improvemes performance"
+		printf '%s\n' "${colr1}test${reset} ..................... ${colr2}adding missing tests, refactoring tests, etc"
+		printf '%s\n' "${colr1}build${reset} .................... ${colr2}changes that affect the build system or external dependencies"
+		printf '%s\n' "${colr1}revert${reset} ................... ${colr2}reverts the previous commit"
+		printf '%s\n' "${colr1}chore${reset} .................... ${colr2}updating grunt tasks (other changes that don't modify src or test files)"
+		printf '\n%s\n' "${reset}References:"
+		printf '%s\n' "https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716"
+		printf '%s\n' "https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716#gistcomment-3198987"
+		printf '%s\n' "https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716#gistcomment-3460311"
 	else
 		return 1
 	fi
