@@ -1,0 +1,51 @@
+alias gs="git status"
+alias gd="git diff"
+alias gr="git restore"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gm="git merge"
+alias gw="git switch"
+alias gb="git branch"
+alias gt="git tag"
+
+# `g sh` for `git show
+# `g stash` for `git stash`
+# `g cc` for conventional commits info
+g() {
+	local arguments=${*:2}
+	if [[ $1 = "sh" || $1 = "show" ]]; then
+		# use `g sh` for `git show`
+		git show "${arguments}"
+	elif [[ $1 = "st" || $1 = "stash" ]]; then
+		# confirm before running `git stash` if the argument is neither `save` nor `list`
+		if [[ -n $2 && $2 != "save" && $2 != "list" ]]; then
+			printf '%s\n' "> ${arguments} <"
+
+			local _confirm
+			read -r -p "Continue (Y/n)? " _confirm
+
+			if [[ ${_confirm} = "y" || ${_confirm} = "Y" ]]; then
+				git stash ${arguments}
+			else
+				printf '%s\n' "Stash aborted!!"
+			fi
+		else
+			git stash ${arguments}
+		fi
+	elif [[ $1 = "cc" ]]; then
+		printf '%s\n' "Conventional Commits:"
+		printf '%s\n' "feat ..................... new features for the user"
+		printf '%s\n' "fix ...................... bug fix for the user"
+		printf '%s\n' "docs ..................... changes to the documentation"
+		printf '%s\n' "style .................... changes that do not affect the meaning of the code (white-space, formatting, missing semi-colon, etc)"
+		printf '%s\n' "refactor ................. refactoring production code; neither fixes a bug nor adds a feature"
+		printf '%s\n' "perf ..................... a code change that improvemes performance"
+		printf '%s\n' "test ..................... adding missing tests, refactoring tests, etc"
+		printf '%s\n' "build .................... changes that affect the build system or external dependencies"
+		printf '%s\n' "chore .................... updating grunt tasks (other changes that don't modify src or test files)"
+		printf '%s\n' "revert ................... reverts the previous commit"
+	else
+		return 1
+	fi
+}

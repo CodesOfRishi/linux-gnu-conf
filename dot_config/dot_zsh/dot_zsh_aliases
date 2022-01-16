@@ -6,6 +6,9 @@ alias pping="prettyping"
 alias d="chezmoi"
 alias dots="${HOME}/.local/share/chezmoi"
 
+# git
+# check ./zsh_git for aliases
+
 # Exa/ls
 if [[ $( whereis -b exa | awk '{print $2}' ) = *exa ]]; then
 	alias ls="exa"

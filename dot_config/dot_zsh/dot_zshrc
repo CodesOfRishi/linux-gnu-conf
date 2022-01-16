@@ -70,3 +70,4 @@ source ${HOME}/.config/.zsh/.zsh_zinit
 source ${ZSH}/.zsh_extra
 source ${ZSH}/.zsh_exports
 source ${ZSH}/.zsh_aliases
+source ${ZSH}/.zsh_git
