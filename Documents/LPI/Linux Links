@@ -1,0 +1,16 @@
+HARD LINKS: 
+	Advantages:
+		> Do not have single point of failure. 
+	
+	Disadvantages:
+		> Not easy to see the target links.
+		> Can link to files only within the same file system (partition).
+		> Cannot be linked to directories.
+
+SOFT LINKS: 
+	Advantages:
+		> Easier to see the target links.
+		> Can link to any file (including across partitions).
+	
+	Disadvantages:
+		> Have single point of failure.

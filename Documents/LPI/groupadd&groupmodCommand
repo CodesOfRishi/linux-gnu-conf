@@ -1,0 +1,7 @@
+groupadd
+-g --> to specify a group id for the new group 
+-r --> to create group with GID less than the lowest standard GID (i.e., to create a system groups)
+
+groupmod 
+-g --> change the GID of an existing group
+-n --> change the group name of a group

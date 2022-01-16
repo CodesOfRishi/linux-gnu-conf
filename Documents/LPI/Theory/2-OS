@@ -1,0 +1,53 @@
+> Mircrosoft Windows is unique in its underlying code.
+> Apple's macOS is a fully-qualified UNIX distribution based on BSD Unix (an OS distributed until 1995).
+
+> OS Decision Points:
+	- Role
+	- Function
+	- Life Cycle
+		-- Release Cycle: OS & software upgrades come on a periodic basis.
+		-- Maintenance/Life Cycle: Vendors only support older versions of software for a certain period of time before not offering any updates.
+	- Stability
+	- Compatibility
+	- Cost
+	- Interface
+
+> Linux Decision Points: 
+	- Role
+	- Function
+	- Life Cycle
+		-- Enthusiast: Eg:- openSUSE's Tumbleweed, Red Hat's Fedora, Ubuntu Desktop
+		-- Enterprise: Eg:- Red Hat, Canonical & SUSE
+	- Stability
+		-- Features are added & changed in the Fedora release (beta) before finding their way into the enterprise-ready RedHat distribution.
+		-- SLES (SUSE Linux Enterprise Server) is enterprise distribution from SUSE.
+	- Cost 
+	- Interface
+		-- MOTD (Message of the day)
+
+> Linux Distribution
+	- Red Hat
+		-- RPM (RedHat Package Manager)
+		-- RHEL (Red Hat Enterprise Linux)
+		-- Fedora Project (Enthusiast version)
+		-- CentOS, Scientific Linux
+			--- Free to use
+			--- Not paid support
+	
+	- SUSE
+		-- Slackware -> SUSE
+		-- openSUSE (free version)
+
+	- Debian
+		-- Ubuntu (created by Canonical)
+		-- Linux Mint (froked from Ubuntu)
+
+	- Android
+		-- Dalvik VM
+
+	- Rasbian 
+		-- runs on Rasberry Pi hardware.	
+	
+	- LFS (Linux Frome Scratch)
+
+> Linux started on "Intel 386 PC".

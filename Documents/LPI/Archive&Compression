@@ -1,0 +1,22 @@
+gzip --> Lempel-Ziv
+bzip2 --> Burrows-Wheeler
+xz --> Lemple-Ziv-Markov (LZMA)
+===========================================================================
+
+Archiving:
+	- Create
+		> tar -c [-f ARCHIVE] [OPTIONS] [FILE...]
+		> -z --> gzip compression
+		> -j --> bzip2 compression
+	- List
+		> tar -t [-f ARCHIVE] [OPTIONS]
+	- Extract
+		> tar -x [-f ARCHIVE] [OPTIONS]
+===========================================================================
+
+zip [OPTIONS] [zipfile [file…]]
+	> creates archive
+	> -r --> recursion
+
+unzip 
+	> -l --> list

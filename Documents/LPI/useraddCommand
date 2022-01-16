@@ -1,0 +1,18 @@
+useradd 
+-D --> to view or change the default values used by useradd command
+	-g --> manual default GID 
+	-b --> manual default home directory base 
+	-f --> manual default inactive grace period 
+	-e --> manual default expire value 
+	-s --> manual default shell 
+	-k --> manual default skeleton (SKEL) directory 
+-u --> manual UID
+-g --> manual GID or group name for primary group configuration 
+-G --> to specify a comma-separated list of supplementary group names or numbers
+-M --> do not create user home directory
+-m --> create the user home directory
+-b --> manual user home directory base
+-d --> to specify a home directory (or a new home directory) for the user
+-k --> to specify the skeleton (SKEL) directory for the user (-m required)
+-s --> to specify a shell
+-c --> GECOS (General Electric Comprehensive Operating System) field; typically used to provide the user's full name.

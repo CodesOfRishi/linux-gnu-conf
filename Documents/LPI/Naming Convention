@@ -1,0 +1,13 @@
+Group naming conventions:
+
+> Up to 32 characters are allowed on most Linux distributions, but using more than 16 can be problematic as some distributions may not accept more than 16.
+> The first character of the name should be either an underscore _ character or a lowercase alphabetic a-z character.
+> After the first character, the remaining characters can be alphanumeric, a dash - character or an underscore _ character.
+> The last character should not be a hyphen - character.
+
+Username naming conventions:
+
+> Up to 32 characters are allowed on most Linux distributions, but using more than 16 can be problematic as some distributions may not accept more than 16.
+> The first character of the name should be either an underscore _ character or a lower-case alphabetic a-z character.
+> After the first character, the remaining characters can be alphanumeric, a dash - character or an underscore _ character.
+> The last character should not be a hyphen - character.

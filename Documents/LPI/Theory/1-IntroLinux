@@ -1,0 +1,18 @@
+> GNU/Linux:
+	- GNU: GNU is the free software that provides open source equivalents of many common UNIX commands.
+	- Linux: The Linux part of this combination is the Linux kernel, which is the core of the operating system. The kernel is loaded at boot time and stays running to manage every aspect of the functioning system.
+
+> The story of Linux begins with UNIX, an operating system developed at AT&T Bell Labs in the 1970s.
+> UNIX is now both a trademark and a specification, owned by an industry consortium called the Open Group.
+> Only software that has been certified by the Open Group may call itself UNIX.
+
+> Prior to and alongside the Linux development was the GNU Project, created by Richard Stallman in 1983.
+> GNU is a recursive acronym for “GNU’s Not Unix".
+
+> Closed Source: You get the right to use the machine code, but cannot see the source code. Often the license explicitly says that you may not attempt to reverse engineer the machine code back to source code to figure out what it does!
+> Open Source: You have a right to obtain the software source code and to modify it for your own use.
+
+> Distribution: 
+	- Includes tools that take care of setting up the storage, installing the kernel, and installing the rest of the software. 
+	- Also include tools to manage the system and a package manager to help you add and remove software after the installation is complete.
+	- Takes care of setting up the storage, building the kernel and installing hardware drivers, as well installing applications and utilities to make a fully functional computer system.

@@ -1,0 +1,11 @@
+- Read
+	> On a file, this allows processes to read the contents of the file, meaning the contents can be viewed and copied.
+	> On a directory, file names in the directory can be listed, but other details are not available.
+
+- Write 
+	> A file can be written to by the process, so changes to a file can be saved. Note that w permission really requires r permission on the file to work correctly.
+	> On a directory, files can be added to or removed from the directory. Note that w permission requires x permission on the directory to work correctly.
+
+- Execute
+	> A file can be executed or run as a process.
+	> On a directory, the user can use the cd command to "get into" the directory and use the directory in a pathname to access files and, potentially, subdirectories under this directory.

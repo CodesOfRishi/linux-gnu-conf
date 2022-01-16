@@ -1,0 +1,87 @@
+> Private Cloud Servers
+	- ownCloud:
+		-- Frank Karlitschek
+		-- GNU AGPLv3
+	
+	- Nextcloud:
+		-- forked from ownCloud
+		-- Frank Karlitschek
+		-- GNU AGPLv3
+
+> Database Servers
+	- MariaDB
+		-- forked from MySQL
+	- Firebird
+	- PostgreSQL
+	- SQL (Structure Query Language) 
+
+> Email Servers
+	- MTA (Mail Transfer Agent)
+		-- Sendmail
+		-- Postfix
+	- MDA (Mail Delivery Agent)
+	- POP/IMAP Server
+		-- Devecot
+		-- Cyrus IMAP
+	- Microsoft Exchange
+
+> File Sharing
+	- Samba (Windows-centric)
+	- Netatalk (Apple Macintosh-centric)
+	- NFS (Network File Sharing): File sharing protocol for UNIX/Linux
+	
+	- Internet Software Consortium
+		-- Maintains "Bind", the most popular DNS server.
+		-- Maintains "ISC DHCP".
+	
+	- LDAP (Lightweight Directory Access Protocol)
+		-- OpenLDAP
+
+> Email 
+	- Thunderbird (Desktop email client)
+	- Evolution (Desktop email client)
+	- Kmail (Desktop email client)
+
+> Productivity
+	- OpenOffic (also called OpenOffice.org) -> LibreOffce
+============================================================================================================================================================
+
+> Shell
+	- Bourne shell
+		-- Bash (Bourne Again Shell)
+	- C shell
+		-- tcsh
+	- ksh (Korn shell)
+	- zsh (Z shell)
+
+> Text Editors
+	- Vi (modern one Vim) & Emacs
+	- Pico & Nano
+
+> Package Management 
+	- Debian Package Management
+		-- .deb extension
+		-- dpkg (lowest level)
+		-- apt-get (Advance Package Tool, front-end to the dpkg tool)
+		-- aptitude (a front-end to the dpkg tool)
+		-- Synaptic (GUI front-end to the dpkg tool)
+		-- Software Center (GUI front-end to the dpkg tool)
+
+	- RPM Package Management
+		-- Standard package management system, according to "Linux Standard Base".
+		-- .rpm extension
+		-- rpm (back-end tool)
+		-- yum (front-end tool)
+		-- up2date (front-end tool)
+		-- Yumex (GUI tool)
+		-- Gnome PackageKit (GUI tool)
+
+		-- ZYpp (or libzypp)
+			--- zypper
+
+> Security
+	- Gufw (GUI to "Ubuntu'S Uncomplicated Firewall (UFW))
+	- iptables (built-in firewall system)
+
+> Cloud 
+	- VMware & Openbox

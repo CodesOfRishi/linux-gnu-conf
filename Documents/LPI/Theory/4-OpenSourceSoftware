@@ -1,0 +1,49 @@
+> There are many different varients of open source, but all agree that users should have access to the source code. 
+> Where they differ is in how one can, or must, redistribute changes.
+
+> 3 distinct components, when buying a software:
+	- Ownership - Who owns the intellectual property behind the software?
+	- Money Transfer - How does money change hands, if at all?
+	- Licensing - What do you get? What can you do with the software? Can you use it on only one computer? Can you give it to someone else?
+
+> Microsoft Windows
+	- EULA
+ > Linux 
+ 	- Owned by Linux Torvalds
+	- GPLv2
+		-- The source code must be available to anyone who asks & that anyone is allowed to make changes.
+		-- If someone makes changes & distributes them, they must put the changes under the same license.
+		-- No one is allowed to price the source code.
+
+> Free & Open Source Software (FOSS)
+	- The right, "to decide how to use & distribute the software" is given up.
+
+> Groups:
+	- The Free Software Foundation (FSF)
+		-- Founded by Richard Stallman 
+		-- Copyleft:
+			--- If someone modifies free software, they should be required to share any changes they have made when they share it again.
+		-- GPLv2
+		-- GPLv3
+		-- LGPLv2 (GNU Lesser General Public License)
+		-- LGPLv3 (GNU Lesser General Public License)
+
+	- The Open Source Initiative
+		-- Bruce Perens 
+		-- Eric Raymond
+		-- BSD (Berkeley Software Distribution (open source license))
+			--- "do whatever you want with the software, just don't say you wrote it"
+		-- Permissive free software licenses:
+			--- BSD & MIT open source licenses do not contain "copyleft" provisions.
+
+	- CC (Creative Commons)
+		-- BY (Attribution) 
+			--- credit to the creator/owner (copywrite holder)
+		-- SA (ShareAlike) 
+			--- allow others to copy, distribute, perform & modify under the same terms
+		-- NC (NonCommercial) 
+			--- allow others to distribute, display, perform & modify for any purpose other than commercially
+		-- ND (NoDerivatives) 
+			--- allow others to distribute, display & perform only the original copies, & modify with owner's permission
+		-- CC0 (No Rights Reserved)
+			--- CC version of public domain

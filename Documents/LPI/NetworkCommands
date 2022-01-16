@@ -1,0 +1,8 @@
+> ifconfig --> ip (ip addr show)
+> route / netstat -r --> ip (ip route show)
+> arp --> ip
+> ping
+> netstat --> ss / ip
+> ss
+> dig 
+> host
