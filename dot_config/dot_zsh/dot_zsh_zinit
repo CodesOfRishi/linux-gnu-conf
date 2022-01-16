@@ -53,5 +53,6 @@ if [[ -s ${NVM_DIR}/nvm.sh ]]; then
 fi
 
 # SmartCd
+export SMARTCD_EXACT_SEARCH="1"
 export SMARTCD_SELECT_ONE="1"
 source "${HOME}/.local/share/smartcd/smartcd.sh"
