@@ -23,7 +23,8 @@ g() {
 			printf '%s\n' "> ${arguments} <"
 
 			local _confirm
-			read -r -p "Continue (Y/n)? " _confirm
+			printf '%s' "Continue (Y/n)? "
+			read -r _confirm
 
 			if [[ ${_confirm} = "y" || ${_confirm} = "Y" ]]; then
 				git stash ${arguments}
