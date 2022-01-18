@@ -39,7 +39,7 @@ zinit light "zsh-users/zsh-syntax-highlighting"
 # after install/update, you need to manually run the install script
 zinit ice depth=1
 zinit light "junegunn/fzf"
-source ${HOME}/.config/.zsh/.zsh_fzf
+source "${HOME}"/.config/.zsh/.zsh_fzf
 
 # Competitive Coding
 [[ -f ${HOME}/code-compete/.cc-utilities.sh ]] && zinit snippet "${HOME}/code-compete/.cc-utilities.sh"
@@ -55,4 +55,4 @@ fi
 # SmartCd
 export SMARTCD_EXACT_SEARCH="1"
 export SMARTCD_SELECT_ONE="1"
-source "${HOME}/.local/share/smartcd/smartcd.sh"
+source "${HOME}"/.local/share/smartcd/smartcd.sh
