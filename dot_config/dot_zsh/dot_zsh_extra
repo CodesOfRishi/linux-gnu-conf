@@ -16,7 +16,7 @@ help() {
 			eval "${var}" | bat -l man -p
 		elif [[ ${var} = *"="* ]]; then
 			var="${var##*=}"
-			"${var}" "${args}" --help | bat -l man -p
+			eval "${var} ${args} --help" | bat -l man -p
 		fi
 	else
 		"$@" --help | bat -l man -p
