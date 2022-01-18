@@ -54,6 +54,7 @@ g() {
 		printf '%s\n' "https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716#gistcomment-3198987"
 		printf '%s\n' "https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716#gistcomment-3460311"
 	else
+		printf '%s\n' "$1 is either invalid or not supported!" 1>&2
 		return 1
 	fi
 }
