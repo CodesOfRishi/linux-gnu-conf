@@ -6,6 +6,7 @@ mkcd() {
 
 help() {
 	local var && var=$( command -v "$1" )
+	local args && args=${*:2}
 	
 	if [[ ${var} = "alias "* ]]; then
 		if [[ ${var} = *"'"* ]]; then
@@ -15,7 +16,7 @@ help() {
 			eval "${var}" | bat -l man -p
 		elif [[ ${var} = *"="* ]]; then
 			var="${var##*=}"
-			"${var}" --help | bat -l man -p
+			"${var}" "${args}" --help | bat -l man -p
 		fi
 	else
 		"$@" --help | bat -l man -p
