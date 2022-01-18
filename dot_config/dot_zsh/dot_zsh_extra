@@ -5,7 +5,21 @@ mkcd() {
 }
 
 help() {
-	"$@" --help | bat -l man -p
+	local var && var=$( command -v "$1" )
+	
+	if [[ ${var} = "alias "* ]]; then
+		if [[ ${var} = *"'"* ]]; then
+			var="${var%'*}"
+			var="${var#*'}"
+			var="${var} --help"
+			eval "${var}" | bat -l man -p
+		elif [[ ${var} = *"="* ]]; then
+			var="${var##*=}"
+			"${var}" --help | bat -l man -p
+		fi
+	else
+		"$@" --help | bat -l man -p
+	fi
 }
 
 weather() {
