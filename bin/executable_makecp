@@ -25,8 +25,7 @@ if [[ $extension = "cpp" ]] || \
 
 	COMPILE_FLAGS="-std=c++17 -Wall -Wextra -O2 -fwrapv -Wshadow -Wfloat-equal -Wconversion"
 
-	clang++-12 "${COMPILE_FLAGS}" "$1" -o "${filename}"
-	if ! clang++-12 "${COMPILE_FLAGS}" "$1" -o "${filename}"; then
+	if ! clang++-12 ${COMPILE_FLAGS} "$1" -o "${filename}"; then
 		echo; echo "${red}Failed compilation ${reset}"; echo
 		exit 1
 	else
