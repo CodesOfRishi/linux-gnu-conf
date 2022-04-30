@@ -18,6 +18,11 @@ return require('packer').startup(function()
 	use { 'rcarriga/nvim-notify', 
 		config = function() require ("plugins-conf.notify") end
 	}--}}}
+
+	use { 'iamcco/markdown-preview.nvim',
+		event = "BufRead",
+		cmd = "MarkdownPreview"
+	}
 	
 	-- completion
 	use { 'hrsh7th/nvim-cmp', --{{{
