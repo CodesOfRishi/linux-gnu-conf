@@ -10,12 +10,16 @@ else
 			virustotal file ${_value} --include=last_analysis_stats,_id,_type,tags,as_owner,names,signature_info,trid | bat -l yaml
 		elif [[ "$3" = "full" ]]; then
 			virustotal file ${_value} | bat -l yaml
+		else 
+			virustotal ${*:1} | bat -l yaml
 		fi
 	elif [[ "$1" = "ip" ]]; then
 		if [[ -z "${*:3}" ]]; then
 			virustotal ip ${_value} --include=last_analysis_stats,_type,tags,as_owner | bat -l yaml
 		elif [[ "$3" = "full" ]]; then
 			virustotal ip ${_value} | bat -l yaml
+		else 
+			virustotal ${*:1} | bat -l yaml
 		fi
 	else
 		virustotal ${*:1} | bat -l yaml
