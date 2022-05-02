@@ -21,6 +21,14 @@ else
 		else 
 			virustotal ${*:1} | bat -l yaml
 		fi
+	elif [[ "$1" = "url" ]]; then
+		if [[ -z "${*:3}" ]]; then
+			vt url ${_value} --include="last_http*,last_final_url,categories,last_analysis_stats"
+		elif [[ "$3" = "full" ]]; then
+			vt url ${_value} | bat -l yaml
+		else 
+			virustotal ${*:1} | bat -l yaml
+		fi
 	else
 		virustotal ${*:1} | bat -l yaml
 	fi
