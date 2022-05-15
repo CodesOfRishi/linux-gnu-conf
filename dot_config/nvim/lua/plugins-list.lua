@@ -67,6 +67,12 @@ return require('packer').startup(function()
 		end
 	}--}}}
 
+	use { "nvim-neorg/neorg",--{{{
+		ft = "norg",
+		after = "nvim-treesitter",
+		config = function() require 'plugins-conf.neorg' end
+	}--}}}
+
 	-- Language specific
 	use { 'nvim-treesitter/nvim-treesitter', --{{{
 		run = ":TSUpdate",
