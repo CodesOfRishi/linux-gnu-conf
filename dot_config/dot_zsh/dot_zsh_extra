@@ -23,6 +23,11 @@ help() {
 	fi
 }
 
+man() {
+	local args && args=${*:1}
+	$( whence -p man ) ${args} | bat -l man -p
+}
+
 weather() {
 	local location
 	[[ -z $1 ]] && location="varanasi" || location="$1"
