@@ -67,7 +67,7 @@ fi
 source ${HOME}/.config/.zsh/.zsh_zinit
 
 # Aliases, Exports & others
-source ${ZSH}/.zsh_extra
 source ${ZSH}/.zsh_exports
 source ${ZSH}/.zsh_aliases
 source ${ZSH}/.zsh_git
+source ${ZSH}/.zsh_extra
