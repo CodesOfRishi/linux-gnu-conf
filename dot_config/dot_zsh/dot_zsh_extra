@@ -33,3 +33,21 @@ weather() {
 	[[ -z $1 ]] && location="varanasi" || location="$1"
 	curl wttr.in/"${location}"\?F
 }
+
+# use `chezmoi edit` first
+# if it throws an error (assuming the file is not in source state) use `nvim`
+v () {
+	local args && args=${*:1}
+	$( whence -p chezmoi ) edit ${args} 2> /dev/null
+
+	if [[ "$?" -ne 0 ]]; then
+		$( whence -p nvim ) ${args}
+		local colr87 && colr87='\e[3;38;5;244m'
+		local colr_reset && colr_reset='\e[0m'
+		printf '%b\n' "${colr87}Neovim!${colr_reset}"
+	else
+		local colr87 && colr87='\e[3;38;5;244m'
+		local colr_reset && colr_reset='\e[0m'
+		printf '%b\n' "${colr87}Chezmoi Edit!${colr_reset}"
+	fi
+}
