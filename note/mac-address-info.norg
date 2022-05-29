@@ -1,0 +1,18 @@
+* Windows
+  @code powershell
+	  ipconfig /all
+  @end
+
+* Linux
+  @code bash
+  	ifconfig -a
+	ip addr show
+	ip link show
+	ip -o link show
+	cat /sys/class/net/*/address
+  @end
+
+* Cisco IOS Router
+  @code ios
+  	show interface
+  @end
