@@ -4,3 +4,8 @@
 [merge]
 	command = "nvim"
 	args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+
+encryption = "age"
+[age]
+	identity = "/home/rishi/.age/priv1"
+	recipient = "age1lu4v8dar2kuxupvplv9g7xq9562qe8ztlqp59jd7h7jhns0vcfls4ku6ag"
