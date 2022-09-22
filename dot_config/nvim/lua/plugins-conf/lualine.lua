@@ -1,4 +1,4 @@
-local gps = require("nvim-gps") -- requires "SmiteshP/nvim-gps" to be installed
+local navic = require("nvim-navic") -- requires "SmiteshP/nvim-navic" to be installed
 
 require'lualine'.setup {
 	options = {
@@ -11,7 +11,7 @@ require'lualine'.setup {
 	sections = {
 		lualine_a = {'mode'},
 		lualine_b = {'branch', 'b:gitsigns_status'},
-		lualine_c = {{'filename', path = 1}, {gps.get_location, condition = gps.is_available}},
+		lualine_c = {{'filename', path = 1}, { navic.get_location, cond = navic.is_available }},
 		lualine_x = {
 			{'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}},
 			'filetype',

@@ -1,6 +1,14 @@
+local navic = require("nvim-navic")
+
+
 -- language server setup{{{
 require'lspconfig'.clangd.setup{
 	cmd = {"clangd-12"},
+
+	-- for nvim-navic to work it needs attach to the lsp server. nvim-navic can attach to only server per buffer
+	on_attach = function(client, bufnr)
+	        navic.attach(client, bufnr)
+	end
 }
 
 require'lspconfig'.pyright.setup{
@@ -16,7 +24,12 @@ require'lspconfig'.pyright.setup{
 			},
 			pythonPath = "python3"
 		}
-	}
+	},
+
+	-- for nvim-navic to work it needs attach to the lsp server. nvim-navic can attach to only server per buffer
+	on_attach = function(client, bufnr)
+	        navic.attach(client, bufnr)
+	end
 }
 
 require'lspconfig'.vimls.setup{}--}}}

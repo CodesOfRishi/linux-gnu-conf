@@ -93,26 +93,11 @@ return require('packer').startup(function()
 		end
 	}--}}}
 
-	use { "SmiteshP/nvim-gps",--{{{
-		requires = "nvim-treesitter/nvim-treesitter",
-		after = { "nvim-treesitter" },
+	use { "SmiteshP/nvim-navic",--{{{
+		require = "neovim/nvim-lspconfig",
+		-- after = { "nvim-lspconfig" },
 		config = function()
-			require("nvim-gps").setup({
-				icons = {
-					["class-name"] = ' ',      -- Classes and class-like objects
-					["function-name"] = ' ',   -- Functions
-					["method-name"] = ' '      -- Methods (functions inside class-like objects)
-				},
-				languages = {                    -- You can disable any language individually here
-					["c"] = true,
-					["cpp"] = true,
-					["go"] = true,
-					["java"] = true,
-					["javascript"] = true,
-					["lua"] = true,
-					["python"] = true,
-					["rust"] = true,
-				},
+			require("nvim-navic").setup({
 				separator = '  ',
 			})
 		end
@@ -208,7 +193,7 @@ return require('packer').startup(function()
 
 	use { 'hoob3rt/lualine.nvim', --{{{
 		config = function() require'plugins-conf.lualine' end,
-		after = { 'github-nvim-theme', 'nvim-gps' }
+		after = { 'github-nvim-theme', 'nvim-navic' }
 	}--}}}
 
 	use { 'norcalli/nvim-colorizer.lua',--{{{
